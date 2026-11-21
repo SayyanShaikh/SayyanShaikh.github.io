@@ -1,13 +1,4 @@
 User-agent: *
-Disallow: /__MACOSX/
-Disallow: /about-us.html
-Disallow: /blog.html
-Disallow: /blog-item.html
-Disallow: /contact-us.html
-Disallow: /portfolio.html
-Disallow: /pricing.html
-Disallow: /services.html
-Disallow: /shortcodes.html
-Disallow: /sendemail.php
+Allow: /
 
 Sitemap: https://sayyanshaikh.github.io/sitemap.xml
