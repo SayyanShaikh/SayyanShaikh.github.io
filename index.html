@@ -3,26 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sayyan Shaikh – Lecturer, Computer Science &amp; Engineering | Research, Teaching, Projects</title>
-<meta name="description" content="Sayyan Shaikh teaches Computer Science and Engineering at Government Polytechnic, Joida, Karnataka, and builds machine learning systems for EEG stress detection, driver drowsiness alerts and face-recognition attendance. Papers, projects, teaching material and contact.">
+<title>Sayyan Shaikh – Lecturer, Computer Science &amp; Engineering</title>
+<meta name="description" content="Sayyan Shaikh teaches Computer Science and Engineering at Government Polytechnic, Joida, Karnataka, and builds machine learning systems for EEG stress detection, driver drowsiness alerts and face-recognition attendance. About, photos, achievements, contact, and a form to ask him a question.">
 <meta name="author" content="Sayyan Shaikh">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sayyanshaikh.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#15233F">
-
+<meta name="theme-color" content="#101C33">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://sayyanshaikh.com/">
 <meta property="og:title" content="Sayyan Shaikh – Lecturer, Computer Science &amp; Engineering">
 <meta property="og:description" content="Teaching computer science in Karnataka and building machine learning systems: EEG stress detection, drowsiness alerts and face-recognition attendance.">
 <meta property="og:image" content="https://sayyanshaikh.com/portrait.jpg">
 <meta name="twitter:card" content="summary">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -86,353 +84,507 @@
   ]
 }
 </script>
-
 <style>
   :root {
-    --paper: #F8F9F6;
+    --night: #101C33;
+    --night-grid: rgba(127, 178, 229, .09);
+    --night-grid-strong: rgba(127, 178, 229, .16);
+    --signal: #7FB2E5;
+    --saffron: #F0A63A;
+    --paper: #F6F7F3;
     --ink: #15233F;
     --muted: #5B6577;
-    --grid: #DDE6E1;
-    --grid-strong: #C9D6CF;
-    --trace: #2C5A86;
-    --marker: #B42318;
+    --rule: #D7DFDA;
+    --link: #2C5A86;
     --white: #FFFFFF;
     --serif: "Spectral", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
     --sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
     --wide: 1120px;
     --gap: clamp(20px, 4vw, 48px);
   }
-
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 1.0625rem;
-    line-height: 1.6;
-  }
-
-  a { color: var(--trace); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(44, 90, 134, .4); }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 1.0625rem; line-height: 1.6; }
+  a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(44,90,134,.4); }
   a:hover { text-decoration-color: currentColor; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--trace); outline-offset: 3px; border-radius: 2px; }
-
-  .skip { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: var(--white); padding: 8px 14px; z-index: 10; }
+  :focus-visible { outline: 2px solid var(--saffron); outline-offset: 3px; }
+  img { max-width: 100%; }
+  .wrap { max-width: var(--wide); margin: 0 auto; padding: 0 var(--gap); }
+  .skip { position: absolute; left: -9999px; top: 8px; background: var(--saffron); color: var(--night); padding: 8px 14px; z-index: 20; }
   .skip:focus { left: 8px; }
 
-  .wrap { max-width: var(--wide); margin: 0 auto; padding: 0 var(--gap); }
-
-  /* Top bar */
-  .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; padding-top: 22px; padding-bottom: 22px; }
-  .top .home { font-family: var(--serif); font-weight: 600; font-size: 1.125rem; color: var(--ink); text-decoration: none; }
-  .top nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 22px; }
-  .top nav a { color: var(--ink); text-decoration: none; font-size: .975rem; }
-  .top nav a:hover { color: var(--trace); text-decoration: underline; }
-
-  /* Hero */
-  .hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--gap); align-items: end; padding-top: clamp(24px, 6vw, 72px); padding-bottom: clamp(28px, 4vw, 44px); }
-  .hero h1 {
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: clamp(2.75rem, 7.2vw, 5rem);
-    line-height: 1.02;
-    letter-spacing: -0.015em;
-    margin: 0 0 18px;
-  }
-  .hero .lead { font-size: clamp(1.125rem, 1.9vw, 1.3rem); line-height: 1.5; max-width: 36em; margin: 0 0 14px; }
-  .hero .role { color: var(--muted); margin: 0 0 22px; }
-  .links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; }
-  .links a { font-weight: 700; }
-
-  .portrait { margin: 0; width: clamp(150px, 22vw, 260px); }
-  .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--ink); padding: 6px; background: var(--white); }
-
-  /* EEG band: the one loud element */
-  .eeg {
-    margin: 0;
-    border-top: 1px solid var(--grid-strong);
-    border-bottom: 1px solid var(--grid-strong);
-    background-color: #FCFDFB;
+  /* ---------- Monitor header ---------- */
+  .monitor {
+    position: relative; overflow: hidden; color: var(--white);
+    background-color: var(--night);
     background-image:
-      linear-gradient(to right, var(--grid-strong) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-strong) 1px, transparent 1px),
-      linear-gradient(to right, var(--grid) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
-    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+      linear-gradient(to right, var(--night-grid-strong) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--night-grid-strong) 1px, transparent 1px),
+      linear-gradient(to right, var(--night-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--night-grid) 1px, transparent 1px);
+    background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
   }
-  .eeg-inner { position: relative; max-width: var(--wide); margin: 0 auto; padding: 18px var(--gap) 10px; }
-  .eeg svg { display: block; width: 100%; height: clamp(150px, 20vw, 210px); overflow: visible; }
-  .eeg .tr { fill: none; stroke: var(--trace); stroke-width: 1.3; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
-  .eeg .mk { stroke: var(--marker); stroke-width: 1.2; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
-  .eeg figcaption { font-size: .9rem; color: var(--muted); padding-top: 6px; }
+  .traces { position: absolute; left: 0; right: 0; top: 38%; height: 170px; pointer-events: none; overflow: hidden; }
+  .traces svg { display: block; width: 200%; height: 100%; }
+  .traces path { fill: none; stroke: var(--signal); stroke-width: 1.2; opacity: .42; vector-effect: non-scaling-stroke; }
   @media (prefers-reduced-motion: no-preference) {
-    .eeg .tr { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s cubic-bezier(.45,.05,.3,1) forwards; }
-    .eeg .tr:nth-of-type(2) { animation-delay: .12s; }
-    .eeg .tr:nth-of-type(3) { animation-delay: .24s; }
-    .eeg .tr:nth-of-type(4) { animation-delay: .36s; }
-    .eeg .mk { opacity: 0; animation: show .4s ease-out 2.2s forwards; }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
-    @keyframes show { to { opacity: 1; } }
+    .traces svg { animation: scroll 30s linear infinite; }
+    @keyframes scroll { to { transform: translateX(-50%); } }
   }
+  .monitor-top { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 20px; }
+  .monitor-top .home { font-family: var(--serif); font-weight: 600; font-size: 1.1rem; color: var(--white); text-decoration: none; }
+  .monitor-top .where { color: rgba(255,255,255,.7); font-size: .95rem; }
+  .hero { position: relative; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: var(--gap); align-items: center; padding-top: clamp(28px, 6vw, 64px); padding-bottom: 8px; }
+  .hero h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(3rem, 9vw, 6.4rem); line-height: .98; letter-spacing: -0.02em; margin: 0 0 18px; text-shadow: 0 2px 24px rgba(16,28,51,.9); }
+  .hero .lead { font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.5; max-width: 34em; margin: 0 0 10px; color: rgba(255,255,255,.92); text-shadow: 0 1px 12px rgba(16,28,51,.95); }
+  .hero .role { color: rgba(255,255,255,.72); margin: 0; }
+  .portrait { margin: 0; width: clamp(140px, 22vw, 250px); position: relative; }
+  .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 3px solid var(--saffron); box-shadow: 0 0 0 8px rgba(240,166,58,.12); }
 
-  /* Sections */
-  main > section { padding-top: clamp(44px, 7vw, 84px); }
-  .sec { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 12px var(--gap); }
-  .sec > h2 {
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: 1.6rem;
-    line-height: 1.2;
-    margin: 0;
-    padding-top: 2px;
-  }
-  .body { max-width: 44em; }
-  .body p { margin: 0 0 1em; }
-  .body p:last-child { margin-bottom: 0; }
+  .stage { position: relative; height: 104px; margin-top: 6px; }
+  .stage svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .floor { stroke: rgba(255,255,255,.28); stroke-width: 1; }
+  .stick { stroke: var(--white); stroke-width: 3; stroke-linecap: round; fill: none; }
+  .stick-head { fill: var(--night); stroke: var(--white); stroke-width: 2.6; }
+  .board-frame { fill: #1D3A2F; stroke: #8B6A3E; stroke-width: 3; }
+  .board-legs { stroke: #8B6A3E; stroke-width: 3; }
+  .chalk { fill: none; stroke: #E9F1EA; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+
+  /* ---------- Tabs ---------- */
+  .tabbar { position: sticky; top: 0; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--rule); }
+  .tabs { display: flex; gap: 4px clamp(14px, 3vw, 34px); overflow-x: auto; scrollbar-width: none; margin: 0; padding: 0; list-style: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs a { display: block; white-space: nowrap; padding: 16px 2px 13px; color: var(--muted); text-decoration: none; font-weight: 700; border-bottom: 3px solid transparent; }
+  .tabs a:hover { color: var(--ink); }
+  .tabs a[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--saffron); }
+
+  /* ---------- Panels ---------- */
+  .panel { padding-top: clamp(36px, 6vw, 64px); padding-bottom: clamp(48px, 7vw, 88px); }
+  .js .panel[hidden] { display: none; }
+  .panel > h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 4.4vw, 2.8rem); line-height: 1.1; margin: 0 0 26px; letter-spacing: -0.01em; }
+  h3 { font-family: var(--serif); font-weight: 600; font-size: 1.45rem; line-height: 1.25; margin: 0 0 14px; }
   .muted { color: var(--muted); }
+  p { margin: 0 0 1em; }
 
-  /* Publications grouped by year */
-  .year { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 0 20px; padding: 18px 0; border-top: 1px solid var(--grid-strong); }
-  .year:first-child { border-top: 0; padding-top: 0; }
-  .year > span { font-family: var(--serif); font-size: 1.25rem; color: var(--muted); line-height: 1.5; }
-  .pubs { list-style: none; margin: 0; padding: 0; }
-  .pubs li + li { margin-top: 20px; }
+  .about { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--gap); }
+  .about .bio { max-width: 40em; font-size: 1.1rem; }
+  .facts { margin: 0; border-top: 2px solid var(--ink); }
+  .facts div { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+  .facts dt { color: var(--muted); font-size: .92rem; }
+  .facts dd { margin: 2px 0 0; font-weight: 700; }
+
+  .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .gallery button { all: unset; cursor: zoom-in; display: block; position: relative; overflow: hidden; border-radius: 6px; background: var(--rule); }
+  .gallery button:focus-visible { outline: 3px solid var(--saffron); outline-offset: 3px; }
+  .gallery img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .gallery .big { grid-column: span 2; grid-row: span 2; }
+  .gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 12px 10px; color: var(--white); font-size: .92rem; background: linear-gradient(transparent, rgba(16,28,51,.8)); }
+  dialog.viewer { border: 0; padding: 0; background: transparent; max-width: min(92vw, 900px); }
+  dialog.viewer::backdrop { background: rgba(16,28,51,.9); }
+  dialog.viewer img { display: block; width: 100%; height: auto; max-height: 82vh; object-fit: contain; border-radius: 6px; }
+  dialog.viewer p { color: var(--white); margin: 10px 0 0; }
+  dialog.viewer .close { position: absolute; top: 8px; right: 8px; background: var(--white); color: var(--ink); border: 0; border-radius: 4px; font: 700 .95rem var(--sans); padding: 8px 12px; cursor: pointer; }
+
+  .timeline { list-style: none; margin: 0 0 56px; padding: 0; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 76px; top: 8px; bottom: 8px; width: 2px; background: var(--rule); }
+  .timeline li { display: grid; grid-template-columns: 60px minmax(0, 1fr); gap: 0 44px; padding: 0 0 26px; position: relative; }
+  .timeline li::before { content: ""; position: absolute; left: 70px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 3px solid var(--link); }
+  .timeline li.key::before { background: var(--saffron); border-color: var(--saffron); }
+  .timeline .yr { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: var(--muted); text-align: right; }
+  .timeline strong { display: block; font-size: 1.08rem; }
+  .timeline span.d { color: var(--muted); }
+
+  .pubs { list-style: none; margin: 0 0 56px; padding: 0; max-width: 48em; }
+  .pubs li { padding: 16px 0; border-top: 1px solid var(--rule); }
+  .pubs li:first-child { border-top: 2px solid var(--ink); }
   .pt { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; line-height: 1.35; display: block; }
   .pa, .pv { display: block; }
   .pv { color: var(--muted); }
-  .status { color: var(--marker); }
 
-  /* Projects */
-  .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px var(--gap); }
+  .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px var(--gap); margin-bottom: 56px; }
   .project { border-top: 2px solid var(--ink); padding-top: 14px; }
-  .project h3 { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; line-height: 1.25; margin: 0 0 8px; }
-  .project p { margin: 0 0 10px; }
-  .project .tools { color: var(--muted); font-size: .95rem; }
+  .project h4 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; margin: 0 0 8px; }
+  .project p { margin: 0 0 8px; }
 
-  /* Teaching table */
-  table { border-collapse: collapse; width: 100%; margin-top: 8px; }
-  caption { text-align: left; color: var(--muted); padding-bottom: 8px; font-size: .95rem; }
-  th, td { text-align: left; vertical-align: top; padding: 12px 16px 12px 0; border-top: 1px solid var(--grid-strong); }
-  thead th { border-top: 0; color: var(--muted); font-weight: 400; font-size: .95rem; padding-top: 0; }
-  tbody th { font-weight: 700; width: 38%; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 16px 12px 0; border-top: 1px solid var(--rule); }
+  thead th { border-top: 2px solid var(--ink); color: var(--muted); font-weight: 400; font-size: .95rem; }
+  tbody th { width: 38%; }
   tbody th small { display: block; font-weight: 400; color: var(--muted); font-size: .875rem; }
 
-  /* Timeline lists */
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px var(--gap); }
-  .split h3 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; margin: 0 0 12px; }
-  .entries { list-style: none; margin: 0; padding: 0; }
-  .entries li { padding: 12px 0; border-top: 1px solid var(--grid-strong); }
-  .entries li:first-child { border-top: 0; padding-top: 0; }
-  .entries strong { display: block; }
-  .entries .when { color: var(--muted); font-size: .95rem; }
+  .contact .email { font-family: var(--serif); font-weight: 600; font-size: clamp(1.6rem, 5vw, 3rem); line-height: 1.15; display: inline-block; margin: 0 0 24px; word-break: break-word; }
+  .contact ul { list-style: none; margin: 0; padding: 0; max-width: 34em; }
+  .contact li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid var(--rule); }
+  .contact li:last-child { border-bottom: 1px solid var(--rule); }
+  .contact li span { color: var(--muted); }
 
-  /* Contact */
-  .contact .email { font-family: var(--serif); font-weight: 600; font-size: clamp(1.5rem, 4vw, 2.3rem); line-height: 1.2; display: inline-block; margin: 0 0 16px; word-break: break-word; }
+  .ask { max-width: 40em; }
+  .ask label { display: block; font-weight: 700; margin: 0 0 6px; }
+  .ask label small { font-weight: 400; color: var(--muted); }
+  .ask textarea, .ask input[type="text"], .ask input[type="email"] { width: 100%; font: inherit; color: var(--ink); background: var(--white); border: 1px solid #AEB9B3; border-radius: 6px; padding: 12px 14px; margin: 0 0 20px; }
+  .ask textarea { min-height: 170px; resize: vertical; }
+  .ask textarea:focus, .ask input:focus { outline: 2px solid var(--saffron); outline-offset: 1px; border-color: var(--ink); }
+  .ask .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  .ask button { font: 700 1.05rem var(--sans); color: var(--night); background: var(--saffron); border: 0; border-radius: 6px; padding: 13px 26px; cursor: pointer; }
+  .ask button:hover { background: #F4B75A; }
+  .hp { position: absolute; left: -9999px; }
 
-  footer.wrap { margin-top: clamp(56px, 8vw, 96px); padding-bottom: 36px; }
-  .foot { border-top: 1px solid var(--grid-strong); padding-top: 20px; color: var(--muted); font-size: .925rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+  /* ---------- Music button ---------- */
+  .music { position: fixed; right: 18px; bottom: 18px; z-index: 30; display: inline-flex; align-items: center; gap: 10px; font: 700 .95rem var(--sans); color: var(--white); background: var(--night); border: 2px solid var(--saffron); border-radius: 999px; padding: 10px 16px 10px 12px; cursor: pointer; box-shadow: 0 6px 20px rgba(16,28,51,.3); }
+  .music .bars { display: inline-flex; align-items: flex-end; gap: 2px; height: 14px; }
+  .music .bars i { display: block; width: 3px; height: 4px; background: var(--saffron); border-radius: 1px; }
+  .music[aria-pressed="true"] .bars i { animation: eq .9s ease-in-out infinite alternate; }
+  .music[aria-pressed="true"] .bars i:nth-child(2) { animation-delay: -.3s; }
+  .music[aria-pressed="true"] .bars i:nth-child(3) { animation-delay: -.6s; }
+  @keyframes eq { from { height: 3px; } to { height: 14px; } }
+  @media (prefers-reduced-motion: reduce) { .music[aria-pressed="true"] .bars i { animation: none; height: 10px; } }
+
+  footer .foot { border-top: 1px solid var(--rule); padding: 20px 0 84px; color: var(--muted); font-size: .925rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 
   @media (max-width: 900px) {
-    .sec { grid-template-columns: minmax(0, 1fr); }
+    .about { grid-template-columns: minmax(0, 1fr); }
     .projects { grid-template-columns: minmax(0, 1fr); }
   }
   @media (max-width: 640px) {
-    .hero { grid-template-columns: minmax(0, 1fr); align-items: start; }
-    .portrait { order: -1; width: 132px; }
-    .split { grid-template-columns: minmax(0, 1fr); }
-    .year { grid-template-columns: minmax(0, 1fr); }
-    .year > span { margin-bottom: 6px; }
-    tbody th { width: auto; }
+    .hero { grid-template-columns: minmax(0, 1fr); }
+    .portrait { order: -1; width: 120px; }
+    .monitor-top .where { display: none; }
+    .traces { top: 46%; }
+    .gallery { grid-template-columns: 1fr 1fr; }
+    .gallery .big { grid-column: span 2; grid-row: auto; }
+    .timeline::before { left: 7px; }
+    .timeline li { grid-template-columns: minmax(0, 1fr); padding-left: 32px; }
+    .timeline li::before { left: 1px; }
+    .timeline .yr { text-align: left; }
+    .ask .row { grid-template-columns: 1fr; }
+    .music { padding: 12px; }
+    .music #music-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     th, td { display: block; padding-right: 0; }
     td { border-top: 0; padding-top: 0; }
     thead { display: none; }
+    tbody th { width: auto; }
   }
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#panels">Skip to content</a>
 
-<header class="wrap top">
-  <a class="home" href="/">Sayyan Shaikh</a>
-  <nav aria-label="Sections">
-    <ul>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header class="monitor">
+  <div class="traces" aria-hidden="true">
+    <svg viewBox="0 0 2400 170" preserveAspectRatio="none" focusable="false">
+      <path d="M0,24.7 L3,22.8 L6,17.7 L9,19.7 L12,20.0 L15,17.3 L18,23.6 L21,28.7 L24,24.2 L27,23.1 L30,24.6 L33,22.6 L36,21.4 L39,18.7 L42,18.6 L45,26.8 L48,31.2 L51,28.5 L54,25.3 L57,20.8 L60,17.7 L63,16.8 L66,15.3 L69,16.1 L72,19.2 L75,21.3 L78,21.5 L81,19.9 L84,20.8 L87,23.7 L90,22.2 L93,18.4 L96,17.0 L99,16.7 L102,16.4 L105,18.3 L108,21.3 L111,21.6 L114,21.4 L117,22.9 L120,25.3 L123,27.7 L126,26.3 L129,24.6 L132,27.0 L135,24.0 L138,19.2 L141,22.2 L144,22.0 L147,17.3 L150,13.8 L153,8.9 L156,11.8 L159,19.2 L162,19.1 L165,22.0 L168,27.4 L171,26.8 L174,27.9 L177,26.2 L180,19.0 L183,18.1 L186,19.2 L189,18.4 L192,22.4 L195,28.2 L198,32.7 L201,34.9 L204,29.9 L207,20.4 L210,17.1 L213,19.1 L216,15.4 L219,11.3 L222,16.9 L225,23.1 L228,22.1 L231,17.3 L234,14.4 L237,18.6 L240,21.1 L243,18.2 L246,19.9 L249,22.1 L252,20.5 L255,19.6 L258,16.6 L261,16.5 L264,21.5 L267,23.6 L270,25.9 L273,29.0 L276,27.1 L279,25.9 L282,23.4 L285,17.4 L288,14.9 L291,15.3 L294,19.6 L297,26.6 L300,28.1 L303,25.5 L306,22.1 L309,20.1 L312,19.3 L315,18.5 L318,22.6 L321,26.8 L324,21.7 L327,21.9 L330,22.2 L333,20.0 L336,19.2 L339,21.6 L342,22.5 L345,21.8 L348,22.4 L351,20.4 L354,21.0 L357,19.5 L360,19.7 L363,18.5 L366,14.4 L369,18.4 L372,22.5 L375,20.8 L378,27.7 L381,24.0 L384,20.0 L387,18.1 L390,13.4 L393,17.6 L396,17.9 L399,23.0 L402,28.8 L405,23.0 L408,25.6 L411,19.4 L414,20.3 L417,20.8 L420,12.1 L423,20.1 L426,20.7 L429,33.5 L432,27.1 L435,36.2 L438,13.5 L441,25.3 L444,7.1 L447,31.0 L450,9.5 L453,28.1 L456,18.9 L459,24.2 L462,26.9 L465,23.4 L468,15.2 L471,20.0 L474,14.7 L477,18.9 L480,24.0 L483,15.9 L486,25.2 L489,18.4 L492,24.1 L495,22.0 L498,29.8 L501,26.0 L504,24.7 L507,23.9 L510,26.4 L513,22.7 L516,12.4 L519,10.1 L522,8.8 L525,10.9 L528,10.0 L531,17.1 L534,19.4 L537,31.5 L540,26.5 L543,29.4 L546,27.8 L549,23.2 L552,22.6 L555,19.3 L558,19.8 L561,19.8 L564,23.8 L567,23.5 L570,32.6 L573,22.9 L576,27.3 L579,26.3 L582,12.7 L585,16.2 L588,7.7 L591,17.6 L594,25.3 L597,28.4 L600,29.9 L603,21.7 L606,20.2 L609,17.3 L612,22.4 L615,17.1 L618,19.8 L621,18.1 L624,20.8 L627,27.8 L630,26.0 L633,20.0 L636,20.9 L639,22.6 L642,19.5 L645,16.8 L648,16.3 L651,15.3 L654,16.0 L657,19.4 L660,22.8 L663,21.7 L666,18.8 L669,20.3 L672,21.5 L675,20.5 L678,23.7 L681,24.0 L684,22.9 L687,25.6 L690,23.5 L693,23.0 L696,27.8 L699,24.6 L702,19.9 L705,18.6 L708,14.8 L711,17.9 L714,24.8 L717,26.1 L720,28.6 L723,29.4 L726,26.0 L729,23.5 L732,18.9 L735,15.5 L738,13.9 L741,9.9 L744,12.8 L747,20.9 L750,22.8 L753,22.8 L756,23.4 L759,22.1 L762,23.5 L765,26.0 L768,21.5 L771,16.0 L774,20.3 L777,23.4 L780,19.6 L783,22.4 L786,23.4 L789,17.3 L792,21.3 L795,24.6 L798,18.9 L801,20.3 L804,23.2 L807,21.9 L810,23.0 L813,21.4 L816,19.3 L819,18.1 L822,15.2 L825,17.3 L828,20.5 L831,21.9 L834,25.4 L837,24.4 L840,20.1 L843,19.3 L846,21.7 L849,26.5 L852,27.8 L855,25.6 L858,24.8 L861,22.2 L864,21.8 L867,23.3 L870,22.5 L873,23.2 L876,21.4 L879,19.5 L882,20.8 L885,16.3 L888,15.1 L891,20.5 L894,20.0 L897,22.6 L900,26.0 L903,23.0 L906,22.8 L909,18.3 L912,13.0 L915,15.4 L918,11.9 L921,13.0 L924,22.8 L927,21.5 L930,21.4 L933,27.1 L936,25.2 L939,23.1 L942,21.0 L945,18.5 L948,19.6 L951,17.4 L954,20.5 L957,29.2 L960,30.3 L963,29.4 L966,26.6 L969,23.6 L972,26.9 L975,24.1 L978,20.1 L981,20.8 L984,13.5 L987,12.7 L990,22.2 L993,21.8 L996,20.5 L999,22.2 L1002,17.7 L1005,15.7 L1008,16.6 L1011,19.0 L1014,24.9 L1017,23.8 L1020,22.3 L1023,27.7 L1026,24.7 L1029,17.3 L1032,20.5 L1035,23.8 L1038,21.0 L1041,19.8 L1044,18.8 L1047,17.9 L1050,18.7 L1053,17.0 L1056,17.2 L1059,22.6 L1062,24.8 L1065,24.7 L1068,25.7 L1071,24.2 L1074,23.1 L1077,21.1 L1080,18.0 L1083,20.6 L1086,21.2 L1089,17.5 L1092,18.4 L1095,17.1 L1098,15.8 L1101,21.2 L1104,22.1 L1107,21.0 L1110,26.1 L1113,30.0 L1116,30.0 L1119,25.7 L1122,19.6 L1125,17.9 L1128,16.1 L1131,16.3 L1134,22.5 L1137,25.6 L1140,27.4 L1143,30.0 L1146,27.5 L1149,26.0 L1152,25.9 L1155,19.4 L1158,11.7 L1161,7.5 L1164,8.7 L1167,16.7 L1170,22.5 L1173,22.4 L1176,22.9 L1179,22.3 L1182,17.6 L1185,15.4 L1188,20.3 L1191,24.5 L1194,21.7 L1197,20.6 L1200,24.7 L1203,22.8 L1206,17.7 L1209,19.7 L1212,20.0 L1215,17.3 L1218,23.6 L1221,28.7 L1224,24.2 L1227,23.1 L1230,24.6 L1233,22.6 L1236,21.4 L1239,18.7 L1242,18.6 L1245,26.8 L1248,31.2 L1251,28.5 L1254,25.3 L1257,20.8 L1260,17.7 L1263,16.8 L1266,15.3 L1269,16.1 L1272,19.2 L1275,21.3 L1278,21.5 L1281,19.9 L1284,20.8 L1287,23.7 L1290,22.2 L1293,18.4 L1296,17.0 L1299,16.7 L1302,16.4 L1305,18.3 L1308,21.3 L1311,21.6 L1314,21.4 L1317,22.9 L1320,25.3 L1323,27.7 L1326,26.3 L1329,24.6 L1332,27.0 L1335,24.0 L1338,19.2 L1341,22.2 L1344,22.0 L1347,17.3 L1350,13.8 L1353,8.9 L1356,11.8 L1359,19.2 L1362,19.1 L1365,22.0 L1368,27.4 L1371,26.8 L1374,27.9 L1377,26.2 L1380,19.0 L1383,18.1 L1386,19.2 L1389,18.4 L1392,22.4 L1395,28.2 L1398,32.7 L1401,34.9 L1404,29.9 L1407,20.4 L1410,17.1 L1413,19.1 L1416,15.4 L1419,11.3 L1422,16.9 L1425,23.1 L1428,22.1 L1431,17.3 L1434,14.4 L1437,18.6 L1440,21.1 L1443,18.2 L1446,19.9 L1449,22.1 L1452,20.5 L1455,19.6 L1458,16.6 L1461,16.5 L1464,21.5 L1467,23.6 L1470,25.9 L1473,29.0 L1476,27.1 L1479,25.9 L1482,23.4 L1485,17.4 L1488,14.9 L1491,15.3 L1494,19.6 L1497,26.6 L1500,28.1 L1503,25.5 L1506,22.1 L1509,20.1 L1512,19.3 L1515,18.5 L1518,22.6 L1521,26.8 L1524,21.7 L1527,21.9 L1530,22.2 L1533,20.0 L1536,19.2 L1539,21.6 L1542,22.5 L1545,21.8 L1548,22.4 L1551,20.4 L1554,21.0 L1557,19.5 L1560,19.7 L1563,18.5 L1566,14.4 L1569,18.4 L1572,22.5 L1575,20.8 L1578,27.7 L1581,24.0 L1584,20.0 L1587,18.1 L1590,13.4 L1593,17.6 L1596,17.9 L1599,23.0 L1602,28.8 L1605,23.0 L1608,25.6 L1611,19.4 L1614,20.3 L1617,20.8 L1620,12.1 L1623,20.1 L1626,20.7 L1629,33.5 L1632,27.1 L1635,36.2 L1638,13.5 L1641,25.3 L1644,7.1 L1647,31.0 L1650,9.5 L1653,28.1 L1656,18.9 L1659,24.2 L1662,26.9 L1665,23.4 L1668,15.2 L1671,20.0 L1674,14.7 L1677,18.9 L1680,24.0 L1683,15.9 L1686,25.2 L1689,18.4 L1692,24.1 L1695,22.0 L1698,29.8 L1701,26.0 L1704,24.7 L1707,23.9 L1710,26.4 L1713,22.7 L1716,12.4 L1719,10.1 L1722,8.8 L1725,10.9 L1728,10.0 L1731,17.1 L1734,19.4 L1737,31.5 L1740,26.5 L1743,29.4 L1746,27.8 L1749,23.2 L1752,22.6 L1755,19.3 L1758,19.8 L1761,19.8 L1764,23.8 L1767,23.5 L1770,32.6 L1773,22.9 L1776,27.3 L1779,26.3 L1782,12.7 L1785,16.2 L1788,7.7 L1791,17.6 L1794,25.3 L1797,28.4 L1800,29.9 L1803,21.7 L1806,20.2 L1809,17.3 L1812,22.4 L1815,17.1 L1818,19.8 L1821,18.1 L1824,20.8 L1827,27.8 L1830,26.0 L1833,20.0 L1836,20.9 L1839,22.6 L1842,19.5 L1845,16.8 L1848,16.3 L1851,15.3 L1854,16.0 L1857,19.4 L1860,22.8 L1863,21.7 L1866,18.8 L1869,20.3 L1872,21.5 L1875,20.5 L1878,23.7 L1881,24.0 L1884,22.9 L1887,25.6 L1890,23.5 L1893,23.0 L1896,27.8 L1899,24.6 L1902,19.9 L1905,18.6 L1908,14.8 L1911,17.9 L1914,24.8 L1917,26.1 L1920,28.6 L1923,29.4 L1926,26.0 L1929,23.5 L1932,18.9 L1935,15.5 L1938,13.9 L1941,9.9 L1944,12.8 L1947,20.9 L1950,22.8 L1953,22.8 L1956,23.4 L1959,22.1 L1962,23.5 L1965,26.0 L1968,21.5 L1971,16.0 L1974,20.3 L1977,23.4 L1980,19.6 L1983,22.4 L1986,23.4 L1989,17.3 L1992,21.3 L1995,24.6 L1998,18.9 L2001,20.3 L2004,23.2 L2007,21.9 L2010,23.0 L2013,21.4 L2016,19.3 L2019,18.1 L2022,15.2 L2025,17.3 L2028,20.5 L2031,21.9 L2034,25.4 L2037,24.4 L2040,20.1 L2043,19.3 L2046,21.7 L2049,26.5 L2052,27.8 L2055,25.6 L2058,24.8 L2061,22.2 L2064,21.8 L2067,23.3 L2070,22.5 L2073,23.2 L2076,21.4 L2079,19.5 L2082,20.8 L2085,16.3 L2088,15.1 L2091,20.5 L2094,20.0 L2097,22.6 L2100,26.0 L2103,23.0 L2106,22.8 L2109,18.3 L2112,13.0 L2115,15.4 L2118,11.9 L2121,13.0 L2124,22.8 L2127,21.5 L2130,21.4 L2133,27.1 L2136,25.2 L2139,23.1 L2142,21.0 L2145,18.5 L2148,19.6 L2151,17.4 L2154,20.5 L2157,29.2 L2160,30.3 L2163,29.4 L2166,26.6 L2169,23.6 L2172,26.9 L2175,24.1 L2178,20.1 L2181,20.8 L2184,13.5 L2187,12.7 L2190,22.2 L2193,21.8 L2196,20.5 L2199,22.2 L2202,17.7 L2205,15.7 L2208,16.6 L2211,19.0 L2214,24.9 L2217,23.8 L2220,22.3 L2223,27.7 L2226,24.7 L2229,17.3 L2232,20.5 L2235,23.8 L2238,21.0 L2241,19.8 L2244,18.8 L2247,17.9 L2250,18.7 L2253,17.0 L2256,17.2 L2259,22.6 L2262,24.8 L2265,24.7 L2268,25.7 L2271,24.2 L2274,23.1 L2277,21.1 L2280,18.0 L2283,20.6 L2286,21.2 L2289,17.5 L2292,18.4 L2295,17.1 L2298,15.8 L2301,21.2 L2304,22.1 L2307,21.0 L2310,26.1 L2313,30.0 L2316,30.0 L2319,25.7 L2322,19.6 L2325,17.9 L2328,16.1 L2331,16.3 L2334,22.5 L2337,25.6 L2340,27.4 L2343,30.0 L2346,27.5 L2349,26.0 L2352,25.9 L2355,19.4 L2358,11.7 L2361,7.5 L2364,8.7 L2367,16.7 L2370,22.5 L2373,22.4 L2376,22.9 L2379,22.3 L2382,17.6 L2385,15.4 L2388,20.3 L2391,24.5 L2394,21.7 L2397,20.6 L2400,24.7"/>
+      <path d="M0,61.6 L3,63.3 L6,63.5 L9,62.5 L12,64.2 L15,63.4 L18,61.3 L21,61.2 L24,61.0 L27,61.1 L30,61.5 L33,62.2 L36,62.6 L39,62.0 L42,64.2 L45,64.4 L48,61.0 L51,63.2 L54,65.8 L57,65.3 L60,68.7 L63,67.1 L66,62.1 L69,64.3 L72,63.3 L75,59.8 L78,63.0 L81,62.2 L84,58.2 L87,60.8 L90,61.8 L93,61.2 L96,65.5 L99,67.9 L102,66.4 L105,65.4 L108,63.3 L111,61.2 L114,61.3 L117,61.0 L120,58.9 L123,58.5 L126,61.4 L129,64.6 L132,64.7 L135,63.7 L138,63.8 L141,62.9 L144,62.0 L147,64.5 L150,65.2 L153,61.2 L156,61.4 L159,65.3 L162,64.8 L165,63.4 L168,65.6 L171,66.8 L174,65.7 L177,65.5 L180,66.5 L183,65.4 L186,63.5 L189,64.3 L192,64.5 L195,62.4 L198,63.1 L201,63.5 L204,61.4 L207,63.6 L210,68.0 L213,67.2 L216,65.5 L219,65.1 L222,63.3 L225,63.8 L228,65.1 L231,63.3 L234,63.0 L237,64.5 L240,65.6 L243,67.8 L246,67.6 L249,65.7 L252,65.6 L255,61.1 L258,55.6 L261,58.2 L264,61.5 L267,63.1 L270,67.0 L273,67.3 L276,65.4 L279,66.4 L282,65.6 L285,63.7 L288,64.7 L291,65.6 L294,66.7 L297,67.0 L300,68.0 L303,66.7 L306,63.0 L309,60.8 L312,59.1 L315,60.6 L318,60.6 L321,64.8 L324,63.7 L327,67.0 L330,68.3 L333,67.9 L336,65.1 L339,64.9 L342,66.6 L345,63.1 L348,63.4 L351,62.6 L354,57.9 L357,58.6 L360,61.8 L363,57.4 L366,64.6 L369,62.3 L372,65.7 L375,61.1 L378,65.5 L381,60.6 L384,62.5 L387,57.1 L390,62.7 L393,62.3 L396,61.7 L399,64.1 L402,67.4 L405,65.2 L408,70.0 L411,65.0 L414,68.0 L417,57.2 L420,66.5 L423,54.0 L426,62.0 L429,59.8 L432,61.1 L435,61.0 L438,61.4 L441,55.8 L444,71.9 L447,52.1 L450,63.9 L453,62.2 L456,58.0 L459,70.7 L462,57.3 L465,66.8 L468,65.5 L471,57.0 L474,66.3 L477,65.2 L480,76.0 L483,63.7 L486,73.0 L489,63.5 L492,68.0 L495,66.3 L498,64.2 L501,63.0 L504,65.7 L507,55.8 L510,70.6 L513,68.2 L516,63.4 L519,78.8 L522,62.5 L525,71.1 L528,67.8 L531,63.7 L534,67.2 L537,65.3 L540,59.4 L543,66.0 L546,59.1 L549,66.2 L552,61.4 L555,65.8 L558,60.9 L561,62.4 L564,61.5 L567,61.4 L570,57.9 L573,61.5 L576,59.4 L579,65.4 L582,59.3 L585,63.6 L588,62.1 L591,61.7 L594,62.3 L597,61.1 L600,64.3 L603,66.7 L606,64.3 L609,64.7 L612,69.8 L615,66.9 L618,63.1 L621,65.5 L624,64.3 L627,63.9 L630,65.3 L633,65.2 L636,64.8 L639,67.9 L642,67.6 L645,65.4 L648,61.7 L651,62.3 L654,64.6 L657,63.6 L660,63.3 L663,62.3 L666,66.8 L669,68.5 L672,65.0 L675,63.7 L678,63.6 L681,59.4 L684,57.7 L687,59.5 L690,59.6 L693,61.4 L696,65.0 L699,66.3 L702,66.2 L705,65.8 L708,64.4 L711,61.3 L714,58.1 L717,57.4 L720,57.4 L723,57.5 L726,59.1 L729,59.8 L732,59.1 L735,61.0 L738,62.9 L741,62.5 L744,63.3 L747,63.4 L750,60.0 L753,60.6 L756,65.1 L759,65.0 L762,64.4 L765,67.4 L768,68.0 L771,67.0 L774,65.8 L777,63.5 L780,64.9 L783,68.4 L786,67.6 L789,66.6 L792,68.8 L795,69.3 L798,64.2 L801,59.2 L804,60.2 L807,63.4 L810,64.6 L813,65.2 L816,65.7 L819,67.1 L822,67.7 L825,66.9 L828,67.4 L831,66.7 L834,64.3 L837,64.5 L840,64.7 L843,64.6 L846,65.6 L849,62.8 L852,59.3 L855,60.3 L858,62.4 L861,64.7 L864,65.6 L867,65.6 L870,67.5 L873,67.2 L876,66.0 L879,65.9 L882,60.3 L885,56.4 L888,60.3 L891,62.2 L894,62.0 L897,62.1 L900,61.7 L903,66.2 L906,70.2 L909,66.4 L912,63.6 L915,65.0 L918,66.4 L921,66.2 L924,63.0 L927,60.4 L930,60.9 L933,61.8 L936,63.3 L939,63.0 L942,61.0 L945,63.2 L948,66.5 L951,66.1 L954,64.4 L957,62.2 L960,60.4 L963,60.7 L966,60.7 L969,61.5 L972,64.3 L975,64.9 L978,64.5 L981,65.9 L984,64.5 L987,62.7 L990,64.5 L993,63.5 L996,60.1 L999,61.9 L1002,64.4 L1005,64.2 L1008,64.6 L1011,63.5 L1014,60.9 L1017,59.2 L1020,56.7 L1023,57.0 L1026,61.2 L1029,64.4 L1032,66.0 L1035,66.6 L1038,66.9 L1041,68.8 L1044,68.2 L1047,64.3 L1050,62.7 L1053,62.9 L1056,63.4 L1059,64.2 L1062,63.1 L1065,62.2 L1068,62.7 L1071,62.2 L1074,63.0 L1077,64.7 L1080,64.2 L1083,63.4 L1086,62.4 L1089,60.9 L1092,62.1 L1095,62.3 L1098,60.0 L1101,61.3 L1104,63.5 L1107,62.8 L1110,64.2 L1113,65.5 L1116,64.1 L1119,65.3 L1122,67.4 L1125,66.9 L1128,65.6 L1131,64.1 L1134,65.4 L1137,67.6 L1140,65.6 L1143,65.2 L1146,67.3 L1149,65.9 L1152,66.1 L1155,69.1 L1158,70.4 L1161,69.9 L1164,67.1 L1167,65.6 L1170,65.8 L1173,63.0 L1176,62.5 L1179,64.1 L1182,62.6 L1185,64.0 L1188,64.8 L1191,61.4 L1194,61.9 L1197,63.0 L1200,61.6 L1203,63.3 L1206,63.5 L1209,62.5 L1212,64.2 L1215,63.4 L1218,61.3 L1221,61.2 L1224,61.0 L1227,61.1 L1230,61.5 L1233,62.2 L1236,62.6 L1239,62.0 L1242,64.2 L1245,64.4 L1248,61.0 L1251,63.2 L1254,65.8 L1257,65.3 L1260,68.7 L1263,67.1 L1266,62.1 L1269,64.3 L1272,63.3 L1275,59.8 L1278,63.0 L1281,62.2 L1284,58.2 L1287,60.8 L1290,61.8 L1293,61.2 L1296,65.5 L1299,67.9 L1302,66.4 L1305,65.4 L1308,63.3 L1311,61.2 L1314,61.3 L1317,61.0 L1320,58.9 L1323,58.5 L1326,61.4 L1329,64.6 L1332,64.7 L1335,63.7 L1338,63.8 L1341,62.9 L1344,62.0 L1347,64.5 L1350,65.2 L1353,61.2 L1356,61.4 L1359,65.3 L1362,64.8 L1365,63.4 L1368,65.6 L1371,66.8 L1374,65.7 L1377,65.5 L1380,66.5 L1383,65.4 L1386,63.5 L1389,64.3 L1392,64.5 L1395,62.4 L1398,63.1 L1401,63.5 L1404,61.4 L1407,63.6 L1410,68.0 L1413,67.2 L1416,65.5 L1419,65.1 L1422,63.3 L1425,63.8 L1428,65.1 L1431,63.3 L1434,63.0 L1437,64.5 L1440,65.6 L1443,67.8 L1446,67.6 L1449,65.7 L1452,65.6 L1455,61.1 L1458,55.6 L1461,58.2 L1464,61.5 L1467,63.1 L1470,67.0 L1473,67.3 L1476,65.4 L1479,66.4 L1482,65.6 L1485,63.7 L1488,64.7 L1491,65.6 L1494,66.7 L1497,67.0 L1500,68.0 L1503,66.7 L1506,63.0 L1509,60.8 L1512,59.1 L1515,60.6 L1518,60.6 L1521,64.8 L1524,63.7 L1527,67.0 L1530,68.3 L1533,67.9 L1536,65.1 L1539,64.9 L1542,66.6 L1545,63.1 L1548,63.4 L1551,62.6 L1554,57.9 L1557,58.6 L1560,61.8 L1563,57.4 L1566,64.6 L1569,62.3 L1572,65.7 L1575,61.1 L1578,65.5 L1581,60.6 L1584,62.5 L1587,57.1 L1590,62.7 L1593,62.3 L1596,61.7 L1599,64.1 L1602,67.4 L1605,65.2 L1608,70.0 L1611,65.0 L1614,68.0 L1617,57.2 L1620,66.5 L1623,54.0 L1626,62.0 L1629,59.8 L1632,61.1 L1635,61.0 L1638,61.4 L1641,55.8 L1644,71.9 L1647,52.1 L1650,63.9 L1653,62.2 L1656,58.0 L1659,70.7 L1662,57.3 L1665,66.8 L1668,65.5 L1671,57.0 L1674,66.3 L1677,65.2 L1680,76.0 L1683,63.7 L1686,73.0 L1689,63.5 L1692,68.0 L1695,66.3 L1698,64.2 L1701,63.0 L1704,65.7 L1707,55.8 L1710,70.6 L1713,68.2 L1716,63.4 L1719,78.8 L1722,62.5 L1725,71.1 L1728,67.8 L1731,63.7 L1734,67.2 L1737,65.3 L1740,59.4 L1743,66.0 L1746,59.1 L1749,66.2 L1752,61.4 L1755,65.8 L1758,60.9 L1761,62.4 L1764,61.5 L1767,61.4 L1770,57.9 L1773,61.5 L1776,59.4 L1779,65.4 L1782,59.3 L1785,63.6 L1788,62.1 L1791,61.7 L1794,62.3 L1797,61.1 L1800,64.3 L1803,66.7 L1806,64.3 L1809,64.7 L1812,69.8 L1815,66.9 L1818,63.1 L1821,65.5 L1824,64.3 L1827,63.9 L1830,65.3 L1833,65.2 L1836,64.8 L1839,67.9 L1842,67.6 L1845,65.4 L1848,61.7 L1851,62.3 L1854,64.6 L1857,63.6 L1860,63.3 L1863,62.3 L1866,66.8 L1869,68.5 L1872,65.0 L1875,63.7 L1878,63.6 L1881,59.4 L1884,57.7 L1887,59.5 L1890,59.6 L1893,61.4 L1896,65.0 L1899,66.3 L1902,66.2 L1905,65.8 L1908,64.4 L1911,61.3 L1914,58.1 L1917,57.4 L1920,57.4 L1923,57.5 L1926,59.1 L1929,59.8 L1932,59.1 L1935,61.0 L1938,62.9 L1941,62.5 L1944,63.3 L1947,63.4 L1950,60.0 L1953,60.6 L1956,65.1 L1959,65.0 L1962,64.4 L1965,67.4 L1968,68.0 L1971,67.0 L1974,65.8 L1977,63.5 L1980,64.9 L1983,68.4 L1986,67.6 L1989,66.6 L1992,68.8 L1995,69.3 L1998,64.2 L2001,59.2 L2004,60.2 L2007,63.4 L2010,64.6 L2013,65.2 L2016,65.7 L2019,67.1 L2022,67.7 L2025,66.9 L2028,67.4 L2031,66.7 L2034,64.3 L2037,64.5 L2040,64.7 L2043,64.6 L2046,65.6 L2049,62.8 L2052,59.3 L2055,60.3 L2058,62.4 L2061,64.7 L2064,65.6 L2067,65.6 L2070,67.5 L2073,67.2 L2076,66.0 L2079,65.9 L2082,60.3 L2085,56.4 L2088,60.3 L2091,62.2 L2094,62.0 L2097,62.1 L2100,61.7 L2103,66.2 L2106,70.2 L2109,66.4 L2112,63.6 L2115,65.0 L2118,66.4 L2121,66.2 L2124,63.0 L2127,60.4 L2130,60.9 L2133,61.8 L2136,63.3 L2139,63.0 L2142,61.0 L2145,63.2 L2148,66.5 L2151,66.1 L2154,64.4 L2157,62.2 L2160,60.4 L2163,60.7 L2166,60.7 L2169,61.5 L2172,64.3 L2175,64.9 L2178,64.5 L2181,65.9 L2184,64.5 L2187,62.7 L2190,64.5 L2193,63.5 L2196,60.1 L2199,61.9 L2202,64.4 L2205,64.2 L2208,64.6 L2211,63.5 L2214,60.9 L2217,59.2 L2220,56.7 L2223,57.0 L2226,61.2 L2229,64.4 L2232,66.0 L2235,66.6 L2238,66.9 L2241,68.8 L2244,68.2 L2247,64.3 L2250,62.7 L2253,62.9 L2256,63.4 L2259,64.2 L2262,63.1 L2265,62.2 L2268,62.7 L2271,62.2 L2274,63.0 L2277,64.7 L2280,64.2 L2283,63.4 L2286,62.4 L2289,60.9 L2292,62.1 L2295,62.3 L2298,60.0 L2301,61.3 L2304,63.5 L2307,62.8 L2310,64.2 L2313,65.5 L2316,64.1 L2319,65.3 L2322,67.4 L2325,66.9 L2328,65.6 L2331,64.1 L2334,65.4 L2337,67.6 L2340,65.6 L2343,65.2 L2346,67.3 L2349,65.9 L2352,66.1 L2355,69.1 L2358,70.4 L2361,69.9 L2364,67.1 L2367,65.6 L2370,65.8 L2373,63.0 L2376,62.5 L2379,64.1 L2382,62.6 L2385,64.0 L2388,64.8 L2391,61.4 L2394,61.9 L2397,63.0 L2400,61.6"/>
+      <path d="M0,103.4 L3,101.8 L6,101.1 L9,103.6 L12,105.5 L15,104.2 L18,104.6 L21,107.0 L24,107.3 L27,106.2 L30,105.2 L33,104.2 L36,103.6 L39,104.2 L42,104.7 L45,103.3 L48,103.2 L51,105.1 L54,103.5 L57,100.9 L60,101.6 L63,102.3 L66,103.4 L69,105.0 L72,103.3 L75,101.7 L78,103.4 L81,104.7 L84,104.0 L87,103.5 L90,104.9 L93,107.8 L96,108.6 L99,107.5 L102,108.7 L105,110.8 L108,108.7 L111,106.1 L114,108.1 L117,109.5 L120,109.3 L123,110.6 L126,110.2 L129,108.2 L132,109.0 L135,110.6 L138,110.8 L141,109.0 L144,106.5 L147,107.5 L150,108.3 L153,106.6 L156,107.6 L159,109.2 L162,108.9 L165,109.8 L168,110.0 L171,109.1 L174,109.0 L177,109.3 L180,110.0 L183,110.4 L186,111.0 L189,112.5 L192,111.6 L195,109.1 L198,108.8 L201,108.6 L204,108.4 L207,108.0 L210,105.6 L213,105.1 L216,107.3 L219,107.0 L222,105.3 L225,105.9 L228,107.8 L231,108.2 L234,107.1 L237,107.8 L240,108.8 L243,105.9 L246,102.9 L249,104.8 L252,106.4 L255,104.6 L258,103.8 L261,105.2 L264,107.0 L267,107.1 L270,106.3 L273,105.0 L276,103.7 L279,102.7 L282,103.4 L285,102.4 L288,98.9 L291,99.7 L294,103.6 L297,104.3 L300,102.1 L303,102.4 L306,103.1 L309,102.0 L312,101.4 L315,105.8 L318,106.9 L321,104.2 L324,104.7 L327,107.2 L330,105.5 L333,105.2 L336,102.9 L339,101.5 L342,104.1 L345,103.2 L348,102.9 L351,105.0 L354,104.4 L357,107.6 L360,106.0 L363,106.6 L366,105.8 L369,104.6 L372,107.3 L375,105.7 L378,106.6 L381,105.6 L384,106.8 L387,106.2 L390,111.1 L393,108.2 L396,109.3 L399,102.8 L402,109.7 L405,104.5 L408,109.9 L411,101.3 L414,113.0 L417,100.0 L420,114.6 L423,98.1 L426,108.1 L429,104.4 L432,103.8 L435,114.1 L438,99.9 L441,118.4 L444,100.0 L447,104.8 L450,101.6 L453,98.2 L456,108.7 L459,98.2 L462,109.4 L465,101.0 L468,111.8 L471,108.0 L474,108.2 L477,99.7 L480,116.7 L483,91.2 L486,118.5 L489,96.5 L492,112.9 L495,112.4 L498,106.9 L501,112.5 L504,108.0 L507,104.0 L510,111.7 L513,104.9 L516,112.6 L519,112.3 L522,109.3 L525,113.6 L528,110.6 L531,106.6 L534,107.9 L537,102.3 L540,105.8 L543,103.0 L546,110.6 L549,105.7 L552,108.3 L555,108.4 L558,105.4 L561,110.1 L564,99.4 L567,110.9 L570,106.3 L573,109.8 L576,106.1 L579,102.4 L582,106.4 L585,103.4 L588,107.0 L591,112.3 L594,107.7 L597,109.3 L600,106.0 L603,112.7 L606,109.5 L609,110.5 L612,104.9 L615,107.3 L618,105.7 L621,106.4 L624,107.8 L627,107.2 L630,106.8 L633,107.9 L636,107.6 L639,106.9 L642,106.9 L645,106.8 L648,105.6 L651,103.9 L654,104.7 L657,105.6 L660,104.6 L663,104.8 L666,104.6 L669,104.7 L672,103.4 L675,101.7 L678,104.5 L681,103.8 L684,101.6 L687,104.0 L690,102.7 L693,101.2 L696,103.5 L699,102.4 L702,102.9 L705,104.6 L708,101.9 L711,103.4 L714,106.2 L717,104.3 L720,103.6 L723,102.8 L726,102.4 L729,105.5 L732,106.5 L735,106.2 L738,108.1 L741,107.9 L744,106.0 L747,105.5 L750,105.9 L753,105.6 L756,105.6 L759,107.7 L762,109.8 L765,109.9 L768,107.9 L771,105.1 L774,104.6 L777,102.7 L780,99.3 L783,102.2 L786,107.9 L789,110.7 L792,112.1 L795,110.0 L798,108.3 L801,108.3 L804,103.9 L807,100.7 L810,102.4 L813,105.0 L816,107.8 L819,107.4 L822,106.3 L825,106.9 L828,104.4 L831,104.8 L834,109.5 L837,109.2 L840,108.5 L843,109.2 L846,107.7 L849,109.1 L852,109.4 L855,103.9 L858,100.8 L861,101.6 L864,102.2 L867,104.1 L870,108.4 L873,111.5 L876,109.5 L879,106.7 L882,106.5 L885,107.0 L888,108.4 L891,108.2 L894,106.6 L897,110.1 L900,113.0 L903,110.7 L906,110.0 L909,109.0 L912,106.5 L915,108.1 L918,110.3 L921,108.5 L924,105.5 L927,104.0 L930,104.5 L933,105.3 L936,105.8 L939,105.5 L942,102.3 L945,100.3 L948,102.2 L951,104.1 L954,106.3 L957,110.9 L960,112.5 L963,110.0 L966,108.9 L969,107.8 L972,103.8 L975,101.7 L978,101.5 L981,101.4 L984,104.9 L987,106.4 L990,104.5 L993,108.2 L996,112.1 L999,109.9 L1002,109.3 L1005,108.6 L1008,105.8 L1011,106.8 L1014,108.3 L1017,107.3 L1020,105.5 L1023,102.5 L1026,101.6 L1029,103.7 L1032,104.9 L1035,105.8 L1038,107.3 L1041,108.5 L1044,107.8 L1047,106.0 L1050,107.5 L1053,109.5 L1056,106.2 L1059,103.2 L1062,103.5 L1065,102.6 L1068,102.7 L1071,104.7 L1074,104.9 L1077,105.3 L1080,106.5 L1083,105.2 L1086,104.4 L1089,106.3 L1092,108.0 L1095,108.9 L1098,107.2 L1101,103.9 L1104,105.0 L1107,107.2 L1110,106.7 L1113,108.0 L1116,109.5 L1119,108.3 L1122,108.4 L1125,109.6 L1128,109.3 L1131,109.2 L1134,109.8 L1137,109.9 L1140,108.3 L1143,105.8 L1146,103.8 L1149,101.0 L1152,99.6 L1155,102.3 L1158,105.9 L1161,109.1 L1164,112.0 L1167,111.4 L1170,108.4 L1173,106.0 L1176,105.5 L1179,106.3 L1182,106.1 L1185,105.1 L1188,104.7 L1191,104.5 L1194,104.3 L1197,104.2 L1200,103.4 L1203,101.8 L1206,101.1 L1209,103.6 L1212,105.5 L1215,104.2 L1218,104.6 L1221,107.0 L1224,107.3 L1227,106.2 L1230,105.2 L1233,104.2 L1236,103.6 L1239,104.2 L1242,104.7 L1245,103.3 L1248,103.2 L1251,105.1 L1254,103.5 L1257,100.9 L1260,101.6 L1263,102.3 L1266,103.4 L1269,105.0 L1272,103.3 L1275,101.7 L1278,103.4 L1281,104.7 L1284,104.0 L1287,103.5 L1290,104.9 L1293,107.8 L1296,108.6 L1299,107.5 L1302,108.7 L1305,110.8 L1308,108.7 L1311,106.1 L1314,108.1 L1317,109.5 L1320,109.3 L1323,110.6 L1326,110.2 L1329,108.2 L1332,109.0 L1335,110.6 L1338,110.8 L1341,109.0 L1344,106.5 L1347,107.5 L1350,108.3 L1353,106.6 L1356,107.6 L1359,109.2 L1362,108.9 L1365,109.8 L1368,110.0 L1371,109.1 L1374,109.0 L1377,109.3 L1380,110.0 L1383,110.4 L1386,111.0 L1389,112.5 L1392,111.6 L1395,109.1 L1398,108.8 L1401,108.6 L1404,108.4 L1407,108.0 L1410,105.6 L1413,105.1 L1416,107.3 L1419,107.0 L1422,105.3 L1425,105.9 L1428,107.8 L1431,108.2 L1434,107.1 L1437,107.8 L1440,108.8 L1443,105.9 L1446,102.9 L1449,104.8 L1452,106.4 L1455,104.6 L1458,103.8 L1461,105.2 L1464,107.0 L1467,107.1 L1470,106.3 L1473,105.0 L1476,103.7 L1479,102.7 L1482,103.4 L1485,102.4 L1488,98.9 L1491,99.7 L1494,103.6 L1497,104.3 L1500,102.1 L1503,102.4 L1506,103.1 L1509,102.0 L1512,101.4 L1515,105.8 L1518,106.9 L1521,104.2 L1524,104.7 L1527,107.2 L1530,105.5 L1533,105.2 L1536,102.9 L1539,101.5 L1542,104.1 L1545,103.2 L1548,102.9 L1551,105.0 L1554,104.4 L1557,107.6 L1560,106.0 L1563,106.6 L1566,105.8 L1569,104.6 L1572,107.3 L1575,105.7 L1578,106.6 L1581,105.6 L1584,106.8 L1587,106.2 L1590,111.1 L1593,108.2 L1596,109.3 L1599,102.8 L1602,109.7 L1605,104.5 L1608,109.9 L1611,101.3 L1614,113.0 L1617,100.0 L1620,114.6 L1623,98.1 L1626,108.1 L1629,104.4 L1632,103.8 L1635,114.1 L1638,99.9 L1641,118.4 L1644,100.0 L1647,104.8 L1650,101.6 L1653,98.2 L1656,108.7 L1659,98.2 L1662,109.4 L1665,101.0 L1668,111.8 L1671,108.0 L1674,108.2 L1677,99.7 L1680,116.7 L1683,91.2 L1686,118.5 L1689,96.5 L1692,112.9 L1695,112.4 L1698,106.9 L1701,112.5 L1704,108.0 L1707,104.0 L1710,111.7 L1713,104.9 L1716,112.6 L1719,112.3 L1722,109.3 L1725,113.6 L1728,110.6 L1731,106.6 L1734,107.9 L1737,102.3 L1740,105.8 L1743,103.0 L1746,110.6 L1749,105.7 L1752,108.3 L1755,108.4 L1758,105.4 L1761,110.1 L1764,99.4 L1767,110.9 L1770,106.3 L1773,109.8 L1776,106.1 L1779,102.4 L1782,106.4 L1785,103.4 L1788,107.0 L1791,112.3 L1794,107.7 L1797,109.3 L1800,106.0 L1803,112.7 L1806,109.5 L1809,110.5 L1812,104.9 L1815,107.3 L1818,105.7 L1821,106.4 L1824,107.8 L1827,107.2 L1830,106.8 L1833,107.9 L1836,107.6 L1839,106.9 L1842,106.9 L1845,106.8 L1848,105.6 L1851,103.9 L1854,104.7 L1857,105.6 L1860,104.6 L1863,104.8 L1866,104.6 L1869,104.7 L1872,103.4 L1875,101.7 L1878,104.5 L1881,103.8 L1884,101.6 L1887,104.0 L1890,102.7 L1893,101.2 L1896,103.5 L1899,102.4 L1902,102.9 L1905,104.6 L1908,101.9 L1911,103.4 L1914,106.2 L1917,104.3 L1920,103.6 L1923,102.8 L1926,102.4 L1929,105.5 L1932,106.5 L1935,106.2 L1938,108.1 L1941,107.9 L1944,106.0 L1947,105.5 L1950,105.9 L1953,105.6 L1956,105.6 L1959,107.7 L1962,109.8 L1965,109.9 L1968,107.9 L1971,105.1 L1974,104.6 L1977,102.7 L1980,99.3 L1983,102.2 L1986,107.9 L1989,110.7 L1992,112.1 L1995,110.0 L1998,108.3 L2001,108.3 L2004,103.9 L2007,100.7 L2010,102.4 L2013,105.0 L2016,107.8 L2019,107.4 L2022,106.3 L2025,106.9 L2028,104.4 L2031,104.8 L2034,109.5 L2037,109.2 L2040,108.5 L2043,109.2 L2046,107.7 L2049,109.1 L2052,109.4 L2055,103.9 L2058,100.8 L2061,101.6 L2064,102.2 L2067,104.1 L2070,108.4 L2073,111.5 L2076,109.5 L2079,106.7 L2082,106.5 L2085,107.0 L2088,108.4 L2091,108.2 L2094,106.6 L2097,110.1 L2100,113.0 L2103,110.7 L2106,110.0 L2109,109.0 L2112,106.5 L2115,108.1 L2118,110.3 L2121,108.5 L2124,105.5 L2127,104.0 L2130,104.5 L2133,105.3 L2136,105.8 L2139,105.5 L2142,102.3 L2145,100.3 L2148,102.2 L2151,104.1 L2154,106.3 L2157,110.9 L2160,112.5 L2163,110.0 L2166,108.9 L2169,107.8 L2172,103.8 L2175,101.7 L2178,101.5 L2181,101.4 L2184,104.9 L2187,106.4 L2190,104.5 L2193,108.2 L2196,112.1 L2199,109.9 L2202,109.3 L2205,108.6 L2208,105.8 L2211,106.8 L2214,108.3 L2217,107.3 L2220,105.5 L2223,102.5 L2226,101.6 L2229,103.7 L2232,104.9 L2235,105.8 L2238,107.3 L2241,108.5 L2244,107.8 L2247,106.0 L2250,107.5 L2253,109.5 L2256,106.2 L2259,103.2 L2262,103.5 L2265,102.6 L2268,102.7 L2271,104.7 L2274,104.9 L2277,105.3 L2280,106.5 L2283,105.2 L2286,104.4 L2289,106.3 L2292,108.0 L2295,108.9 L2298,107.2 L2301,103.9 L2304,105.0 L2307,107.2 L2310,106.7 L2313,108.0 L2316,109.5 L2319,108.3 L2322,108.4 L2325,109.6 L2328,109.3 L2331,109.2 L2334,109.8 L2337,109.9 L2340,108.3 L2343,105.8 L2346,103.8 L2349,101.0 L2352,99.6 L2355,102.3 L2358,105.9 L2361,109.1 L2364,112.0 L2367,111.4 L2370,108.4 L2373,106.0 L2376,105.5 L2379,106.3 L2382,106.1 L2385,105.1 L2388,104.7 L2391,104.5 L2394,104.3 L2397,104.2 L2400,103.4"/>
+      <path d="M0,141.7 L3,148.5 L6,150.5 L9,151.5 L12,159.3 L15,162.3 L18,151.6 L21,148.5 L24,151.7 L27,145.6 L30,145.9 L33,151.0 L36,150.4 L39,153.1 L42,151.4 L45,147.2 L48,153.5 L51,155.1 L54,150.6 L57,151.1 L60,149.4 L63,146.3 L66,146.2 L69,148.0 L72,149.5 L75,147.5 L78,148.1 L81,149.7 L84,147.8 L87,150.5 L90,149.3 L93,142.9 L96,146.4 L99,148.8 L102,148.4 L105,152.2 L108,145.6 L111,138.4 L114,144.0 L117,146.9 L120,148.8 L123,152.5 L126,148.9 L129,145.9 L132,146.9 L135,144.4 L138,140.1 L141,138.7 L144,144.5 L147,154.7 L150,159.0 L153,154.3 L156,149.0 L159,149.4 L162,147.7 L165,143.1 L168,144.9 L171,145.4 L174,141.0 L177,141.5 L180,144.9 L183,149.2 L186,151.1 L189,147.3 L192,146.1 L195,145.2 L198,144.4 L201,149.1 L204,148.2 L207,146.9 L210,152.3 L213,149.1 L216,145.2 L219,147.0 L222,145.1 L225,151.3 L228,158.8 L231,152.5 L234,149.8 L237,149.6 L240,144.0 L243,145.2 L246,147.4 L249,148.0 L252,154.8 L255,156.2 L258,152.1 L261,152.4 L264,152.4 L267,150.1 L270,146.8 L273,144.6 L276,149.1 L279,153.5 L282,150.4 L285,145.9 L288,148.9 L291,152.6 L294,151.3 L297,150.4 L300,153.8 L303,153.5 L306,152.8 L309,154.4 L312,148.2 L315,146.3 L318,148.8 L321,148.2 L324,148.3 L327,149.0 L330,148.3 L333,152.2 L336,156.2 L339,152.9 L342,148.5 L345,148.5 L348,153.7 L351,153.5 L354,153.6 L357,155.9 L360,148.9 L363,142.2 L366,147.6 L369,149.4 L372,146.2 L375,147.6 L378,148.9 L381,144.2 L384,148.4 L387,138.1 L390,148.8 L393,146.2 L396,145.5 L399,149.1 L402,155.4 L405,144.6 L408,141.3 L411,149.2 L414,150.5 L417,153.6 L420,150.9 L423,153.8 L426,148.3 L429,149.5 L432,139.5 L435,148.8 L438,144.6 L441,143.1 L444,152.8 L447,141.4 L450,149.5 L453,138.4 L456,139.2 L459,147.4 L462,147.3 L465,151.8 L468,149.9 L471,145.5 L474,148.3 L477,140.7 L480,158.1 L483,133.8 L486,148.8 L489,143.2 L492,142.3 L495,159.9 L498,146.9 L501,155.0 L504,158.2 L507,143.7 L510,158.2 L513,136.5 L516,143.6 L519,146.0 L522,149.5 L525,135.8 L528,154.1 L531,147.1 L534,155.4 L537,148.8 L540,151.2 L543,152.2 L546,155.7 L549,150.5 L552,154.3 L555,151.6 L558,145.7 L561,146.5 L564,141.7 L567,144.0 L570,147.7 L573,149.3 L576,150.6 L579,162.3 L582,157.1 L585,155.2 L588,153.7 L591,147.4 L594,147.2 L597,148.2 L600,149.3 L603,149.1 L606,149.8 L609,157.3 L612,150.2 L615,146.6 L618,150.0 L621,150.0 L624,146.0 L627,154.2 L630,151.7 L633,154.4 L636,156.0 L639,149.8 L642,146.0 L645,147.0 L648,143.2 L651,147.8 L654,156.0 L657,154.9 L660,154.5 L663,153.0 L666,148.9 L669,147.4 L672,146.0 L675,143.0 L678,140.3 L681,140.9 L684,146.3 L687,151.7 L690,153.5 L693,154.5 L696,153.7 L699,149.6 L702,146.7 L705,147.5 L708,144.3 L711,138.9 L714,140.5 L717,143.4 L720,145.8 L723,150.3 L726,151.8 L729,154.8 L732,156.0 L735,148.9 L738,145.2 L741,142.9 L744,139.5 L747,145.5 L750,149.8 L753,149.6 L756,153.6 L759,150.4 L762,144.7 L765,144.2 L768,140.4 L771,138.9 L774,138.2 L777,138.4 L780,151.2 L783,157.6 L786,150.3 L789,150.0 L792,148.3 L795,140.4 L798,139.8 L801,143.8 L804,150.4 L807,155.5 L810,153.4 L813,153.9 L816,155.4 L819,150.8 L822,150.6 L825,153.4 L828,150.2 L831,146.5 L834,146.8 L837,146.0 L840,142.2 L843,140.8 L846,144.1 L849,148.5 L852,153.4 L855,157.7 L858,157.6 L861,157.0 L864,156.6 L867,148.0 L870,137.6 L873,138.4 L876,143.1 L879,144.4 L882,147.4 L885,149.2 L888,151.3 L891,159.3 L894,160.3 L897,153.5 L900,154.3 L903,157.8 L906,158.7 L909,160.2 L912,157.9 L915,151.8 L918,146.0 L921,143.7 L924,146.3 L927,147.7 L930,148.9 L933,150.8 L936,148.0 L939,147.4 L942,147.9 L945,141.4 L948,138.5 L951,139.7 L954,142.0 L957,152.4 L960,159.6 L963,157.1 L966,155.8 L969,153.0 L972,149.5 L975,151.8 L978,152.4 L981,148.4 L984,146.9 L987,149.5 L990,152.6 L993,153.1 L996,150.0 L999,144.3 L1002,143.5 L1005,146.4 L1008,143.4 L1011,143.4 L1014,148.9 L1017,146.1 L1020,143.3 L1023,147.0 L1026,146.9 L1029,146.9 L1032,146.8 L1035,142.7 L1038,144.8 L1041,150.5 L1044,149.7 L1047,144.9 L1050,142.3 L1053,145.4 L1056,148.8 L1059,147.3 L1062,145.5 L1065,145.4 L1068,145.6 L1071,145.0 L1074,143.8 L1077,145.9 L1080,148.4 L1083,151.3 L1086,156.7 L1089,158.3 L1092,159.2 L1095,160.5 L1098,150.5 L1101,140.6 L1104,142.6 L1107,141.1 L1110,135.4 L1113,137.3 L1116,143.5 L1119,147.7 L1122,148.9 L1125,147.5 L1128,145.2 L1131,144.3 L1134,146.2 L1137,148.9 L1140,150.8 L1143,152.8 L1146,154.3 L1149,156.3 L1152,159.5 L1155,160.4 L1158,155.6 L1161,150.2 L1164,150.6 L1167,148.3 L1170,141.5 L1173,144.3 L1176,152.8 L1179,158.1 L1182,159.4 L1185,151.8 L1188,145.5 L1191,148.7 L1194,145.8 L1197,138.8 L1200,141.7 L1203,148.5 L1206,150.5 L1209,151.5 L1212,159.3 L1215,162.3 L1218,151.6 L1221,148.5 L1224,151.7 L1227,145.6 L1230,145.9 L1233,151.0 L1236,150.4 L1239,153.1 L1242,151.4 L1245,147.2 L1248,153.5 L1251,155.1 L1254,150.6 L1257,151.1 L1260,149.4 L1263,146.3 L1266,146.2 L1269,148.0 L1272,149.5 L1275,147.5 L1278,148.1 L1281,149.7 L1284,147.8 L1287,150.5 L1290,149.3 L1293,142.9 L1296,146.4 L1299,148.8 L1302,148.4 L1305,152.2 L1308,145.6 L1311,138.4 L1314,144.0 L1317,146.9 L1320,148.8 L1323,152.5 L1326,148.9 L1329,145.9 L1332,146.9 L1335,144.4 L1338,140.1 L1341,138.7 L1344,144.5 L1347,154.7 L1350,159.0 L1353,154.3 L1356,149.0 L1359,149.4 L1362,147.7 L1365,143.1 L1368,144.9 L1371,145.4 L1374,141.0 L1377,141.5 L1380,144.9 L1383,149.2 L1386,151.1 L1389,147.3 L1392,146.1 L1395,145.2 L1398,144.4 L1401,149.1 L1404,148.2 L1407,146.9 L1410,152.3 L1413,149.1 L1416,145.2 L1419,147.0 L1422,145.1 L1425,151.3 L1428,158.8 L1431,152.5 L1434,149.8 L1437,149.6 L1440,144.0 L1443,145.2 L1446,147.4 L1449,148.0 L1452,154.8 L1455,156.2 L1458,152.1 L1461,152.4 L1464,152.4 L1467,150.1 L1470,146.8 L1473,144.6 L1476,149.1 L1479,153.5 L1482,150.4 L1485,145.9 L1488,148.9 L1491,152.6 L1494,151.3 L1497,150.4 L1500,153.8 L1503,153.5 L1506,152.8 L1509,154.4 L1512,148.2 L1515,146.3 L1518,148.8 L1521,148.2 L1524,148.3 L1527,149.0 L1530,148.3 L1533,152.2 L1536,156.2 L1539,152.9 L1542,148.5 L1545,148.5 L1548,153.7 L1551,153.5 L1554,153.6 L1557,155.9 L1560,148.9 L1563,142.2 L1566,147.6 L1569,149.4 L1572,146.2 L1575,147.6 L1578,148.9 L1581,144.2 L1584,148.4 L1587,138.1 L1590,148.8 L1593,146.2 L1596,145.5 L1599,149.1 L1602,155.4 L1605,144.6 L1608,141.3 L1611,149.2 L1614,150.5 L1617,153.6 L1620,150.9 L1623,153.8 L1626,148.3 L1629,149.5 L1632,139.5 L1635,148.8 L1638,144.6 L1641,143.1 L1644,152.8 L1647,141.4 L1650,149.5 L1653,138.4 L1656,139.2 L1659,147.4 L1662,147.3 L1665,151.8 L1668,149.9 L1671,145.5 L1674,148.3 L1677,140.7 L1680,158.1 L1683,133.8 L1686,148.8 L1689,143.2 L1692,142.3 L1695,159.9 L1698,146.9 L1701,155.0 L1704,158.2 L1707,143.7 L1710,158.2 L1713,136.5 L1716,143.6 L1719,146.0 L1722,149.5 L1725,135.8 L1728,154.1 L1731,147.1 L1734,155.4 L1737,148.8 L1740,151.2 L1743,152.2 L1746,155.7 L1749,150.5 L1752,154.3 L1755,151.6 L1758,145.7 L1761,146.5 L1764,141.7 L1767,144.0 L1770,147.7 L1773,149.3 L1776,150.6 L1779,162.3 L1782,157.1 L1785,155.2 L1788,153.7 L1791,147.4 L1794,147.2 L1797,148.2 L1800,149.3 L1803,149.1 L1806,149.8 L1809,157.3 L1812,150.2 L1815,146.6 L1818,150.0 L1821,150.0 L1824,146.0 L1827,154.2 L1830,151.7 L1833,154.4 L1836,156.0 L1839,149.8 L1842,146.0 L1845,147.0 L1848,143.2 L1851,147.8 L1854,156.0 L1857,154.9 L1860,154.5 L1863,153.0 L1866,148.9 L1869,147.4 L1872,146.0 L1875,143.0 L1878,140.3 L1881,140.9 L1884,146.3 L1887,151.7 L1890,153.5 L1893,154.5 L1896,153.7 L1899,149.6 L1902,146.7 L1905,147.5 L1908,144.3 L1911,138.9 L1914,140.5 L1917,143.4 L1920,145.8 L1923,150.3 L1926,151.8 L1929,154.8 L1932,156.0 L1935,148.9 L1938,145.2 L1941,142.9 L1944,139.5 L1947,145.5 L1950,149.8 L1953,149.6 L1956,153.6 L1959,150.4 L1962,144.7 L1965,144.2 L1968,140.4 L1971,138.9 L1974,138.2 L1977,138.4 L1980,151.2 L1983,157.6 L1986,150.3 L1989,150.0 L1992,148.3 L1995,140.4 L1998,139.8 L2001,143.8 L2004,150.4 L2007,155.5 L2010,153.4 L2013,153.9 L2016,155.4 L2019,150.8 L2022,150.6 L2025,153.4 L2028,150.2 L2031,146.5 L2034,146.8 L2037,146.0 L2040,142.2 L2043,140.8 L2046,144.1 L2049,148.5 L2052,153.4 L2055,157.7 L2058,157.6 L2061,157.0 L2064,156.6 L2067,148.0 L2070,137.6 L2073,138.4 L2076,143.1 L2079,144.4 L2082,147.4 L2085,149.2 L2088,151.3 L2091,159.3 L2094,160.3 L2097,153.5 L2100,154.3 L2103,157.8 L2106,158.7 L2109,160.2 L2112,157.9 L2115,151.8 L2118,146.0 L2121,143.7 L2124,146.3 L2127,147.7 L2130,148.9 L2133,150.8 L2136,148.0 L2139,147.4 L2142,147.9 L2145,141.4 L2148,138.5 L2151,139.7 L2154,142.0 L2157,152.4 L2160,159.6 L2163,157.1 L2166,155.8 L2169,153.0 L2172,149.5 L2175,151.8 L2178,152.4 L2181,148.4 L2184,146.9 L2187,149.5 L2190,152.6 L2193,153.1 L2196,150.0 L2199,144.3 L2202,143.5 L2205,146.4 L2208,143.4 L2211,143.4 L2214,148.9 L2217,146.1 L2220,143.3 L2223,147.0 L2226,146.9 L2229,146.9 L2232,146.8 L2235,142.7 L2238,144.8 L2241,150.5 L2244,149.7 L2247,144.9 L2250,142.3 L2253,145.4 L2256,148.8 L2259,147.3 L2262,145.5 L2265,145.4 L2268,145.6 L2271,145.0 L2274,143.8 L2277,145.9 L2280,148.4 L2283,151.3 L2286,156.7 L2289,158.3 L2292,159.2 L2295,160.5 L2298,150.5 L2301,140.6 L2304,142.6 L2307,141.1 L2310,135.4 L2313,137.3 L2316,143.5 L2319,147.7 L2322,148.9 L2325,147.5 L2328,145.2 L2331,144.3 L2334,146.2 L2337,148.9 L2340,150.8 L2343,152.8 L2346,154.3 L2349,156.3 L2352,159.5 L2355,160.4 L2358,155.6 L2361,150.2 L2364,150.6 L2367,148.3 L2370,141.5 L2373,144.3 L2376,152.8 L2379,158.1 L2382,159.4 L2385,151.8 L2388,145.5 L2391,148.7 L2394,145.8 L2397,138.8 L2400,141.7"/>
+    </svg>
+  </div>
+  <div class="wrap monitor-top">
+    <a class="home" href="/">sayyanshaikh.com</a>
+    <span class="where">Joida, Karnataka, India</span>
+  </div>
+  <div class="wrap hero">
+    <div>
+      <h1>Sayyan Shaikh</h1>
+      <p class="lead">I teach computer science at a government polytechnic in Karnataka and build machine learning systems that read brain signals, watch for sleepy drivers and take attendance by face.</p>
+      <p class="role">Lecturer, Computer Science &amp; Engineering, Government Polytechnic, Joida</p>
+    </div>
+    <figure class="portrait"><img src="/portrait.jpg" width="640" height="640" alt="Sayyan Shaikh"></figure>
+  </div>
+  <div class="stage" aria-hidden="true">
+    <svg id="stage" focusable="false">
+      <line class="floor" id="floor" x1="0" y1="100" x2="100%" y2="100"/>
+      <g id="board">
+        <line class="board-legs" x1="8" y1="40" x2="2" y2="86"/>
+        <line class="board-legs" x1="62" y1="40" x2="68" y2="86"/>
+        <rect class="board-frame" x="0" y="6" width="70" height="42" rx="2"/>
+        <path id="chalk" class="chalk" d="M8 30 L14 30 L17 22 L21 38 L25 16 L29 34 L33 26 L37 30 L44 30 L48 24 L52 34 L56 28 L62 30" pathLength="1"/>
+      </g>
+      <g id="man">
+        <circle class="stick-head" cx="0" cy="-66" r="9"/>
+        <line class="stick" x1="0" y1="-57" x2="0" y2="-28"/>
+        <line class="stick" id="armL" x1="0" y1="-50" x2="0" y2="-28"/>
+        <line class="stick" id="armR" x1="0" y1="-50" x2="0" y2="-28"/>
+        <line class="stick" id="legL" x1="0" y1="-28" x2="0" y2="0"/>
+        <line class="stick" id="legR" x1="0" y1="-28" x2="0" y2="0"/>
+      </g>
+    </svg>
+  </div>
 </header>
 
-<div class="wrap hero">
-  <div>
-    <h1>Sayyan Shaikh</h1>
-    <p class="lead">I teach computer science at a government polytechnic in Karnataka and build machine learning systems: EEG stress detection, driver drowsiness alerts and face-recognition attendance.</p>
-    <p class="role">Lecturer, Computer Science &amp; Engineering<br>Government Polytechnic, Joida, Karnataka, India</p>
-    <ul class="links">
-      <li><a href="mailto:sayyan@sayyanshaikh.com">Email</a></li>
-      <li><a href="https://scholar.google.com/citations?user=T5rE6ccAAAAJ">Google Scholar</a></li>
-      <li><a href="https://orcid.org/0009-0005-7107-8838">ORCID</a></li>
-      <li><a href="https://github.com/SayyanShaikh">GitHub</a></li>
+<nav class="tabbar" aria-label="Sections">
+  <div class="wrap">
+    <div class="tabs" role="tablist">
+      <a role="tab" id="t-about" href="#about" aria-controls="about" aria-selected="true">About me</a>
+      <a role="tab" id="t-photos" href="#photos" aria-controls="photos" aria-selected="false" tabindex="-1">My photos</a>
+      <a role="tab" id="t-achievements" href="#achievements" aria-controls="achievements" aria-selected="false" tabindex="-1">My achievements</a>
+      <a role="tab" id="t-contact" href="#contact" aria-controls="contact" aria-selected="false" tabindex="-1">Contact me</a>
+      <a role="tab" id="t-ask" href="#ask" aria-controls="ask" aria-selected="false" tabindex="-1">Ask me</a>
+    </div>
+  </div>
+</nav>
+
+<main id="panels" class="wrap">
+
+  <section class="panel" id="about" role="tabpanel" aria-labelledby="t-about">
+    <h2>About me</h2>
+    <div class="about">
+      <div class="bio">
+        <p>I have taught Computer Science &amp; Engineering diploma courses at Government Polytechnics in Karnataka since 2013, first at Karwar and, since 2016, at Joida. I teach Python, AI and machine learning, databases, computer networks and IoT under the Karnataka DTE curriculum.</p>
+        <p>Most of what my students learn from, I write myself: illustrated study notes, lab manuals with tested programs and their real outputs, question banks and solved model papers. Every program runs and every answer is checked before it reaches a student.</p>
+        <p>My research is about machine learning that reads people. My M.Tech dissertation, NeuroStress AI, detects stress from EEG brain signals; the lines moving across the top of this page are EEG. I have also built a driver drowsiness alarm and a face-recognition attendance system that is hard to fool with proxies.</p>
+        <p>Outside the classroom I like walking forest trails around Joida with a camera.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Lecturer, Computer Science &amp; Engineering</dd></div>
+        <div><dt>Works at</dt><dd>Government Polytechnic, Joida</dd></div>
+        <div><dt>Teaching since</dt><dd>2013</dd></div>
+        <div><dt>Degrees</dt><dd>M.Tech CSE, M.Tech Industrial Automation &amp; Robotics, B.E. CSE</dd></div>
+        <div><dt>Research</dt><dd>EEG stress detection, computer vision</dd></div>
+        <div><dt>Tools</dt><dd>Python, scikit-learn, Pandas, OpenCV, Keras, Flask, SQL, MongoDB</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="panel" id="photos" role="tabpanel" aria-labelledby="t-photos">
+    <h2>My photos</h2>
+    <div class="gallery">
+      <figure class="big" style="margin:0"><button type="button" data-full="/photos/office-1.jpg" data-cap="At work in Joida"><img src="/photos/office-1.jpg" width="900" height="900" alt="Sayyan at his desk, hand on chin, in a dark blue shirt" loading="lazy"><figcaption>At work in Joida</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-full="/photos/trail-1.jpg" data-cap="Forest trail, April 2026"><img src="/photos/trail-1-sm.jpg" width="480" height="480" alt="Sayyan standing on a forest road in a khaki shirt" loading="lazy"><figcaption>Forest trail, April 2026</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-full="/photos/trek-1.jpg" data-cap="Trek, December 2025"><img src="/photos/trek-1-sm.jpg" width="480" height="480" alt="Sayyan smiling in the forest, wearing a brown jacket" loading="lazy"><figcaption>Trek, December 2025</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-full="/photos/trail-2.jpg" data-cap="Resting on a fallen tree, April 2026"><img src="/photos/trail-2-sm.jpg" width="480" height="480" alt="Sayyan in sunglasses and a checked shirt, sitting on a fallen tree" loading="lazy"><figcaption>Resting on a fallen tree, April 2026</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-full="/photos/trek-2.jpg" data-cap="Up a tree, December 2025"><img src="/photos/trek-2-sm.jpg" width="480" height="480" alt="Sayyan standing in the fork of a tree" loading="lazy"><figcaption>Up a tree, December 2025</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-full="/photos/office-2.jpg" data-cap="In the department"><img src="/photos/office-2-sm.jpg" width="480" height="480" alt="Sayyan at his office desk, looking at the camera" loading="lazy"><figcaption>In the department</figcaption></button></figure>
+    </div>
+    <dialog class="viewer" id="viewer" aria-label="Photo">
+      <button class="close" type="button" id="viewer-close">Close</button>
+      <img id="viewer-img" src="" alt="">
+      <p id="viewer-cap"></p>
+    </dialog>
+  </section>
+
+  <section class="panel" id="achievements" role="tabpanel" aria-labelledby="t-achievements">
+    <h2>My achievements</h2>
+    <ol class="timeline">
+      <li class="key"><span class="yr">2026</span><div><strong>FaceAnchor paper published in IJIRT</strong><span class="d">A face-recognition attendance system that resists proxy attendance.</span></div></li>
+      <li class="key"><span class="yr">2026</span><div><strong>NeuroStress AI accepted at CISCom 2026, Malta</strong><span class="d">My M.Tech dissertation work on EEG stress detection, to appear in Springer CCIS.</span></div></li>
+      <li><span class="yr">2026</span><div><strong>Peer reviewer for IJIRT and review board member of JATIR</strong></div></li>
+      <li><span class="yr">2026</span><div><strong>AFREAF paper in DMPedia Lecture Notes in Computer Science &amp; Engineering</strong><span class="d">Real-time face recognition and emotion analysis.</span></div></li>
+      <li class="key"><span class="yr">2026</span><div><strong>M.Tech, Computer Science &amp; Engineering</strong><span class="d">KLE Institute of Technology, Hubballi (VTU).</span></div></li>
+      <li><span class="yr">2025</span><div><strong>AI &amp; Machine Learning internship, Inventeron Technologies, Bengaluru</strong><span class="d">Built a real-time driver drowsiness detector.</span></div></li>
+      <li><span class="yr">2016</span><div><strong>Joined Government Polytechnic, Joida</strong></div></li>
+      <li><span class="yr">2013</span><div><strong>Began teaching at Government Polytechnic, Karwar</strong></div></li>
+      <li><span class="yr">2013</span><div><strong>First research paper</strong><span class="d">OCR Based Mapless Navigation Method of Robot, IJIES.</span></div></li>
+      <li class="key"><span class="yr">2013</span><div><strong>M.Tech, Industrial Automation &amp; Robotics, First Class with Distinction</strong><span class="d">Srinivas Institute of Technology, Mangaluru (VTU).</span></div></li>
+      <li><span class="yr">2011</span><div><strong>B.E., Computer Science &amp; Engineering</strong><span class="d">KLS Vishwanathrao Deshpande Institute of Technology, Haliyal (VTU).</span></div></li>
+    </ol>
+
+    <h3>Papers</h3>
+    <ul class="pubs">
+      <li><span class="pt">FaceAnchor: A Session-Anchored, Proxy-Resistant Face Recognition Attendance System with Calibrated LBPH Thresholds</span><span class="pa">Sayyan Shaikh, Rizawan N. Shaikh</span><span class="pv">International Journal of Innovative Research in Technology (IJIRT), ISSN 2349-6002, 2026. <a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></span></li>
+      <li><span class="pt">NeuroStress AI: An Advanced Electroencephalography-Based Clinical Decision Support System for Real-Time Stress Detection and Risk Stratification</span><span class="pa">Sayyan Shaikh, Rizawan N. Shaikh, Prasanna Bammigatti, Manjunatha Badiger</span><span class="pv">CISCom 2026, Malta, October 2026. To appear in Springer Communications in Computer and Information Science (CCIS).</span></li>
+      <li><span class="pt">Adaptive Face Recognition and Emotion Analysis Framework (AFREAF): A Real-Time Multi-Modal Deep Learning System for Comprehensive Facial Attribute Detection</span><span class="pa">Sayyan Shaikh, Prasanna Bammigatti, Rizawan N. Shaikh</span><span class="pv">DMPedia Lecture Notes in Computer Science &amp; Engineering, pp. 241–248, 2026.</span></li>
+      <li><span class="pt">OCR Based Mapless Navigation Method of Robot</span><span class="pa">S. N. Shaikh, N. V. Londhe</span><span class="pv">International Journal of Inventive Engineering and Sciences (IJIES), vol. 1, no. 8, pp. 6–12, 2013.</span></li>
     </ul>
-  </div>
-  <figure class="portrait">
-    <img src="/portrait.jpg" width="640" height="640" alt="Sayyan Shaikh">
-  </figure>
-</div>
 
-<figure class="eeg">
-  <div class="eeg-inner">
-    <svg viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-      <path class="tr" pathLength="1" d="M0,17.1 L2,17.7 L4,14.6 L6,17.8 L8,17.6 L10,22.8 L12,23.9 L14,28.3 L16,30.7 L18,31.1 L20,29.6 L22,26.7 L24,21.0 L26,22.2 L28,19.7 L30,16.5 L32,14.8 L34,14.3 L36,15.1 L38,15.8 L40,18.8 L42,21.8 L44,22.5 L46,25.5 L48,27.5 L50,28.6 L52,26.6 L54,24.0 L56,17.8 L58,20.4 L60,17.3 L62,13.8 L64,11.4 L66,15.5 L68,17.2 L70,19.6 L72,22.5 L74,18.0 L76,17.0 L78,24.5 L80,21.6 L82,24.4 L84,23.1 L86,19.9 L88,20.1 L90,24.3 L92,27.8 L94,28.8 L96,30.0 L98,26.2 L100,24.7 L102,28.9 L104,27.9 L106,25.1 L108,20.8 L110,19.1 L112,23.1 L114,23.4 L116,23.0 L118,25.8 L120,21.4 L122,23.9 L124,24.2 L126,26.3 L128,23.4 L130,29.1 L132,28.4 L134,27.5 L136,26.0 L138,20.4 L140,13.4 L142,14.1 L144,11.6 L146,14.8 L148,16.1 L150,15.2 L152,15.0 L154,18.4 L156,18.9 L158,20.2 L160,22.6 L162,20.7 L164,21.6 L166,25.9 L168,25.9 L170,27.9 L172,25.8 L174,23.0 L176,20.1 L178,21.2 L180,20.8 L182,22.3 L184,24.4 L186,25.7 L188,27.7 L190,25.4 L192,24.6 L194,22.6 L196,24.1 L198,22.1 L200,26.5 L202,25.1 L204,31.6 L206,30.3 L208,25.1 L210,25.9 L212,29.1 L214,30.1 L216,23.4 L218,19.5 L220,16.6 L222,14.4 L224,17.1 L226,18.2 L228,18.5 L230,20.0 L232,26.3 L234,27.1 L236,31.4 L238,32.5 L240,33.3 L242,34.4 L244,31.4 L246,34.5 L248,27.7 L250,23.1 L252,16.5 L254,12.7 L256,10.0 L258,10.7 L260,13.5 L262,18.5 L264,25.3 L266,26.3 L268,27.6 L270,29.2 L272,33.1 L274,35.1 L276,31.5 L278,30.2 L280,28.6 L282,27.5 L284,20.8 L286,20.2 L288,17.0 L290,18.9 L292,21.3 L294,18.7 L296,15.6 L298,17.3 L300,21.9 L302,20.0 L304,19.2 L306,18.2 L308,18.0 L310,21.2 L312,22.0 L314,21.1 L316,22.8 L318,25.1 L320,24.1 L322,27.1 L324,21.2 L326,21.7 L328,18.9 L330,14.7 L332,16.3 L334,18.4 L336,21.6 L338,22.1 L340,21.9 L342,18.7 L344,26.2 L346,20.8 L348,26.6 L350,32.3 L352,27.1 L354,26.5 L356,23.9 L358,21.3 L360,18.3 L362,18.0 L364,19.4 L366,17.6 L368,13.7 L370,13.1 L372,13.8 L374,16.8 L376,22.1 L378,22.8 L380,22.3 L382,17.5 L384,18.4 L386,18.4 L388,25.0 L390,29.3 L392,28.0 L394,27.3 L396,26.4 L398,32.3 L400,30.9 L402,30.5 L404,32.7 L406,27.6 L408,24.9 L410,26.2 L412,21.1 L414,21.4 L416,17.9 L418,16.6 L420,16.8 L422,19.7 L424,25.4 L426,26.8 L428,33.2 L430,27.0 L432,23.8 L434,21.0 L436,19.9 L438,16.8 L440,13.4 L442,9.7 L444,7.4 L446,6.0 L448,6.1 L450,8.4 L452,12.8 L454,15.1 L456,19.3 L458,21.1 L460,22.3 L462,23.0 L464,27.0 L466,28.2 L468,32.5 L470,31.9 L472,29.6 L474,25.6 L476,25.5 L478,19.8 L480,21.9 L482,18.4 L484,18.0 L486,16.1 L488,14.5 L490,13.3 L492,13.7 L494,12.7 L496,18.7 L498,23.0 L500,25.6 L502,28.5 L504,27.6 L506,28.4 L508,28.5 L510,24.2 L512,20.4 L514,13.5 L516,16.3 L518,13.2 L520,18.3 L522,16.4 L524,17.8 L526,19.1 L528,26.5 L530,28.0 L532,29.4 L534,35.0 L536,38.3 L538,38.0 L540,35.3 L542,31.8 L544,27.1 L546,28.7 L548,26.7 L550,24.9 L552,23.5 L554,26.5 L556,26.5 L558,29.0 L560,30.8 L562,27.5 L564,33.9 L566,31.3 L568,31.4 L570,28.7 L572,29.9 L574,31.5 L576,26.3 L578,25.0 L580,26.5 L582,27.7 L584,26.1 L586,25.7 L588,25.2 L590,21.4 L592,20.9 L594,17.4 L596,16.7 L598,17.7 L600,18.8 L602,20.4 L604,21.4 L606,22.7 L608,25.9 L610,26.4 L612,27.4 L614,28.3 L616,27.6 L618,25.2 L620,24.5 L622,20.1 L624,20.4 L626,18.9 L628,21.2 L630,21.5 L632,22.5 L634,23.4 L636,22.8 L638,20.6 L640,23.6 L642,25.3 L644,23.5 L646,19.3 L648,22.7 L650,25.8 L652,24.2 L654,19.2 L656,17.7 L658,23.6 L660,25.4 L662,24.4 L664,23.3 L666,22.8 L668,25.7 L670,21.1 L672,16.0 L674,10.4 L676,13.1 L678,18.7 L680,20.7 L682,18.3 L684,21.7 L686,25.9 L688,25.8 L690,29.1 L692,30.8 L694,29.0 L696,32.0 L698,31.0 L700,28.2 L702,24.1 L704,23.6 L706,20.2 L708,19.4 L710,21.1 L712,22.8 L714,19.5 L716,24.5 L718,23.8 L720,27.5 L722,29.6 L724,34.2 L726,30.1 L728,31.3 L730,29.5 L732,24.9 L734,23.4 L736,23.9 L738,22.8 L740,21.9 L742,20.9 L744,22.4 L746,22.1 L748,16.5 L750,17.3 L752,20.8 L754,25.1 L756,27.4 L758,33.8 L760,35.3 L762,40.5 L764,37.6 L766,33.5 L768,32.5 L770,29.0 L772,26.1 L774,26.5 L776,24.5 L778,22.3 L780,23.0 L782,21.9 L784,17.2 L786,16.3 L788,21.8 L790,26.8 L792,25.3 L794,26.7 L796,25.0 L798,25.0 L800,26.8 L802,26.1 L804,24.0 L806,23.9 L808,19.6 L810,19.9 L812,16.7 L814,17.0 L816,14.8 L818,16.3 L820,18.2 L822,16.4 L824,19.2 L826,20.6 L828,23.6 L830,28.6 L832,30.9 L834,31.3 L836,31.4 L838,32.6 L840,28.1 L842,29.9 L844,31.1 L846,27.5 L848,29.2 L850,26.3 L852,22.7 L854,21.5 L856,22.9 L858,23.3 L860,22.6 L862,24.3 L864,25.3 L866,24.1 L868,24.8 L870,25.3 L872,25.2 L874,24.6 L876,21.5 L878,20.3 L880,19.3 L882,20.7 L884,18.8 L886,17.6 L888,14.2 L890,17.8 L892,18.7 L894,20.5 L896,21.0 L898,17.7 L900,20.4 L902,25.3 L904,24.5 L906,27.3 L908,25.3 L910,31.7 L912,32.9 L914,31.8 L916,30.6 L918,31.9 L920,35.0 L922,38.9 L924,38.4 L926,29.9 L928,26.1 L930,21.0 L932,18.1 L934,16.0 L936,15.5 L938,18.5 L940,22.2 L942,24.6 L944,22.5 L946,23.0 L948,25.0 L950,27.8 L952,26.2 L954,26.5 L956,24.2 L958,26.7 L960,27.1 L962,26.0 L964,22.3 L966,19.4 L968,16.6 L970,21.7 L972,18.6 L974,20.6 L976,21.7 L978,23.9 L980,29.3 L982,31.1 L984,28.3 L986,30.7 L988,26.4 L990,25.5 L992,26.6 L994,23.7 L996,23.8 L998,25.5 L1000,26.6 L1002,24.6 L1004,20.4 L1006,19.3 L1008,20.1 L1010,23.3 L1012,25.7 L1014,22.9 L1016,23.0 L1018,28.2 L1020,29.9 L1022,31.6 L1024,35.3 L1026,34.3 L1028,37.6 L1030,35.1 L1032,33.0 L1034,30.6 L1036,30.2 L1038,29.2 L1040,25.1 L1042,20.9 L1044,23.7 L1046,28.3 L1048,22.9 L1050,22.9 L1052,22.8 L1054,26.7 L1056,30.5 L1058,30.7 L1060,30.8 L1062,32.7 L1064,30.9 L1066,26.1 L1068,27.2 L1070,21.1 L1072,28.0 L1074,26.5 L1076,27.3 L1078,26.0 L1080,21.7 L1082,18.6 L1084,19.8 L1086,23.5 L1088,27.2 L1090,30.4 L1092,34.1 L1094,34.1 L1096,35.4 L1098,37.8 L1100,33.7 L1102,33.8 L1104,32.0 L1106,30.5 L1108,26.9 L1110,29.4 L1112,26.3 L1114,24.7 L1116,26.0 L1118,28.6 L1120,26.1 L1122,23.7 L1124,23.0 L1126,25.2 L1128,24.2 L1130,24.2 L1132,21.3 L1134,20.9 L1136,21.2 L1138,25.2 L1140,29.6 L1142,30.8 L1144,30.5 L1146,32.6 L1148,31.2 L1150,29.8 L1152,29.2 L1154,28.0 L1156,26.7 L1158,31.7 L1160,25.6 L1162,24.8 L1164,20.3 L1166,24.3 L1168,23.7 L1170,27.5 L1172,33.3 L1174,32.8 L1176,32.4 L1178,31.3 L1180,34.3 L1182,35.4 L1184,32.0 L1186,25.3 L1188,23.6 L1190,23.1 L1192,24.5 L1194,25.2 L1196,29.0 L1198,28.3 L1200,30.0"/>
-      <path class="tr" pathLength="1" d="M0,72.7 L2,72.4 L4,74.5 L6,74.6 L8,73.9 L10,72.9 L12,71.3 L14,69.7 L16,71.2 L18,72.2 L20,73.2 L22,72.9 L24,71.7 L26,71.3 L28,71.8 L30,71.8 L32,73.9 L34,74.5 L36,75.4 L38,74.9 L40,78.7 L42,77.0 L44,74.5 L46,72.3 L48,72.4 L50,73.2 L52,72.1 L54,75.7 L56,78.6 L58,79.0 L60,77.8 L62,75.8 L64,74.3 L66,76.1 L68,76.9 L70,76.2 L72,73.3 L74,71.8 L76,70.3 L78,73.4 L80,76.9 L82,77.4 L84,77.3 L86,77.2 L88,74.8 L90,75.9 L92,75.9 L94,74.6 L96,71.1 L98,74.1 L100,73.6 L102,72.9 L104,74.2 L106,74.1 L108,75.7 L110,78.1 L112,76.2 L114,74.0 L116,70.4 L118,69.1 L120,69.5 L122,71.1 L124,71.4 L126,70.1 L128,72.5 L130,72.0 L132,73.1 L134,73.1 L136,74.3 L138,74.4 L140,74.1 L142,75.0 L144,73.6 L146,72.6 L148,71.3 L150,71.5 L152,71.1 L154,72.3 L156,73.0 L158,73.3 L160,72.9 L162,73.3 L164,74.6 L166,73.1 L168,73.1 L170,74.6 L172,71.7 L174,72.7 L176,72.2 L178,73.2 L180,73.7 L182,75.3 L184,75.3 L186,74.8 L188,74.8 L190,73.0 L192,70.4 L194,71.5 L196,73.5 L198,74.5 L200,74.6 L202,74.5 L204,74.8 L206,74.3 L208,74.9 L210,73.8 L212,73.0 L214,73.3 L216,74.5 L218,73.1 L220,74.1 L222,75.5 L224,75.6 L226,74.9 L228,76.4 L230,76.9 L232,77.0 L234,78.5 L236,78.1 L238,74.9 L240,72.9 L242,72.1 L244,72.6 L246,73.2 L248,71.7 L250,70.7 L252,72.7 L254,73.9 L256,76.0 L258,76.6 L260,77.8 L262,76.2 L264,75.6 L266,74.5 L268,72.0 L270,74.5 L272,76.1 L274,77.7 L276,75.6 L278,74.7 L280,74.1 L282,75.0 L284,75.8 L286,76.6 L288,75.9 L290,74.5 L292,72.9 L294,71.3 L296,70.6 L298,69.7 L300,70.8 L302,70.5 L304,73.6 L306,74.0 L308,72.8 L310,73.1 L312,73.3 L314,73.7 L316,74.5 L318,74.5 L320,72.2 L322,72.7 L324,73.5 L326,75.7 L328,74.5 L330,74.2 L332,75.5 L334,80.2 L336,79.4 L338,76.4 L340,75.3 L342,75.4 L344,76.0 L346,74.4 L348,72.3 L350,71.9 L352,73.4 L354,74.9 L356,74.5 L358,76.0 L360,74.0 L362,73.7 L364,72.2 L366,72.7 L368,72.4 L370,74.6 L372,72.2 L374,71.7 L376,72.3 L378,76.3 L380,76.3 L382,73.5 L384,70.9 L386,70.6 L388,71.5 L390,76.8 L392,75.1 L394,75.2 L396,76.0 L398,76.6 L400,75.1 L402,76.9 L404,75.7 L406,76.0 L408,76.3 L410,76.8 L412,73.4 L414,72.9 L416,71.2 L418,70.5 L420,69.8 L422,71.4 L424,72.1 L426,73.7 L428,73.8 L430,71.7 L432,73.2 L434,72.0 L436,73.4 L438,72.1 L440,74.9 L442,74.9 L444,72.0 L446,72.1 L448,72.9 L450,74.6 L452,75.6 L454,75.3 L456,73.7 L458,71.9 L460,73.2 L462,75.0 L464,73.6 L466,73.2 L468,74.1 L470,74.2 L472,72.3 L474,73.5 L476,73.9 L478,74.3 L480,75.5 L482,75.7 L484,74.5 L486,74.4 L488,72.9 L490,72.8 L492,71.9 L494,73.9 L496,74.3 L498,77.2 L500,78.7 L502,77.3 L504,77.5 L506,77.4 L508,76.8 L510,76.9 L512,76.9 L514,77.1 L516,76.4 L518,76.0 L520,74.9 L522,72.5 L524,72.1 L526,72.4 L528,73.3 L530,76.8 L532,78.4 L534,80.6 L536,79.2 L538,78.8 L540,76.2 L542,77.6 L544,78.7 L546,74.7 L548,73.9 L550,74.0 L552,73.9 L554,74.1 L556,72.5 L558,71.9 L560,72.1 L562,75.3 L564,74.6 L566,73.4 L568,76.8 L570,77.4 L572,78.7 L574,79.0 L576,77.0 L578,76.2 L580,73.4 L582,71.4 L584,70.5 L586,69.2 L588,71.5 L590,71.3 L592,71.8 L594,71.4 L596,71.7 L598,74.2 L600,73.8 L602,74.0 L604,76.6 L606,74.7 L608,73.3 L610,73.7 L612,74.0 L614,75.0 L616,74.7 L618,73.9 L620,73.1 L622,73.7 L624,75.1 L626,72.8 L628,75.6 L630,77.1 L632,75.7 L634,77.0 L636,78.2 L638,78.2 L640,79.1 L642,76.9 L644,75.5 L646,74.1 L648,74.3 L650,73.1 L652,73.4 L654,71.4 L656,72.9 L658,72.6 L660,71.6 L662,72.6 L664,73.0 L666,74.0 L668,73.8 L670,74.1 L672,73.9 L674,74.4 L676,74.1 L678,76.1 L680,75.2 L682,74.5 L684,73.1 L686,73.5 L688,73.6 L690,71.9 L692,71.6 L694,69.9 L696,71.6 L698,71.5 L700,73.1 L702,72.9 L704,74.7 L706,76.6 L708,76.5 L710,76.5 L712,74.7 L714,72.3 L716,74.3 L718,74.2 L720,75.0 L722,71.2 L724,70.5 L726,70.8 L728,72.3 L730,74.1 L732,76.6 L734,75.2 L736,76.0 L738,77.9 L740,78.8 L742,79.3 L744,78.5 L746,79.8 L748,79.4 L750,78.0 L752,77.7 L754,76.3 L756,76.5 L758,74.7 L760,73.2 L762,72.7 L764,73.8 L766,74.6 L768,74.8 L770,74.4 L772,76.3 L774,76.9 L776,75.9 L778,75.1 L780,74.4 L782,74.5 L784,74.6 L786,73.8 L788,73.0 L790,74.1 L792,74.4 L794,78.2 L796,75.9 L798,76.6 L800,75.7 L802,74.3 L804,71.5 L806,73.8 L808,73.7 L810,73.6 L812,76.1 L814,75.9 L816,73.1 L818,77.4 L820,73.9 L822,67.7 L824,77.4 L826,79.7 L828,69.3 L830,71.6 L832,75.9 L834,73.4 L836,76.4 L838,77.5 L840,73.6 L842,73.6 L844,82.5 L846,84.5 L848,74.5 L850,76.9 L852,83.1 L854,75.3 L856,69.2 L858,74.8 L860,75.6 L862,73.2 L864,76.3 L866,60.9 L868,59.9 L870,78.8 L872,79.6 L874,73.3 L876,74.5 L878,67.7 L880,69.4 L882,77.7 L884,78.2 L886,74.9 L888,73.3 L890,69.6 L892,74.3 L894,74.4 L896,69.4 L898,66.7 L900,68.1 L902,66.6 L904,68.3 L906,70.1 L908,73.2 L910,75.9 L912,71.6 L914,72.1 L916,72.6 L918,75.3 L920,84.8 L922,73.3 L924,59.9 L926,67.1 L928,72.2 L930,74.4 L932,76.6 L934,60.5 L936,58.7 L938,84.1 L940,82.8 L942,65.4 L944,68.8 L946,80.1 L948,79.4 L950,79.6 L952,76.7 L954,69.8 L956,68.9 L958,75.3 L960,70.8 L962,62.7 L964,70.4 L966,80.4 L968,67.7 L970,64.1 L972,72.9 L974,78.4 L976,81.0 L978,72.3 L980,57.0 L982,71.1 L984,94.0 L986,84.8 L988,68.5 L990,72.4 L992,72.9 L994,80.2 L996,91.3 L998,80.3 L1000,62.9 L1002,60.0 L1004,73.0 L1006,82.3 L1008,76.2 L1010,74.9 L1012,75.6 L1014,72.5 L1016,75.1 L1018,86.8 L1020,90.6 L1022,83.4 L1024,69.8 L1026,65.8 L1028,73.0 L1030,77.5 L1032,76.8 L1034,77.6 L1036,64.5 L1038,56.6 L1040,78.5 L1042,87.0 L1044,79.2 L1046,69.7 L1048,64.3 L1050,74.1 L1052,89.2 L1054,83.2 L1056,73.2 L1058,75.0 L1060,68.2 L1062,68.3 L1064,76.9 L1066,73.4 L1068,66.6 L1070,69.7 L1072,75.7 L1074,65.3 L1076,63.9 L1078,81.3 L1080,81.8 L1082,60.3 L1084,67.6 L1086,84.4 L1088,76.5 L1090,74.1 L1092,77.0 L1094,69.0 L1096,72.2 L1098,74.4 L1100,63.9 L1102,65.4 L1104,73.3 L1106,71.0 L1108,74.9 L1110,77.6 L1112,72.1 L1114,76.3 L1116,84.2 L1118,78.9 L1120,71.3 L1122,74.4 L1124,81.9 L1126,74.6 L1128,67.6 L1130,78.2 L1132,76.4 L1134,62.6 L1136,64.5 L1138,75.2 L1140,76.5 L1142,81.7 L1144,77.4 L1146,71.9 L1148,73.5 L1150,74.4 L1152,76.8 L1154,79.3 L1156,69.6 L1158,65.8 L1160,70.9 L1162,71.6 L1164,72.0 L1166,79.4 L1168,74.8 L1170,65.8 L1172,63.8 L1174,67.4 L1176,74.4 L1178,73.2 L1180,67.1 L1182,66.7 L1184,69.4 L1186,78.1 L1188,80.5 L1190,80.5 L1192,78.0 L1194,69.3 L1196,66.3 L1198,76.6 L1200,77.1"/>
-      <path class="tr" pathLength="1" d="M0,118.7 L2,119.3 L4,119.1 L6,121.3 L8,123.4 L10,124.4 L12,124.8 L14,125.6 L16,129.9 L18,131.1 L20,128.8 L22,127.3 L24,123.6 L26,123.8 L28,125.1 L30,122.9 L32,121.4 L34,121.5 L36,121.3 L38,124.5 L40,125.9 L42,127.8 L44,128.8 L46,126.8 L48,126.8 L50,127.2 L52,128.0 L54,126.8 L56,122.7 L58,125.4 L60,121.7 L62,122.5 L64,122.9 L66,124.7 L68,126.2 L70,125.4 L72,128.5 L74,126.3 L76,127.0 L78,123.6 L80,122.9 L82,124.1 L84,128.4 L86,130.3 L88,128.7 L90,128.3 L92,126.1 L94,124.7 L96,125.3 L98,127.4 L100,127.4 L102,124.6 L104,123.9 L106,123.0 L108,125.3 L110,126.4 L112,126.4 L114,127.0 L116,128.9 L118,129.9 L120,131.1 L122,128.6 L124,128.7 L126,130.5 L128,128.7 L130,129.1 L132,128.4 L134,129.3 L136,129.0 L138,130.1 L140,129.4 L142,130.5 L144,127.2 L146,128.3 L148,129.4 L150,133.3 L152,133.5 L154,129.9 L156,127.6 L158,128.4 L160,131.8 L162,133.3 L164,129.7 L166,125.3 L168,124.4 L170,127.0 L172,129.2 L174,124.6 L176,125.3 L178,125.6 L180,127.2 L182,125.7 L184,128.0 L186,129.1 L188,130.3 L190,131.7 L192,129.3 L194,126.0 L196,125.1 L198,123.3 L200,120.6 L202,123.0 L204,124.9 L206,126.1 L208,127.6 L210,126.6 L212,127.4 L214,127.7 L216,126.5 L218,127.2 L220,127.1 L222,129.7 L224,126.6 L226,124.6 L228,123.5 L230,125.7 L232,127.5 L234,129.3 L236,128.3 L238,127.9 L240,131.1 L242,129.5 L244,129.6 L246,129.4 L248,129.8 L250,127.9 L252,126.2 L254,124.3 L256,126.4 L258,126.7 L260,127.0 L262,127.5 L264,128.5 L266,129.9 L268,130.8 L270,132.0 L272,130.7 L274,130.3 L276,127.5 L278,127.0 L280,127.2 L282,131.0 L284,129.7 L286,130.2 L288,130.3 L290,130.1 L292,128.2 L294,127.2 L296,127.1 L298,127.7 L300,127.6 L302,126.7 L304,125.4 L306,125.7 L308,127.1 L310,128.2 L312,129.3 L314,130.8 L316,131.4 L318,130.9 L320,128.7 L322,127.5 L324,128.5 L326,127.6 L328,123.0 L330,120.0 L332,122.0 L334,127.1 L336,128.0 L338,128.2 L340,126.8 L342,126.8 L344,130.7 L346,129.8 L348,127.9 L350,127.4 L352,128.0 L354,127.1 L356,126.4 L358,122.2 L360,121.5 L362,122.2 L364,124.5 L366,127.0 L368,127.7 L370,126.2 L372,124.0 L374,123.6 L376,124.8 L378,126.0 L380,126.8 L382,127.0 L384,128.2 L386,127.8 L388,125.9 L390,122.6 L392,121.0 L394,120.0 L396,119.1 L398,121.8 L400,121.5 L402,120.0 L404,119.8 L406,121.5 L408,122.9 L410,122.8 L412,124.4 L414,124.3 L416,128.8 L418,131.3 L420,134.6 L422,128.7 L424,126.4 L426,123.6 L428,125.8 L430,125.0 L432,123.3 L434,122.7 L436,124.2 L438,126.6 L440,126.2 L442,124.8 L444,129.4 L446,131.1 L448,131.9 L450,128.9 L452,127.9 L454,131.1 L456,130.0 L458,128.7 L460,130.4 L462,126.9 L464,125.2 L466,126.2 L468,126.0 L470,127.0 L472,129.5 L474,128.3 L476,125.3 L478,126.0 L480,127.9 L482,131.5 L484,132.9 L486,131.2 L488,129.8 L490,128.6 L492,129.2 L494,129.1 L496,127.5 L498,127.5 L500,127.1 L502,125.5 L504,125.2 L506,125.1 L508,126.6 L510,125.3 L512,126.3 L514,129.3 L516,128.6 L518,127.2 L520,127.5 L522,131.5 L524,131.0 L526,129.7 L528,129.7 L530,128.5 L532,129.2 L534,127.0 L536,124.6 L538,124.0 L540,124.2 L542,122.7 L544,123.1 L546,123.3 L548,124.3 L550,127.6 L552,129.9 L554,129.2 L556,129.7 L558,132.4 L560,133.0 L562,131.4 L564,130.1 L566,128.7 L568,126.4 L570,126.6 L572,124.3 L574,123.5 L576,127.4 L578,124.9 L580,126.2 L582,126.1 L584,127.5 L586,131.0 L588,131.7 L590,132.5 L592,129.1 L594,129.6 L596,127.9 L598,128.1 L600,126.4 L602,125.4 L604,123.8 L606,124.6 L608,122.9 L610,125.9 L612,125.3 L614,127.8 L616,126.4 L618,128.4 L620,125.8 L622,124.9 L624,126.1 L626,127.7 L628,130.3 L630,127.3 L632,125.6 L634,126.9 L636,128.5 L638,126.7 L640,124.9 L642,125.4 L644,127.3 L646,127.4 L648,125.8 L650,122.5 L652,122.3 L654,126.1 L656,125.7 L658,125.0 L660,121.4 L662,121.9 L664,120.6 L666,123.7 L668,123.7 L670,125.7 L672,126.4 L674,126.2 L676,125.4 L678,123.8 L680,120.4 L682,122.5 L684,119.8 L686,120.9 L688,121.6 L690,122.6 L692,120.5 L694,119.9 L696,122.0 L698,122.4 L700,121.4 L702,121.3 L704,121.1 L706,122.0 L708,123.0 L710,120.3 L712,117.9 L714,118.7 L716,120.0 L718,122.7 L720,122.0 L722,123.7 L724,123.2 L726,127.1 L728,126.7 L730,126.3 L732,126.2 L734,128.3 L736,127.1 L738,124.8 L740,123.6 L742,122.7 L744,125.9 L746,128.0 L748,127.1 L750,128.1 L752,128.5 L754,128.9 L756,127.4 L758,126.8 L760,127.0 L762,125.5 L764,124.6 L766,123.4 L768,121.6 L770,122.2 L772,123.2 L774,126.1 L776,129.4 L778,131.5 L780,130.1 L782,128.3 L784,128.3 L786,128.4 L788,125.8 L790,126.4 L792,124.9 L794,123.8 L796,123.4 L798,122.2 L800,121.9 L802,124.4 L804,126.3 L806,123.0 L808,122.2 L810,127.6 L812,131.5 L814,130.0 L816,124.3 L818,117.6 L820,120.1 L822,128.5 L824,128.4 L826,124.3 L828,124.4 L830,124.3 L832,120.4 L834,124.8 L836,128.8 L838,129.6 L840,124.4 L842,116.5 L844,121.6 L846,130.8 L848,127.2 L850,126.0 L852,134.0 L854,125.3 L856,119.4 L858,126.4 L860,132.8 L862,129.0 L864,122.4 L866,121.5 L868,118.4 L870,111.0 L872,118.0 L874,133.3 L876,125.1 L878,119.7 L880,126.6 L882,120.2 L884,118.3 L886,130.8 L888,130.6 L890,123.2 L892,123.8 L894,121.2 L896,119.4 L898,125.8 L900,127.0 L902,125.3 L904,117.8 L906,121.9 L908,125.8 L910,116.3 L912,118.3 L914,133.0 L916,124.3 L918,112.2 L920,124.1 L922,132.3 L924,123.2 L926,116.3 L928,124.2 L930,139.6 L932,132.8 L934,113.3 L936,111.5 L938,125.4 L940,131.6 L942,135.6 L944,129.8 L946,111.2 L948,113.8 L950,133.4 L952,142.6 L954,135.7 L956,126.8 L958,126.7 L960,123.7 L962,124.8 L964,132.1 L966,134.2 L968,122.0 L970,120.3 L972,122.3 L974,117.9 L976,126.2 L978,136.5 L980,122.9 L982,119.9 L984,130.2 L986,122.3 L988,112.5 L990,128.6 L992,144.0 L994,131.6 L996,111.3 L998,114.5 L1000,130.8 L1002,128.3 L1004,128.2 L1006,134.2 L1008,121.9 L1010,108.7 L1012,118.0 L1014,126.9 L1016,128.8 L1018,126.9 L1020,120.0 L1022,117.9 L1024,118.6 L1026,120.5 L1028,131.2 L1030,134.3 L1032,122.5 L1034,119.1 L1036,118.8 L1038,116.9 L1040,129.2 L1042,134.8 L1044,122.8 L1046,117.8 L1048,122.4 L1050,124.3 L1052,130.0 L1054,135.1 L1056,132.7 L1058,121.7 L1060,119.1 L1062,128.2 L1064,125.1 L1066,113.2 L1068,128.4 L1070,139.5 L1072,113.8 L1074,110.7 L1076,133.9 L1078,130.8 L1080,118.0 L1082,122.3 L1084,131.3 L1086,125.0 L1088,117.6 L1090,121.1 L1092,128.7 L1094,128.5 L1096,126.7 L1098,126.7 L1100,121.0 L1102,120.0 L1104,127.6 L1106,125.2 L1108,127.7 L1110,132.0 L1112,123.9 L1114,111.3 L1116,116.4 L1118,125.5 L1120,134.2 L1122,129.3 L1124,116.3 L1126,113.3 L1128,122.6 L1130,132.8 L1132,139.4 L1134,125.5 L1136,112.1 L1138,122.2 L1140,128.9 L1142,114.5 L1144,113.2 L1146,128.9 L1148,132.5 L1150,117.4 L1152,112.8 L1154,127.7 L1156,131.0 L1158,123.9 L1160,130.1 L1162,128.6 L1164,109.3 L1166,109.9 L1168,124.1 L1170,126.5 L1172,127.6 L1174,123.1 L1176,112.9 L1178,110.8 L1180,125.9 L1182,133.6 L1184,131.6 L1186,123.5 L1188,119.2 L1190,117.7 L1192,120.3 L1194,127.4 L1196,129.6 L1198,119.5 L1200,120.8"/>
-      <path class="tr" pathLength="1" d="M0,180.3 L2,179.7 L4,176.2 L6,177.1 L8,177.6 L10,177.4 L12,173.4 L14,169.0 L16,170.9 L18,171.7 L20,173.0 L22,172.0 L24,172.5 L26,170.8 L28,170.0 L30,171.3 L32,176.0 L34,178.3 L36,178.6 L38,179.8 L40,179.9 L42,179.5 L44,178.1 L46,175.0 L48,172.6 L50,171.0 L52,172.1 L54,172.6 L56,174.2 L58,177.1 L60,175.9 L62,176.6 L64,175.0 L66,175.2 L68,175.3 L70,175.2 L72,177.5 L74,177.6 L76,175.7 L78,174.4 L80,170.5 L82,169.2 L84,169.6 L86,169.8 L88,169.4 L90,170.8 L92,172.0 L94,173.5 L96,173.1 L98,174.9 L100,174.6 L102,175.0 L104,174.6 L106,175.2 L108,177.6 L110,177.8 L112,176.7 L114,173.8 L116,170.5 L118,169.9 L120,171.4 L122,172.6 L124,172.4 L126,174.4 L128,175.5 L130,177.3 L132,177.4 L134,176.4 L136,175.4 L138,176.6 L140,180.5 L142,179.0 L144,177.9 L146,175.7 L148,174.5 L150,174.4 L152,174.5 L154,177.2 L156,177.2 L158,180.1 L160,180.9 L162,180.0 L164,182.1 L166,180.9 L168,177.6 L170,175.8 L172,175.2 L174,175.6 L176,175.1 L178,172.8 L180,170.9 L182,169.8 L184,169.6 L186,171.2 L188,172.3 L190,172.9 L192,173.1 L194,175.8 L196,174.2 L198,174.6 L200,171.9 L202,170.1 L204,172.9 L206,174.5 L208,175.1 L210,175.7 L212,175.7 L214,176.1 L216,175.8 L218,176.5 L220,175.6 L222,175.0 L224,174.0 L226,173.0 L228,172.3 L230,175.6 L232,175.9 L234,179.0 L236,181.7 L238,181.1 L240,182.7 L242,181.7 L244,180.8 L246,178.4 L248,176.8 L250,175.0 L252,174.9 L254,175.6 L256,178.0 L258,178.9 L260,183.4 L262,181.8 L264,181.9 L266,179.9 L268,179.0 L270,177.0 L272,173.7 L274,170.5 L276,171.8 L278,171.7 L280,171.9 L282,169.7 L284,171.5 L286,171.7 L288,173.7 L290,172.8 L292,177.4 L294,179.1 L296,177.9 L298,175.5 L300,174.5 L302,170.6 L304,168.0 L306,167.8 L308,170.1 L310,171.3 L312,174.5 L314,172.4 L316,172.1 L318,171.3 L320,171.7 L322,170.6 L324,171.6 L326,174.2 L328,176.4 L330,177.5 L332,176.6 L334,176.9 L336,173.6 L338,173.8 L340,171.8 L342,172.9 L344,174.0 L346,173.3 L348,177.9 L350,176.5 L352,175.1 L354,175.9 L356,176.8 L358,177.0 L360,179.5 L362,179.3 L364,179.1 L366,175.1 L368,175.5 L370,176.8 L372,174.5 L374,174.2 L376,170.8 L378,168.8 L380,170.8 L382,174.3 L384,179.8 L386,177.3 L388,177.5 L390,178.8 L392,180.0 L394,178.8 L396,178.3 L398,174.9 L400,175.2 L402,175.6 L404,177.1 L406,177.5 L408,175.4 L410,174.2 L412,171.1 L414,175.1 L416,176.9 L418,179.8 L420,181.0 L422,182.0 L424,182.9 L426,183.1 L428,180.8 L430,176.3 L432,174.0 L434,174.0 L436,174.0 L438,175.8 L440,175.2 L442,173.8 L444,173.8 L446,174.8 L448,177.4 L450,178.7 L452,179.4 L454,179.6 L456,183.8 L458,184.3 L460,183.3 L462,180.4 L464,178.6 L466,179.1 L468,177.3 L470,172.7 L472,169.2 L474,170.2 L476,168.6 L478,170.8 L480,173.1 L482,176.2 L484,176.7 L486,180.4 L488,181.8 L490,181.3 L492,178.3 L494,178.4 L496,174.7 L498,174.5 L500,171.2 L502,170.3 L504,171.1 L506,169.0 L508,172.1 L510,175.5 L512,175.6 L514,177.9 L516,179.6 L518,182.5 L520,185.4 L522,185.1 L524,182.8 L526,178.0 L528,176.5 L530,176.0 L532,175.1 L534,172.8 L536,174.1 L538,172.2 L540,176.5 L542,173.8 L544,173.7 L546,180.6 L548,180.2 L550,179.2 L552,182.8 L554,181.6 L556,179.4 L558,179.8 L560,174.3 L562,172.5 L564,171.2 L566,170.1 L568,170.1 L570,169.5 L572,168.9 L574,169.4 L576,169.1 L578,173.4 L580,173.7 L582,176.5 L584,178.3 L586,178.0 L588,177.9 L590,175.0 L592,173.4 L594,170.4 L596,168.8 L598,170.0 L600,170.5 L602,171.7 L604,171.2 L606,171.3 L608,171.3 L610,173.1 L612,174.3 L614,174.9 L616,175.8 L618,175.7 L620,177.9 L622,176.0 L624,176.4 L626,177.0 L628,176.0 L630,172.9 L632,173.2 L634,171.6 L636,169.9 L638,169.4 L640,172.1 L642,174.8 L644,177.5 L646,181.4 L648,183.8 L650,181.9 L652,179.4 L654,179.0 L656,177.0 L658,177.2 L660,177.4 L662,175.9 L664,172.5 L666,172.3 L668,171.2 L670,172.2 L672,173.0 L674,174.4 L676,176.0 L678,178.8 L680,180.0 L682,180.0 L684,181.8 L686,178.6 L688,176.4 L690,174.5 L692,171.5 L694,171.8 L696,170.1 L698,171.9 L700,172.7 L702,175.1 L704,178.7 L706,176.5 L708,178.8 L710,180.1 L712,178.1 L714,175.5 L716,175.0 L718,174.5 L720,176.4 L722,177.7 L724,179.6 L726,177.2 L728,174.5 L730,178.5 L732,177.4 L734,177.9 L736,179.5 L738,178.4 L740,179.2 L742,177.3 L744,177.6 L746,174.8 L748,174.8 L750,175.1 L752,177.3 L754,179.3 L756,179.8 L758,177.3 L760,174.7 L762,171.7 L764,169.4 L766,169.4 L768,173.9 L770,174.0 L772,176.3 L774,174.4 L776,175.5 L778,176.8 L780,178.4 L782,178.1 L784,179.5 L786,179.4 L788,177.5 L790,177.6 L792,175.7 L794,171.7 L796,171.0 L798,172.7 L800,174.7 L802,174.8 L804,174.5 L806,171.4 L808,174.7 L810,174.7 L812,175.4 L814,174.2 L816,172.1 L818,175.3 L820,175.5 L822,174.1 L824,172.2 L826,171.6 L828,177.4 L830,176.8 L832,171.5 L834,177.0 L836,180.9 L838,179.3 L840,176.7 L842,173.6 L844,173.7 L846,179.0 L848,177.8 L850,176.0 L852,173.8 L854,172.7 L856,177.3 L858,179.0 L860,173.9 L862,166.6 L864,168.4 L866,181.1 L868,178.4 L870,163.3 L872,167.7 L874,181.4 L876,177.9 L878,170.2 L880,166.7 L882,168.9 L884,179.4 L886,175.3 L888,162.6 L890,170.1 L892,179.7 L894,175.4 L896,164.0 L898,168.9 L900,170.0 L902,172.8 L904,177.3 L906,179.8 L908,174.0 L910,175.9 L912,181.3 L914,173.6 L916,168.3 L918,170.4 L920,176.4 L922,175.0 L924,169.1 L926,174.6 L928,179.8 L930,171.6 L932,175.8 L934,175.2 L936,165.1 L938,169.7 L940,187.3 L942,172.9 L944,163.2 L946,170.9 L948,177.1 L950,168.0 L952,167.5 L954,169.0 L956,172.1 L958,170.3 L960,170.1 L962,162.6 L964,165.5 L966,172.1 L968,168.8 L970,166.4 L972,168.9 L974,165.3 L976,171.9 L978,173.0 L980,169.9 L982,172.4 L984,177.5 L986,169.0 L988,170.4 L990,164.2 L992,162.2 L994,172.9 L996,171.6 L998,164.8 L1000,176.4 L1002,176.2 L1004,172.2 L1006,177.2 L1008,173.2 L1010,169.5 L1012,176.5 L1014,175.8 L1016,172.4 L1018,169.5 L1020,171.7 L1022,169.4 L1024,168.3 L1026,172.5 L1028,173.8 L1030,178.0 L1032,192.3 L1034,182.2 L1036,172.3 L1038,187.9 L1040,178.4 L1042,169.4 L1044,186.4 L1046,181.9 L1048,171.0 L1050,177.2 L1052,172.3 L1054,162.4 L1056,167.8 L1058,168.4 L1060,171.6 L1062,168.2 L1064,164.0 L1066,176.5 L1068,178.7 L1070,165.5 L1072,170.0 L1074,177.7 L1076,171.9 L1078,168.8 L1080,172.1 L1082,173.2 L1084,168.6 L1086,170.9 L1088,170.5 L1090,164.1 L1092,170.7 L1094,181.8 L1096,169.7 L1098,171.9 L1100,180.1 L1102,166.4 L1104,169.6 L1106,177.1 L1108,167.0 L1110,172.1 L1112,176.2 L1114,161.8 L1116,164.4 L1118,171.0 L1120,166.5 L1122,172.7 L1124,170.6 L1126,164.3 L1128,170.1 L1130,171.0 L1132,174.6 L1134,178.1 L1136,176.1 L1138,178.5 L1140,183.6 L1142,178.0 L1144,170.7 L1146,171.2 L1148,181.1 L1150,179.9 L1152,163.6 L1154,166.4 L1156,170.8 L1158,167.9 L1160,169.0 L1162,167.9 L1164,168.3 L1166,177.7 L1168,173.3 L1170,171.2 L1172,179.7 L1174,172.4 L1176,167.5 L1178,174.0 L1180,163.0 L1182,156.0 L1184,170.3 L1186,170.8 L1188,164.2 L1190,169.7 L1192,169.2 L1194,166.6 L1196,173.3 L1198,178.4 L1200,177.1"/>
-      <line class="mk" x1="792" y1="2" x2="792" y2="198"/>
-    </svg>
-    <figcaption>Four channels of EEG, the brain signals my M.Tech research reads to grade stress. The faster activity after the red line is the kind of change it looks for.</figcaption>
-  </div>
-</figure>
-
-<main id="main" class="wrap">
-
-  <section id="about" class="sec" aria-labelledby="about-h">
-    <h2 id="about-h">About</h2>
-    <div class="body">
-      <p>I have taught Computer Science &amp; Engineering diploma courses at Government Polytechnics in Karnataka since 2013, at Karwar and, since 2016, at Joida. I teach Python, AI and machine learning, databases, computer networks and IoT under the Karnataka DTE curriculum (C-20 and C-25 NEP).</p>
-      <p>I also write the material my students learn from: illustrated study notes, lab manuals with tested programs and real outputs, question banks and solved model papers.</p>
-      <p>In 2026 I completed an M.Tech in Computer Science &amp; Engineering at KLE Institute of Technology, Hubballi. My dissertation, NeuroStress AI, detects stress from EEG brain signals with an ensemble machine learning model and shows the result in a web app.</p>
-      <p class="muted">Tools I work with: Python, scikit-learn, Pandas, NumPy, OpenCV, Keras, Flask, SQL and MongoDB.</p>
-    </div>
-  </section>
-
-  <section id="research" class="sec" aria-labelledby="research-h">
-    <h2 id="research-h">Research and publications</h2>
-    <div class="body">
-      <div class="year">
-        <span>2026</span>
-        <ul class="pubs">
-          <li>
-            <span class="pt">FaceAnchor: A Session-Anchored, Proxy-Resistant Face Recognition Attendance System with Calibrated LBPH Thresholds</span>
-            <span class="pa">Sayyan Shaikh, Rizawan N. Shaikh</span>
-            <span class="pv">International Journal of Innovative Research in Technology (IJIRT), ISSN 2349-6002. <a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></span>
-          </li>
-          <li>
-            <span class="pt">NeuroStress AI: An Advanced Electroencephalography-Based Clinical Decision Support System for Real-Time Stress Detection and Risk Stratification</span>
-            <span class="pa">Sayyan Shaikh, Rizawan N. Shaikh, Prasanna Bammigatti, Manjunatha Badiger</span>
-            <span class="pv">International Conference on Computational Intelligence and Soft Computing (CISCom 2026), Malta, October 2026. <span class="status">To appear in Springer Communications in Computer and Information Science (CCIS).</span></span>
-          </li>
-          <li>
-            <span class="pt">Adaptive Face Recognition and Emotion Analysis Framework (AFREAF): A Real-Time Multi-Modal Deep Learning System for Comprehensive Facial Attribute Detection</span>
-            <span class="pa">Sayyan Shaikh, Prasanna Bammigatti, Rizawan N. Shaikh</span>
-            <span class="pv">DMPedia Lecture Notes in Computer Science &amp; Engineering, pp. 241–248.</span>
-          </li>
-        </ul>
-      </div>
-      <div class="year">
-        <span>2013</span>
-        <ul class="pubs">
-          <li>
-            <span class="pt">OCR Based Mapless Navigation Method of Robot</span>
-            <span class="pa">S. N. Shaikh, N. V. Londhe</span>
-            <span class="pv">International Journal of Inventive Engineering and Sciences (IJIES), vol. 1, no. 8, pp. 6–12.</span>
-          </li>
-        </ul>
-      </div>
-      <p class="muted" style="margin-top:18px">Full list on <a href="https://scholar.google.com/citations?user=T5rE6ccAAAAJ">Google Scholar</a> and <a href="https://orcid.org/0009-0005-7107-8838">ORCID</a>.</p>
-    </div>
-  </section>
-
-  <section id="projects" class="sec" aria-labelledby="projects-h">
-    <h2 id="projects-h">Projects</h2>
+    <h3>Projects</h3>
     <div class="projects">
-      <article class="project">
-        <h3>NeuroStress AI</h3>
-        <p>Reads EEG brain signals, extracts features and grades stress with an ensemble of machine learning models. A Flask web app shows each result. Built for my M.Tech dissertation.</p>
-        <p class="tools">Python, scikit-learn, Flask</p>
-        <p class="muted">Code is private until the paper is published.</p>
-      </article>
-      <article class="project">
-        <h3>Driver drowsiness detection</h3>
-        <p>Watches a driver through a laptop webcam, tracks 68 facial landmarks and gives a spoken alert for closed eyes, yawning or head nodding. Runs at 12–20 frames per second. Built during my AI &amp; ML internship.</p>
-        <p class="tools">Python, OpenCV, dlib, NumPy, SciPy</p>
-        <p><a href="https://github.com/SayyanShaikh/drowsiness-detection">Code on GitHub</a></p>
-      </article>
-      <article class="project">
-        <h3>FaceAnchor</h3>
-        <p>A face-recognition attendance system designed to stop proxy attendance. It ties each check-in to a class session and uses calibrated LBPH match thresholds.</p>
-        <p><a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></p>
-      </article>
+      <article class="project"><h4>NeuroStress AI</h4><p>Reads EEG brain signals and grades stress with an ensemble of machine learning models, shown in a Flask web app.</p><p class="muted">Python, scikit-learn, Flask. Code is private until the paper is out.</p></article>
+      <article class="project"><h4>Driver drowsiness detection</h4><p>Tracks 68 facial landmarks from a webcam and speaks an alert for closed eyes, yawning or nodding. Runs at 12–20 frames per second on a laptop.</p><p><a href="https://github.com/SayyanShaikh/drowsiness-detection">Code on GitHub</a></p></article>
+      <article class="project"><h4>FaceAnchor</h4><p>Face-recognition attendance that ties each check-in to a class session, with calibrated LBPH match thresholds.</p><p><a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></p></article>
     </div>
+
+    <h3>Course material I have written</h3>
+    <table>
+      <thead><tr><th scope="col">Course</th><th scope="col">What I wrote</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Artificial Intelligence &amp; Machine Learning<small>20CS51I</small></th><td>59 pages of study notes and a 55-page lab manual with 26 experiments</td></tr>
+        <tr><th scope="row">Thinking Programming with Python<small>25CS21I</small></th><td>57 pages of illustrated notes and a 32-page lab manual</td></tr>
+        <tr><th scope="row">Data Structures with Python<small>25CS33I</small></th><td>Study notes and a lab manual with 23 tested programs</td></tr>
+        <tr><th scope="row">Database Concepts and Technologies<small>25CS31I</small></th><td>A 13-week MySQL and MongoDB lab manual, solutions manual and question bank</td></tr>
+        <tr><th scope="row">Computer Networks<small>25CS32I</small></th><td>A 54-page question bank and a fully solved model paper</td></tr>
+        <tr><th scope="row">System and Network Administration<small>25CS34I</small></th><td>53 pages of study notes and a 34-page lab manual</td></tr>
+        <tr><th scope="row">Engineering Mathematics<small>25SC11I, 25SC21I</small></th><td>A 133-page solutions manual with all 294 answers checked in SymPy</td></tr>
+      </tbody>
+    </table>
   </section>
 
-  <section id="teaching" class="sec" aria-labelledby="teaching-h">
-    <h2 id="teaching-h">Teaching</h2>
-    <div class="body" style="max-width:none">
-      <p>I build complete course material for Karnataka DTE diploma courses and check every program and answer before students see it. Some of what I have written:</p>
-      <table>
-        <thead><tr><th scope="col">Course</th><th scope="col">What I wrote</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Artificial Intelligence &amp; Machine Learning<small>20CS51I</small></th><td>59 pages of week-wise study notes, and a 55-page lab manual with 26 experiments and their real outputs</td></tr>
-          <tr><th scope="row">Thinking Programming with Python<small>25CS21I</small></th><td>57 pages of illustrated study notes and a 32-page lab manual with verified program outputs</td></tr>
-          <tr><th scope="row">Data Structures with Python<small>25CS33I</small></th><td>Study notes and a lab manual with 23 tested programs</td></tr>
-          <tr><th scope="row">Database Concepts and Technologies<small>25CS31I</small></th><td>A 13-week MySQL and MongoDB lab manual, a solutions manual and a week-wise question bank</td></tr>
-          <tr><th scope="row">Computer Networks<small>25CS32I</small></th><td>A 54-page week-wise question bank and a fully solved model question paper</td></tr>
-          <tr><th scope="row">System and Network Administration<small>25CS34I</small></th><td>53 pages of study notes and a 34-page lab manual</td></tr>
-          <tr><th scope="row">Engineering Mathematics<small>25SC11I, 25SC21I</small></th><td>A 133-page solutions manual for six model papers, with all 294 answers checked in SymPy</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <section class="panel contact" id="contact" role="tabpanel" aria-labelledby="t-contact">
+    <h2>Contact me</h2>
+    <a class="email" href="mailto:sayyan@sayyanshaikh.com">sayyan@sayyanshaikh.com</a>
+    <p class="muted">Email is the best way to reach me about research, teaching material or training work.</p>
+    <ul>
+      <li><a href="https://scholar.google.com/citations?user=T5rE6ccAAAAJ">Google Scholar</a><span>Papers and citations</span></li>
+      <li><a href="https://orcid.org/0009-0005-7107-8838">ORCID</a><span>0009-0005-7107-8838</span></li>
+      <li><a href="https://github.com/SayyanShaikh">GitHub</a><span>Code and projects</span></li>
+      <li>Government Polytechnic, Joida<span>Karnataka, India</span></li>
+    </ul>
   </section>
 
-  <section id="experience" class="sec" aria-labelledby="experience-h">
-    <h2 id="experience-h">Experience and education</h2>
-    <div class="split">
-      <div>
-        <h3>Work</h3>
-        <ul class="entries">
-          <li><strong>Lecturer, Computer Science &amp; Engineering</strong>Government Polytechnic, Joida<br><span class="when">2016 to present, guest faculty</span></li>
-          <li><strong>Lecturer, Computer Science &amp; Engineering</strong>Government Polytechnic, Karwar<br><span class="when">2013 to 2024, guest faculty</span></li>
-          <li><strong>AI &amp; Machine Learning Intern</strong>Inventeron Technologies and Business Solutions LLP, Bengaluru<br><span class="when">September to December 2025</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Education</h3>
-        <ul class="entries">
-          <li><strong>M.Tech, Computer Science &amp; Engineering</strong>KLE Institute of Technology, Hubballi (VTU)<br><span class="when">2026</span></li>
-          <li><strong>M.Tech, Industrial Automation &amp; Robotics</strong>Srinivas Institute of Technology, Mangaluru (VTU)<br><span class="when">2013, First Class with Distinction</span></li>
-          <li><strong>B.E., Computer Science &amp; Engineering</strong>KLS Vishwanathrao Deshpande Institute of Technology, Haliyal (VTU)<br><span class="when">2011</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="service" class="sec" aria-labelledby="service-h">
-    <h2 id="service-h">Reviewing</h2>
-    <div class="body">
-      <p>Peer reviewer for the International Journal of Innovative Research in Technology (IJIRT), and a member of the editorial and review board of JATIR.</p>
-    </div>
-  </section>
-
-  <section id="contact" class="sec contact" aria-labelledby="contact-h">
-    <h2 id="contact-h">Contact</h2>
-    <div class="body">
-      <a class="email" href="mailto:sayyan@sayyanshaikh.com">sayyan@sayyanshaikh.com</a>
-      <p>Write to me about research, teaching material or training work. I am also on <a href="https://scholar.google.com/citations?user=T5rE6ccAAAAJ">Google Scholar</a>, <a href="https://orcid.org/0009-0005-7107-8838">ORCID</a> and <a href="https://github.com/SayyanShaikh">GitHub</a>.</p>
+  <section class="panel" id="ask" role="tabpanel" aria-labelledby="t-ask">
+    <h2>Ask me</h2>
+    <div class="ask">
+      <p>Ask me anything: about teaching, research, a career in computer science, or about me. Your name and email are optional. Leave an email if you would like a reply.</p>
+      <form action="https://formsubmit.co/sayyan@sayyanshaikh.com" method="POST">
+        <input type="hidden" name="_subject" value="New question from sayyanshaikh.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://sayyanshaikh.com/thanks.html">
+        <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label for="q">Your question</label>
+        <textarea id="q" name="question" required maxlength="3000"></textarea>
+        <div class="row">
+          <div><label for="n">Your name <small>(optional)</small></label><input id="n" type="text" name="name" autocomplete="name" maxlength="120"></div>
+          <div><label for="e">Your email <small>(optional)</small></label><input id="e" type="email" name="email" autocomplete="email" maxlength="200"></div>
+        </div>
+        <button type="submit">Send question</button>
+      </form>
     </div>
   </section>
 
 </main>
 
-<footer class="wrap">
-  <div class="foot">
-    <span>© 2026 Sayyan Shaikh</span>
-    <span>Last updated November 2026</span>
-  </div>
-</footer>
+<footer class="wrap"><div class="foot"><span>© 2026 Sayyan Shaikh</span><span>Background music is generated in your browser, not recorded.</span></div></footer>
+
+<button class="music" id="music" type="button" aria-pressed="false"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span id="music-label">Play music</span></button>
+
+<script>
+(() => {
+  /* ---------- Tabs ---------- */
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+  function show(id, focus) {
+    const i = Math.max(0, panels.findIndex(p => p.id === id));
+    tabs.forEach((t, k) => { t.setAttribute('aria-selected', k === i); t.tabIndex = k === i ? 0 : -1; });
+    panels.forEach((p, k) => { p.hidden = k !== i; });
+    if (focus) tabs[i].focus();
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', e => {
+      e.preventDefault();
+      history.replaceState(null, '', '#' + panels[i].id);
+      show(panels[i].id);
+      const top = document.querySelector('.monitor').offsetHeight;
+      window.scrollTo({ top, behavior: 'instant' });
+    });
+    t.addEventListener('keydown', e => {
+      let k = null;
+      if (e.key === 'ArrowRight') k = (i + 1) % tabs.length;
+      if (e.key === 'ArrowLeft') k = (i - 1 + tabs.length) % tabs.length;
+      if (e.key === 'Home') k = 0;
+      if (e.key === 'End') k = tabs.length - 1;
+      if (k !== null) { e.preventDefault(); history.replaceState(null, '', '#' + panels[k].id); show(panels[k].id, true); }
+    });
+  });
+  show(location.hash.slice(1) || 'about');
+  window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+
+  /* ---------- Photo viewer ---------- */
+  const dlg = document.getElementById('viewer');
+  document.querySelectorAll('.gallery button').forEach(b => b.addEventListener('click', () => {
+    document.getElementById('viewer-img').src = b.dataset.full;
+    document.getElementById('viewer-img').alt = b.querySelector('img').alt;
+    document.getElementById('viewer-cap').textContent = b.dataset.cap;
+    dlg.showModal();
+  }));
+  document.getElementById('viewer-close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  /* ---------- Stickman ---------- */
+  const svg = document.getElementById('stage'), man = document.getElementById('man'), board = document.getElementById('board'), chalk = document.getElementById('chalk');
+  const L = id => document.getElementById(id);
+  const armL = L('armL'), armR = L('armR'), legL = L('legL'), legR = L('legR');
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const floorY = 100, speed = 62, teach = 4.2, pause = 1.5;
+  let W = 0, boardX = 0, stopX = 0, cycle = 0;
+  function layout() {
+    W = svg.clientWidth;
+    boardX = Math.round(W * (W < 640 ? 0.62 : 0.72));
+    board.setAttribute('transform', `translate(${boardX},${floorY - 86})`);
+    stopX = boardX - 30;
+    cycle = (stopX + 30) / speed + teach + (W + 30 - stopX) / speed + pause;
+  }
+  function rot(el, a) { el.setAttribute('transform', `rotate(${a.toFixed(1)} 0 ${el.getAttribute('y1')})`); }
+  function pose(x, walking, t, teaching) {
+    const s = Math.sin(t * Math.PI * 2 * 1.7);
+    const bob = walking ? -Math.abs(s) * 2 : 0;
+    man.setAttribute('transform', `translate(${x.toFixed(1)},${(floorY + bob).toFixed(1)})`);
+    if (walking) { rot(legL, s * 28); rot(legR, -s * 28); rot(armL, 24 - s * 16); rot(armR, -24 + s * 16); }
+    else { rot(legL, 12); rot(legR, -12); rot(armL, 22); rot(armR, teaching ? -128 + Math.sin(t * 6) * 10 : -22); }
+  }
+  layout();
+  window.addEventListener('resize', layout);
+  if (still) { pose(stopX, false, 0, true); chalk.style.strokeDasharray = 'none'; }
+  else {
+    chalk.style.strokeDasharray = '1'; chalk.style.strokeDashoffset = '1';
+    const start = performance.now();
+    function frame(now) {
+      const t = (now - start) / 1000, c = t % cycle;
+      const a = (stopX + 30) / speed, b = a + teach, d = b + (W + 30 - stopX) / speed;
+      if (c < a) { pose(-30 + c * speed, true, t); chalk.style.strokeDashoffset = '1'; }
+      else if (c < b) { pose(stopX, false, t, true); chalk.style.strokeDashoffset = String(Math.max(0, 1 - (c - a) / (teach * 0.8))); }
+      else if (c < d) { pose(stopX + (c - b) * speed, true, t); chalk.style.strokeDashoffset = '0'; }
+      else { pose(W + 40, false, t); }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  /* ---------- Music: generated in the browser ---------- */
+  const btn = document.getElementById('music'), label = document.getElementById('music-label');
+  let ctx = null, master = null, timer = null, next = 0, step = 0;
+  const hz = n => 440 * Math.pow(2, (n - 69) / 12);
+  const chords = [[57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62]];
+  const scale = [69, 72, 74, 76, 79, 81];
+  function voice(freq, at, dur, type, gain, dest) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.setValueAtTime(0, at);
+    g.gain.linearRampToValueAtTime(gain, at + Math.min(1.6, dur * 0.3));
+    g.gain.linearRampToValueAtTime(0, at + dur);
+    o.connect(g); g.connect(dest); o.start(at); o.stop(at + dur + 0.05);
+  }
+  function pluck(freq, at, dest) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = 'sine'; o.frequency.value = freq;
+    g.gain.setValueAtTime(0.0001, at); g.gain.exponentialRampToValueAtTime(0.22, at + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, at + 1.4);
+    o.connect(g); g.connect(dest); o.start(at); o.stop(at + 1.5);
+  }
+  function build() {
+    ctx = new (window.AudioContext || window.webkitAudioContext)();
+    master = ctx.createGain(); master.gain.value = 0;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 1400;
+    const delay = ctx.createDelay(); delay.delayTime.value = 0.42;
+    const fb = ctx.createGain(); fb.gain.value = 0.35;
+    delay.connect(fb); fb.connect(delay); delay.connect(lp);
+    lp.connect(master); master.connect(ctx.destination);
+    ctx.pad = lp; ctx.echo = delay;
+  }
+  function schedule() {
+    while (next < ctx.currentTime + 1.2) {
+      const beat = 0.5, bar = 16;
+      if (step % bar === 0) chords[(step / bar) % chords.length].forEach(n => { voice(hz(n), next, bar * beat + 1.5, 'triangle', 0.05, ctx.pad); voice(hz(n - 12), next, bar * beat + 1.5, 'sine', 0.04, ctx.pad); });
+      if (step % 2 === 0 && Math.random() < 0.55) { const f = hz(scale[Math.floor(Math.random() * scale.length)]); pluck(f, next, ctx.echo); pluck(f, next, ctx.pad); }
+      next += beat; step++;
+    }
+  }
+  btn.addEventListener('click', async () => {
+    const on = btn.getAttribute('aria-pressed') !== 'true';
+    if (on) {
+      if (!ctx) build();
+      await ctx.resume();
+      next = ctx.currentTime + 0.1;
+      master.gain.cancelScheduledValues(ctx.currentTime);
+      master.gain.linearRampToValueAtTime(0.6, ctx.currentTime + 2);
+      schedule(); timer = setInterval(schedule, 250);
+      btn.setAttribute('aria-pressed', 'true'); label.textContent = 'Pause music';
+    } else {
+      master.gain.cancelScheduledValues(ctx.currentTime);
+      master.gain.setValueAtTime(master.gain.value, ctx.currentTime);
+      master.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.8);
+      clearInterval(timer); setTimeout(() => ctx.suspend(), 900);
+      btn.setAttribute('aria-pressed', 'false'); label.textContent = 'Play music';
+    }
+  });
+})();
+</script>
 </body>
 </html>
