@@ -176,8 +176,12 @@
   .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
   .gallery button { all: unset; cursor: zoom-in; display: block; position: relative; overflow: hidden; border-radius: 6px; background: var(--rule); }
   .gallery button:focus-visible { outline: 3px solid var(--saffron); outline-offset: 3px; }
-  .gallery img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .gallery img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
   .gallery .big { grid-column: span 2; grid-row: span 2; }
+  .gallery .wide { grid-column: span 2; }
+  .gallery figure { margin: 0; min-height: 0; }
+  .gallery .big button, .gallery .wide button { height: 100%; width: 100%; }
+  .gallery .big img, .gallery .wide img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
   .gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 12px 10px; color: var(--white); font-size: .92rem; background: linear-gradient(transparent, rgba(16,28,51,.8)); }
   dialog.viewer { border: 0; padding: 0; background: transparent; max-width: min(92vw, 900px); }
   dialog.viewer::backdrop { background: rgba(16,28,51,.9); }
@@ -250,8 +254,11 @@
     .portrait { order: -1; width: 120px; }
     .monitor-top .where { display: none; }
     .traces { top: 46%; }
-    .gallery { grid-template-columns: 1fr 1fr; }
+    .gallery { grid-template-columns: 1fr 1fr; grid-auto-flow: dense; gap: 8px; }
+    .gallery figcaption { font-size: .8rem; padding: 18px 8px 6px; }
     .gallery .big { grid-column: span 2; grid-row: auto; }
+    .gallery .big img, .gallery .wide img { position: static; aspect-ratio: 1; height: auto; }
+    .gallery .wide img { aspect-ratio: 2; }
     .timeline::before { left: 7px; }
     .timeline li { grid-template-columns: minmax(0, 1fr); padding-left: 32px; }
     .timeline li::before { left: 1px; }
@@ -353,9 +360,9 @@
       <figure style="margin:0"><button type="button" data-full="/photos/trek-1.jpg" data-cap="Trek, December 2025"><img src="/photos/trek-1-sm.jpg" width="480" height="480" alt="Sayyan smiling in the forest, wearing a brown jacket" loading="lazy"><figcaption>Trek, December 2025</figcaption></button></figure>
       <figure style="margin:0"><button type="button" data-full="/photos/trail-2.jpg" data-cap="Resting on a fallen tree, April 2026"><img src="/photos/trail-2-sm.jpg" width="480" height="480" alt="Sayyan in sunglasses and a checked shirt, sitting on a fallen tree" loading="lazy"><figcaption>Resting on a fallen tree, April 2026</figcaption></button></figure>
       <figure style="margin:0"><button type="button" data-full="/photos/trek-2.jpg" data-cap="Up a tree, December 2025"><img src="/photos/trek-2-sm.jpg" width="480" height="480" alt="Sayyan standing in the fork of a tree" loading="lazy"><figcaption>Up a tree, December 2025</figcaption></button></figure>
-      <figure style="margin:0"><button type="button" data-full="/photos/cuff-1.jpg" data-cap="My calligraphy cuff, engraved with Surah Ya-Sin 36:40"><img src="/photos/cuff-1-sm.jpg" width="480" height="480" alt="Gold cuff bracelet engraved with Arabic calligraphy, on a slice of wood" loading="lazy"><figcaption>My calligraphy cuff</figcaption></button></figure>
-      <figure style="margin:0"><button type="button" data-full="/photos/cuff-2.jpg" data-cap="The cuff from the other side: the verse ends with &quot;each floating in its orbit&quot;"><img src="/photos/cuff-2-sm.jpg" width="480" height="480" alt="The same gold calligraphy cuff seen from its other end" loading="lazy"><figcaption>The cuff, other side</figcaption></button></figure>
       <figure style="margin:0"><button type="button" data-full="/photos/office-2.jpg" data-cap="In the department"><img src="/photos/office-2-sm.jpg" width="480" height="480" alt="Sayyan at his office desk, looking at the camera" loading="lazy"><figcaption>In the department</figcaption></button></figure>
+      <figure class="wide" style="margin:0"><button type="button" data-full="/photos/cuff-1.jpg" data-cap="My calligraphy cuff, engraved with Surah Ya-Sin 36:40"><img src="/photos/cuff-1-wide.jpg" width="1200" height="600" alt="Gold cuff bracelet engraved with Arabic calligraphy, on a slice of wood" loading="lazy"><figcaption>My calligraphy cuff</figcaption></button></figure>
+      <figure style="margin:0"><button type="button" data-full="/photos/cuff-2.jpg" data-cap="The cuff from the other side: the verse ends with &quot;each floating in its orbit&quot;"><img src="/photos/cuff-2-sm.jpg" width="480" height="480" alt="The same gold calligraphy cuff seen from its other end" loading="lazy"><figcaption>The cuff, other side</figcaption></button></figure>
     </div>
     <dialog class="viewer" id="viewer" aria-label="Photo">
       <button class="close" type="button" id="viewer-close">Close</button>
