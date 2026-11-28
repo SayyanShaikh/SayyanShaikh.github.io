@@ -164,10 +164,21 @@
   .hull-trim { stroke: var(--gold); stroke-width: 1.4; }
   .spear { stroke: #C9A36A; stroke-width: 2.4; stroke-linecap: round; }
   .spear-tip { fill: #DDE3EA; }
-  .tiger { fill: #E8902E; }
-  .tiger-leg { stroke: #E8902E; stroke-width: 5; stroke-linecap: round; }
-  .tiger-tail { fill: none; stroke: #E8902E; stroke-width: 4; stroke-linecap: round; }
-  .tiger-stripe { fill: none; stroke: #1B1206; stroke-width: 2.6; stroke-linecap: round; }
+  .tiger { fill: #E07A1F; }
+  .tl, .tl-far { stroke-width: 9; stroke-linecap: round; }
+  .tl { stroke: #E07A1F; }
+  .tl-far { stroke: #A9540F; }
+  .paw { fill: #E07A1F; }
+  .paw-far { fill: #A9540F; }
+  .tiger-belly, .tiger-cheek { fill: #F6EBD8; }
+  .tiger-tail { fill: none; stroke: #E07A1F; stroke-width: 6; stroke-linecap: round; }
+  .tiger-tail-rings { fill: none; stroke: #1B1206; stroke-width: 6.4; stroke-dasharray: 4 7; }
+  .tiger-stripe { fill: none; stroke: #1B1206; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+  .tiger-stripe.thin { stroke-width: 2; }
+  .tiger-ear { fill: #1B1206; }
+  .ear-in { fill: none; stroke: #F6EBD8; stroke-width: 1.6; stroke-linecap: round; }
+  .tiger-eye { fill: #F2C14E; }
+  .tiger-line { fill: none; stroke: #1B1206; stroke-width: 1.4; stroke-linecap: round; }
   .tiger-dark { fill: #1B1206; }
   .muzzle { fill: #F6E3C6; }
   .current { stroke: var(--signal); stroke-linecap: round; }
@@ -664,45 +675,66 @@
     el('line', { class: 'spear', x1: -8, y1: -33, x2: 58, y2: -45 }, spear);
     el('path', { class: 'spear-tip', d: 'M57 -49 L70 -47.5 L59 -41 Z' }, spear);
     const tg = el('g', {}, g), tb = el('g', {}, tg);
-    const tail = el('path', { class: 'tiger-tail', d: 'M56 -26 Q72 -28 74 -44' }, tb);
-    const legs = [4, 13, 42, 51].map(x => el('line', { class: 'tiger-leg', x1: x, y1: -16, x2: x, y2: -1 }, tb));
-    el('path', { class: 'tiger', d: 'M0 -31 Q26 -39 56 -31 Q63 -23 56 -14 Q26 -10 2 -14 Q-5 -22 0 -31 Z' }, tb);
-    ['M17 -35 q4 7 1 13', 'M29 -36 q4 8 0 14', 'M41 -34 q4 7 0 13', 'M51 -31 q3 5 0 10'].forEach(d => el('path', { class: 'tiger-stripe', d }, tb));
-    const head = el('g', {}, tb);
-    el('path', { class: 'tiger', d: 'M-15 -40 l1 -8 l6 5 Z M-2 -42 l4 -6 l3 7 Z' }, head);
-    el('circle', { class: 'tiger', cx: -6, cy: -32, r: 11 }, head);
-    el('ellipse', { class: 'muzzle', cx: -12, cy: -27, rx: 6, ry: 4.5 }, head);
-    el('circle', { class: 'tiger-dark', cx: -17, cy: -29, r: 1.8 }, head);
-    el('circle', { class: 'tiger-dark', cx: -9, cy: -35, r: 1.6 }, head);
-    el('path', { class: 'tiger-stripe', d: 'M-3 -42 l1 5 M1 -40 l-1 4' }, head);
-    const T = 9;
+    // far-side legs (darker), then tail, body, near-side legs, head
+    const leg = (x, top, cls) => {
+      const lg = el('g', {}, tb);
+      el('line', { class: cls, x1: x, y1: top, x2: x, y2: -4 }, lg);
+      el('ellipse', { class: cls === 'tl-far' ? 'paw-far' : 'paw', cx: x - 3, cy: -2.5, rx: 6, ry: 3 }, lg);
+      el('path', { class: 'tiger-stripe thin', d: `M${x - 4} ${top + 12} h8 M${x - 4} ${top + 20} h8` }, lg);
+      lg.dataset.x = x; lg.dataset.top = top;
+      return lg;
+    };
+    const legs = [leg(18, -46, 'tl-far'), leg(90, -50, 'tl-far')];
+    const up = el('g', { transform: 'translate(0 -10)' }, tb);
+    const tail = el('g', {}, up);
+    el('path', { class: 'tiger-tail', d: 'M102 -46 Q128 -50 134 -70 Q136 -78 131 -82' }, tail);
+    el('path', { class: 'tiger-tail-rings', d: 'M102 -46 Q128 -50 134 -70 Q136 -78 131 -82' }, tail);
+    el('path', { class: 'tiger', d: 'M-6 -46 C10 -62 40 -58 58 -55 C78 -60 99 -57 106 -44 C110 -32 101 -23 90 -21 C70 -17 40 -17 20 -21 C4 -23 -9 -31 -6 -46 Z' }, up);
+    el('path', { class: 'tiger-belly', d: 'M12 -23 C40 -17 70 -17 92 -22 C72 -27 40 -27 12 -23 Z' }, up);
+    ['M16 -58 q5 9 1 20', 'M27 -59 q6 11 1 24 q-1 -12 -5 -22', 'M39 -58 q5 12 0 26', 'M51 -56 q6 12 1 26 q-1 -12 -5 -24', 'M63 -57 q5 11 0 24', 'M75 -58 q6 12 1 25 q-1 -12 -5 -23', 'M87 -56 q5 10 1 22', 'M98 -52 q4 8 0 17']
+      .forEach(d => el('path', { class: 'tiger-stripe', d }, up));
+    legs.push(leg(8, -44, 'tl'), leg(80, -48, 'tl'));
+    const head = el('g', {}, up);
+    const hs = el('g', { transform: 'translate(-15 -46) scale(1.2) translate(15 46)' }, head);
+    el('path', { class: 'tiger-ear', d: 'M-4 -60 q2 -10 10 -6 q-1 6 -6 9 Z M-22 -63 q-1 -10 8 -8 q0 6 -4 10 Z' }, hs);
+    el('path', { class: 'ear-in', d: 'M0 -61 q2 -5 5 -3 M-19 -63 q0 -5 4 -4' }, hs);
+    el('path', { class: 'tiger', d: 'M2 -56 C-6 -67 -28 -66 -34 -52 C-38 -42 -35 -32 -26 -29 C-17 -26 -6 -29 -1 -38 C1 -44 4 -50 2 -56 Z' }, hs);
+    el('path', { class: 'tiger-cheek', d: 'M-12 -30 C-20 -24 -32 -27 -36 -37 C-30 -33 -22 -33 -12 -30 Z M-4 -37 C-1 -31 -5 -27 -11 -28 C-8 -31 -6 -33 -4 -37 Z' }, hs);
+    el('ellipse', { class: 'muzzle', cx: -30, cy: -40, rx: 7, ry: 5.5 }, hs);
+    el('path', { class: 'tiger-dark', d: 'M-37 -45 l5 -1 l-2 4 Z' }, hs);
+    el('path', { class: 'tiger-line', d: 'M-35 -37 q4 3 9 1' }, hs);
+    el('ellipse', { class: 'tiger-eye', cx: -22, cy: -50, rx: 3, ry: 2.2 }, hs);
+    el('circle', { class: 'tiger-dark', cx: -23, cy: -50, r: 1.2 }, hs);
+    ['M-13 -64 l-1 6', 'M-17 -63 l1 5', 'M-9 -63 l-2 5', 'M-4 -52 q4 3 4 8', 'M-6 -46 q4 2 5 6', 'M-18 -45 q-3 3 -2 6']
+      .forEach(d => el('path', { class: 'tiger-stripe thin', d }, hs));
+    const T = 9.5;
     let mx = 0;
     return {
       g,
-      layout() { mx = Math.round(W * (W < 640 ? .18 : .3)); },
+      layout() { mx = Math.round(W * (W < 640 ? .12 : .26)); },
       frame(t) {
-        const c = t % T, near = mx + 104, far = mx + (W < 640 ? 170 : 200);
+        const c = t % T, near = mx + 122, far = mx + (W < 640 ? 200 : 250);
         limb(m.legL, 16); limb(m.legR, -18); m.face.setAttribute('transform', 'translate(1.6 0)');
         const thrust = c > 4.55 && c < 5.55 ? Math.sin((c - 4.55) * Math.PI) * 12 : 0;
         limb(m.armL, -60 + thrust * .3); limb(m.armR, -66 + thrust * .4);
         place(spear, thrust, -thrust * .12);
         place(m.g, mx, FLOOR);
-        let x, y = 0, sx = 1, sy = 1, flip = false, walk = false, tailA = Math.sin(t * 3) * 6, bob = 0;
-        if (c < 3.2) { x = W + 90 - (W + 90 - far) * (c / 3.2); walk = true; }
-        else if (c < 4.2) { x = far; sy = .84; tailA = Math.sin(t * 16) * 14; }
-        else if (c < 4.9) { const p = (c - 4.2) / .7; x = far - (far - near) * ease(p); y = -Math.sin(p * Math.PI) * 34; sx = 1.08; sy = .94; }
-        else if (c < 5.5) { const p = (c - 4.9) / .6; x = near + (far - 40 - near) * ease(p); y = -Math.sin(p * Math.PI) * 10; }
-        else if (c < 6.6) { x = far - 40; bob = Math.sin(t * 10) * 1.3; tailA = Math.sin(t * 8) * 10; }
-        else if (c < 8.6) { const p = (c - 6.6) / 2; x = far - 40 + (W + 140 - far) * p; flip = true; walk = true; }
-        else x = W + 200;
-        const s = Math.sin(t * Math.PI * 4);
-        legs.forEach((l, i) => rot(l, walk ? (i % 2 ? s : -s) * 22 : 0, l.getAttribute('x1'), -16));
-        rot(tail, tailA, 56, -26);
+        let x, y = 0, sx = 1, sy = 1, flip = false, walk = false, tailA = Math.sin(t * 2.5) * 5, bob = 0;
+        if (c < 3.3) { x = W + 150 - (W + 150 - far) * (c / 3.3); walk = true; }
+        else if (c < 4.2) { x = far; sy = .82; tailA = Math.sin(t * 16) * 9; }
+        else if (c < 4.9) { const p = (c - 4.2) / .7; x = far - (far - near) * ease(p); y = -Math.sin(p * Math.PI) * 30; sx = 1.06; sy = .95; }
+        else if (c < 5.5) { const p = (c - 4.9) / .6; x = near + (far - 40 - near) * ease(p); y = -Math.sin(p * Math.PI) * 8; }
+        else if (c < 6.8) { x = far - 40; bob = Math.sin(t * 10) * 1.4; tailA = Math.sin(t * 8) * 8; }
+        else if (c < 9) { const p = (c - 6.8) / 2.2; x = far - 40 + (W + 260 - far) * p; flip = true; walk = true; }
+        else x = W + 300;
+        const s = Math.sin(t * Math.PI * 3.2);
+        legs.forEach((l, i) => rot(l, walk ? (i % 2 ? s : -s) * (i < 2 ? 14 : 18) * (i % 2 ? 1 : -1) : 0, l.dataset.x, l.dataset.top));
+        rot(tail, tailA, 102, -46);
         place(head, 0, bob);
         tb.setAttribute('transform', `scale(${sx} ${sy})`);
-        if (flip) place(tg, x + 56, FLOOR + y, ' scale(-1 1)'); else place(tg, x, FLOOR + y);
+        if (flip) place(tg, x + 96, FLOOR + y, ' scale(-1 1)'); else place(tg, x, FLOOR + y);
       },
-      still() { this.frame(5.8); }
+      still() { this.frame(6); }
     };
   }
 
