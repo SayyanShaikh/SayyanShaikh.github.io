@@ -15,8 +15,11 @@
 <meta property="og:url" content="https://sayyanshaikh.com/">
 <meta property="og:title" content="Sayyan Shaikh – Lecturer, Computer Science &amp; Engineering">
 <meta property="og:description" content="Teaching computer science since 2013. Researching artificial intelligence and machine learning.">
-<meta property="og:image" content="https://sayyanshaikh.com/portrait.jpg">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://sayyanshaikh.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sayyan Shaikh, Lecturer in Computer Science &amp; Engineering">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Spectral:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -57,8 +60,7 @@
       "headline": "FaceAnchor: A Session-Anchored, Proxy-Resistant Face Recognition Attendance System with Calibrated LBPH Thresholds",
       "author": [{ "@id": "https://sayyanshaikh.com/#me" }, { "@type": "Person", "name": "Rizawan N. Shaikh" }],
       "datePublished": "2026",
-      "isPartOf": { "@type": "Periodical", "name": "International Journal of Innovative Research in Technology", "issn": "2349-6002" },
-      "url": "https://ijirt.org/article?manuscript=211422"
+      "isPartOf": { "@type": "Periodical", "name": "International Journal of Innovative Research in Technology", "issn": "2349-6002" }
     },
     {
       "@type": "ScholarlyArticle",
@@ -70,8 +72,10 @@
       "@type": "ScholarlyArticle",
       "headline": "Adaptive Face Recognition and Emotion Analysis Framework (AFREAF): A Real-Time Multi-Modal Deep Learning System for Comprehensive Facial Attribute Detection",
       "author": [{ "@id": "https://sayyanshaikh.com/#me" }, { "@type": "Person", "name": "Prasanna Bammigatti" }, { "@type": "Person", "name": "Rizawan N. Shaikh" }],
-      "datePublished": "2026",
-      "pagination": "241-248"
+      "datePublished": "2026-07-26",
+      "pagination": "241-248",
+      "sameAs": "https://doi.org/10.65890/dmp-lncse.ICICCS26.206",
+      "url": "https://digitalmanuscriptpedia.com/conferences/index.php/DMP-LNCSE/article/view/206"
     },
     {
       "@type": "ScholarlyArticle",
@@ -79,7 +83,8 @@
       "author": [{ "@id": "https://sayyanshaikh.com/#me" }, { "@type": "Person", "name": "N. V. Londhe" }],
       "datePublished": "2013",
       "isPartOf": { "@type": "Periodical", "name": "International Journal of Inventive Engineering and Sciences", "issn": "2319-9598" },
-      "pagination": "6-12"
+      "pagination": "6-12",
+      "url": "https://www.ijies.org/portfolio-item/h0246071813/"
     }
   ]
 }
@@ -335,6 +340,16 @@
   .wa-form input:focus { outline: 2px solid #075E54; }
   .wa-form button { border: 0; border-radius: 999px; background: #128C7E; color: #fff; font: 700 .95rem var(--sans); padding: 0 16px; cursor: pointer; }
 
+  details.courses { border-top: 2px solid var(--gold); }
+  details.courses summary { cursor: pointer; padding: 14px 0; font-weight: 700; color: var(--link); list-style: none; }
+  details.courses summary::-webkit-details-marker { display: none; }
+  details.courses summary::before { content: "+"; display: inline-block; width: 1.4em; color: var(--gold); font-weight: 700; }
+  details.courses[open] summary::before { content: "–"; }
+  details.courses[open] summary { color: var(--text); }
+  details.courses table thead th { border-top: 1px solid var(--rule); }
+  /* floating buttons tuck away while scrolling down on phones */
+  .wa-fab, .music { transition: transform .3s ease, opacity .3s ease; }
+  .fab-away { transform: translateY(140%); opacity: 0; pointer-events: none; }
   footer .foot { border-top: 1px solid var(--rule); padding: 20px 0 96px; color: var(--muted); font-size: .925rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 
   @media (max-width: 900px) {
@@ -360,7 +375,10 @@
     td { border-top: 0; padding-top: 0; }
     thead { display: none; }
     tbody th { width: auto; }
-    .music { padding: 12px; }
+    .music { padding: 10px; right: 12px; bottom: 12px; }
+    .wa-fab { width: 46px; height: 46px; left: 12px; bottom: 12px; }
+    .wa-fab svg { width: 25px; height: 25px; }
+    .wa-card { left: 12px; bottom: 68px; }
     .music #music-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   }
 </style>
@@ -389,16 +407,16 @@
     </div>
     <figure class="portrait" id="portrait" aria-label="Photos of Sayyan Shaikh">
       <img src="/rot/1-headshot.jpg" width="480" height="480" alt="Sayyan Shaikh, studio portrait" class="on">
-      <img src="/rot/10-sealink.jpg" width="480" height="480" alt="Sayyan at the Sea Link, Mumbai" loading="lazy">
-      <img src="/rot/11-lake.jpg" width="480" height="480" alt="Sayyan by the river" loading="lazy">
-      <img src="/rot/2-office.jpg" width="480" height="480" alt="Sayyan at his office desk" loading="lazy">
-      <img src="/rot/3-desk.jpg" width="480" height="480" alt="Sayyan at work, hand on chin" loading="lazy">
-      <img src="/rot/4-elephant.jpg" width="480" height="480" alt="Sayyan with an elephant" loading="lazy">
-      <img src="/rot/5-trek.jpg" width="480" height="480" alt="Sayyan on a forest trek" loading="lazy">
-      <img src="/rot/6-captain.jpg" width="480" height="480" alt="Sayyan in the forest" loading="lazy">
-      <img src="/rot/7-shades.jpg" width="480" height="480" alt="Sayyan in sunglasses on a trail" loading="lazy">
-      <img src="/rot/8-stairs.jpg" width="480" height="480" alt="Sayyan on forest steps" loading="lazy">
-      <img src="/rot/9-gazebo.jpg" width="480" height="480" alt="Sayyan at a hilltop shelter" loading="lazy">
+      <img data-src="/rot/10-sealink.jpg" width="480" height="480" alt="Sayyan at the Sea Link, Mumbai">
+      <img data-src="/rot/11-lake.jpg" width="480" height="480" alt="Sayyan by the river">
+      <img data-src="/rot/2-office.jpg" width="480" height="480" alt="Sayyan at his office desk">
+      <img data-src="/rot/3-desk.jpg" width="480" height="480" alt="Sayyan at work, hand on chin">
+      <img data-src="/rot/4-elephant.jpg" width="480" height="480" alt="Sayyan with an elephant">
+      <img data-src="/rot/5-trek.jpg" width="480" height="480" alt="Sayyan on a forest trek">
+      <img data-src="/rot/6-captain.jpg" width="480" height="480" alt="Sayyan in the forest">
+      <img data-src="/rot/7-shades.jpg" width="480" height="480" alt="Sayyan in sunglasses on a trail">
+      <img data-src="/rot/8-stairs.jpg" width="480" height="480" alt="Sayyan on forest steps">
+      <img data-src="/rot/9-gazebo.jpg" width="480" height="480" alt="Sayyan at a hilltop shelter">
     </figure>
   </div>
   <div class="stage" aria-hidden="true">
@@ -445,24 +463,13 @@
     <h2>My photos</h2>
     <div class="gallery">
       <figure class="big"><button type="button" data-full="/photos/office-1.jpg" data-cap="At work in Joida"><img src="/photos/office-1.jpg" width="900" height="900" alt="Sayyan at his desk, hand on chin, in a dark blue shirt" loading="lazy"><figcaption>At work in Joida</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/stairs.jpg" data-cap="Forest steps, January 2023"><img src="/photos/stairs-sm.jpg" width="480" height="480" alt="Sayyan in a Captain America T-shirt on forest steps" loading="lazy"><figcaption>Forest steps, January 2023</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/gazebo.jpg" data-cap="Hilltop shelter, January 2023"><img src="/photos/gazebo-sm.jpg" width="480" height="480" alt="Sayyan sitting at a blue hilltop shelter" loading="lazy"><figcaption>Hilltop shelter, January 2023</figcaption></button></figure>
-      <figure class="wide"><button type="button" data-full="/photos/elephant-wide.jpg" data-cap="With the elephants"><img src="/photos/elephant-wide.jpg" width="1200" height="600" alt="Sayyan smiling beside an elephant, with a second elephant nearby" loading="lazy"><figcaption>With the elephants</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/bike.jpg" data-cap="On the road"><img src="/photos/bike-sm.jpg" width="480" height="480" alt="Sayyan in sunglasses on his motorbike by a forest road" loading="lazy"><figcaption>On the road</figcaption></button></figure>
-      <figure class="wide"><button type="button" data-full="/photos/sealink-wide.jpg" data-cap="Bandra–Worli Sea Link, Mumbai, October 2019"><img src="/photos/sealink-wide.jpg" width="1200" height="600" alt="Sayyan in sunglasses sitting on a sea wall with the Bandra–Worli Sea Link behind him" loading="lazy"><figcaption>Bandra–Worli Sea Link, Mumbai, October 2019</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/sealink.jpg" data-cap="Sea Link, Mumbai, October 2019"><img src="/photos/sealink-sm.jpg" width="480" height="480" alt="Sayyan smiling on the sea wall by the Sea Link" loading="lazy"><figcaption>Sea Link, Mumbai, October 2019</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/captain.jpg" data-cap="By the old tree, December 2025"><img src="/photos/captain-sm.jpg" width="480" height="480" alt="Sayyan in a Captain America T-shirt beside a large tree" loading="lazy"><figcaption>By the old tree, December 2025</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/trek-1.jpg" data-cap="Trek, December 2025"><img src="/photos/trek-1-sm.jpg" width="480" height="480" alt="Sayyan smiling in the forest, wearing a brown jacket" loading="lazy"><figcaption>Trek, December 2025</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/trail-1.jpg" data-cap="Forest trail, April 2026"><img src="/photos/trail-1-sm.jpg" width="480" height="480" alt="Sayyan standing on a forest road in a khaki shirt" loading="lazy"><figcaption>Forest trail, April 2026</figcaption></button></figure>
+      <figure><button type="button" data-full="/photos/elephant.jpg" data-cap="With the elephants"><img src="/photos/elephant-sm.jpg" width="480" height="480" alt="Sayyan smiling beside an elephant" loading="lazy"><figcaption>With the elephants</figcaption></button></figure>
       <figure><button type="button" data-full="/photos/lake.jpg" data-cap="Riverside, July 2021"><img src="/photos/lake-sm.jpg" width="480" height="480" alt="Sayyan in a blue shirt with arms crossed, forest behind him" loading="lazy"><figcaption>Riverside, July 2021</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/river.jpg" data-cap="By the river, July 2021"><img src="/photos/river-sm.jpg" width="480" height="480" alt="Sayyan in a blue shirt beside a river and wooded hills" loading="lazy"><figcaption>By the river, July 2021</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/white.jpg" data-cap="December 2020"><img src="/photos/white-sm.jpg" width="480" height="480" alt="Sayyan in a white shirt and jeans standing on a lawn" loading="lazy"><figcaption>December 2020</figcaption></button></figure>
+      <figure class="wide"><button type="button" data-full="/photos/sealink-wide.jpg" data-cap="Bandra–Worli Sea Link, Mumbai, October 2019"><img src="/photos/sealink-wide.jpg" width="1200" height="600" alt="Sayyan in sunglasses sitting on a sea wall with the Bandra–Worli Sea Link behind him" loading="lazy"><figcaption>Bandra–Worli Sea Link, Mumbai, October 2019</figcaption></button></figure>
+      <figure><button type="button" data-full="/photos/stairs.jpg" data-cap="Forest steps, January 2023"><img src="/photos/stairs-sm.jpg" width="480" height="480" alt="Sayyan in a Captain America T-shirt on forest steps" loading="lazy"><figcaption>Forest steps, January 2023</figcaption></button></figure>
+      <figure><button type="button" data-full="/photos/trek-1.jpg" data-cap="Trek, December 2025"><img src="/photos/trek-1-sm.jpg" width="480" height="480" alt="Sayyan smiling in the forest, wearing a brown jacket" loading="lazy"><figcaption>Trek, December 2025</figcaption></button></figure>
+      <figure><button type="button" data-full="/photos/bike.jpg" data-cap="On the road"><img src="/photos/bike-sm.jpg" width="480" height="480" alt="Sayyan in sunglasses on his motorbike by a forest road" loading="lazy"><figcaption>On the road</figcaption></button></figure>
       <figure><button type="button" data-full="/photos/walk.jpg" data-cap="Campus walk"><img src="/photos/walk-sm.jpg" width="480" height="480" alt="Sayyan walking on a shaded campus path" loading="lazy"><figcaption>Campus walk</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/trail-2.jpg" data-cap="Resting on a fallen tree, April 2026"><img src="/photos/trail-2-sm.jpg" width="480" height="480" alt="Sayyan in sunglasses and a checked shirt, sitting on a fallen tree" loading="lazy"><figcaption>Resting on a fallen tree, April 2026</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/trek-2.jpg" data-cap="Up a tree, December 2025"><img src="/photos/trek-2-sm.jpg" width="480" height="480" alt="Sayyan standing in the fork of a tree" loading="lazy"><figcaption>Up a tree, December 2025</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/office-2.jpg" data-cap="In the department"><img src="/photos/office-2-sm.jpg" width="480" height="480" alt="Sayyan at his office desk, looking at the camera" loading="lazy"><figcaption>In the department</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/mirror.jpg" data-cap="Mirror room at a science centre, 2019"><img src="/photos/mirror-sm.jpg" width="480" height="480" alt="Sayyan taking a selfie in a room of mirrors at a science centre" loading="lazy"><figcaption>Mirror room, 2019</figcaption></button></figure>
-      <figure><button type="button" data-full="/photos/cuff-1.jpg" data-cap="My calligraphy cuff, engraved with Surah Ya-Sin 36:40"><img src="/photos/cuff-1-sm.jpg" width="480" height="480" alt="Gold cuff bracelet engraved with Arabic calligraphy, on a slice of wood" loading="lazy"><figcaption>My calligraphy cuff</figcaption></button></figure>
     </div>
     <dialog class="viewer" id="viewer" aria-label="Photo viewer">
       <div class="zoom-wrap" id="zoom-wrap"><img id="viewer-img" src="" alt=""></div>
@@ -494,20 +501,22 @@
 
     <h3 data-reveal>Papers</h3>
     <ul class="pubs">
-      <li data-reveal><span class="pt">FaceAnchor: A Session-Anchored, Proxy-Resistant Face Recognition Attendance System with Calibrated LBPH Thresholds</span><span class="pa">Sayyan Shaikh, Rizawan N. Shaikh</span><span class="pv">International Journal of Innovative Research in Technology (IJIRT), ISSN 2349-6002, 2026. <a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></span></li>
+      <li data-reveal><span class="pt">FaceAnchor: A Session-Anchored, Proxy-Resistant Face Recognition Attendance System with Calibrated LBPH Thresholds</span><span class="pa">Sayyan Shaikh, Rizawan N. Shaikh</span><span class="pv">International Journal of Innovative Research in Technology (IJIRT), ISSN 2349-6002, 2026. Accepted and paid; IJIRT has not put it online yet.</span></li>
       <li data-reveal><span class="pt">NeuroStress AI: An Advanced Electroencephalography-Based Clinical Decision Support System for Real-Time Stress Detection and Risk Stratification</span><span class="pa">Sayyan Shaikh, Rizawan N. Shaikh, Prasanna Bammigatti, Manjunatha Badiger</span><span class="pv">CISCom 2026, Malta, October 2026. To appear in Springer Communications in Computer and Information Science (CCIS).</span></li>
-      <li data-reveal><span class="pt">Adaptive Face Recognition and Emotion Analysis Framework (AFREAF): A Real-Time Multi-Modal Deep Learning System for Comprehensive Facial Attribute Detection</span><span class="pa">Sayyan Shaikh, Prasanna Bammigatti, Rizawan N. Shaikh</span><span class="pv">DMPedia Lecture Notes in Computer Science &amp; Engineering, pp. 241–248, 2026.</span></li>
-      <li data-reveal><span class="pt">OCR Based Mapless Navigation Method of Robot</span><span class="pa">S. N. Shaikh, N. V. Londhe</span><span class="pv">International Journal of Inventive Engineering and Sciences (IJIES), vol. 1, no. 8, pp. 6–12, 2013.</span></li>
+      <li data-reveal><span class="pt">Adaptive Face Recognition and Emotion Analysis Framework (AFREAF): A Real-Time Multi-Modal Deep Learning System for Comprehensive Facial Attribute Detection</span><span class="pa">Sayyan Shaikh, Prasanna Bammigatti, Rizawan N. Shaikh</span><span class="pv">Proceedings of ICICCS-2026 (poster papers), DMPedia Lecture Notes in Computer Science &amp; Engineering, vol. 1, issue 2, pp. 241–248, 2026. DOI: <a href="https://doi.org/10.65890/dmp-lncse.ICICCS26.206">10.65890/dmp-lncse.ICICCS26.206</a></span></li>
+      <li data-reveal><span class="pt">OCR Based Mapless Navigation Method of Robot</span><span class="pa">S. N. Shaikh, N. V. Londhe</span><span class="pv">International Journal of Inventive Engineering and Sciences (IJIES), vol. 1, no. 8, pp. 6–12, 2013. <a href="https://www.ijies.org/portfolio-item/h0246071813/">Read the paper</a></span></li>
     </ul>
 
     <h3 data-reveal>Projects</h3>
     <div class="projects">
       <article class="project" data-reveal><h4>NeuroStress AI</h4><p>Reads EEG brain signals and grades stress with an ensemble of machine learning models, shown in a Flask web app.</p><p class="muted">Python, scikit-learn, Flask. Code is private until the paper is out.</p></article>
       <article class="project" data-reveal><h4>Driver drowsiness detection</h4><p>Tracks 68 facial landmarks from a webcam and speaks an alert for closed eyes, yawning or nodding. Runs at 12–20 frames per second on a laptop.</p><p><a href="https://github.com/SayyanShaikh/drowsiness-detection">Code on GitHub</a></p></article>
-      <article class="project" data-reveal><h4>FaceAnchor</h4><p>Face-recognition attendance that ties each check-in to a class session, with calibrated LBPH match thresholds.</p><p><a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></p></article>
+      <article class="project" data-reveal><h4>FaceAnchor</h4><p>Face-recognition attendance that ties each check-in to a class session, with calibrated LBPH match thresholds.</p><p class="muted">Published in IJIRT, 2026. Link coming when the journal puts it online.</p></article>
     </div>
 
     <h3 data-reveal>Course material I have written</h3>
+    <details class="courses">
+      <summary>Show all 7 courses</summary>
     <table>
       <thead><tr><th scope="col">Course</th><th scope="col">What I wrote</th></tr></thead>
       <tbody>
@@ -520,6 +529,7 @@
         <tr data-reveal><th scope="row">Engineering Mathematics<small>25SC11I, 25SC21I</small></th><td>A 133-page solutions manual with all 294 answers checked in SymPy</td></tr>
       </tbody>
     </table>
+    </details>
   </section>
 
   <section class="panel contact" id="contact" role="tabpanel" aria-labelledby="t-contact">
@@ -557,7 +567,7 @@
 
 </main>
 
-<footer class="wrap"><div class="foot"><span>© 2026 Sayyan Shaikh</span><span>Background music is generated in your browser, not recorded.</span></div></footer>
+<footer class="wrap"><div class="foot"><span>© 2026 Sayyan Shaikh</span><span>sayyanshaikh.com</span></div></footer>
 
 <button class="wa-fab" id="wa-fab" type="button" aria-expanded="false" aria-controls="wa-card" aria-label="Chat with Sayyan on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.8-1.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></button>
 <div class="wa-card" id="wa-card" role="dialog" aria-label="WhatsApp chat" hidden>
@@ -618,13 +628,29 @@
 
   /* ---------- Rotating portrait ---------- */
   const pics = [...document.querySelectorAll('#portrait img')];
+  const fetchPic = i => { const im = pics[i % pics.length]; if (im && !im.getAttribute('src') && im.dataset.src) im.src = im.dataset.src; };
   let pi = 0;
+  window.addEventListener('load', () => fetchPic(1));
   setInterval(() => {
     if (document.hidden) return;
+    const n = (pi + 1) % pics.length, nx = pics[n];
+    fetchPic(n);
+    if (!nx.complete || !nx.naturalWidth) return;
     pics[pi].classList.remove('on');
-    pi = (pi + 1) % pics.length;
-    pics[pi].classList.add('on');
+    pi = n;
+    nx.classList.add('on');
+    fetchPic(pi + 1);
   }, 2500);
+
+  /* ---------- Floating buttons hide while scrolling down on phones ---------- */
+  const fabs = [document.getElementById('wa-fab'), document.getElementById('music')];
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY, phone = window.matchMedia('(max-width: 640px)').matches;
+    const away = phone && y > lastY + 4 && y > 200 && document.getElementById('wa-card').hidden;
+    if (away || y < lastY - 4 || !phone) fabs.forEach(f => f.classList.toggle('fab-away', away));
+    lastY = y;
+  }, { passive: true });
 
   /* ---------- WhatsApp chat ---------- */
   const fab = document.getElementById('wa-fab'), card = document.getElementById('wa-card');
