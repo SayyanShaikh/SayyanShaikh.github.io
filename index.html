@@ -148,7 +148,7 @@
   .no-js .portrait img:first-child { opacity: 1; }
   @media (prefers-reduced-motion: reduce) { .portrait img { transition: none; } }
 
-  .stage { position: relative; height: 104px; margin-top: 6px; }
+  .stage { position: relative; height: 130px; margin-top: 6px; }
   .stage svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
   .floor { stroke: rgba(255,255,255,.28); stroke-width: 1; }
   .stick { stroke: #fff; stroke-width: 3; stroke-linecap: round; fill: none; }
@@ -158,6 +158,10 @@
   .chalk { fill: none; stroke: #E9F1EA; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
 
   .face circle { fill: #fff; }
+  .mouth { fill: none; stroke: #fff; stroke-width: 1.5; stroke-linecap: round; }
+  .wheel { fill: none; stroke: #C9A36A; stroke-width: 1.8; }
+  .wheel-post { stroke: #8B6A3E; stroke-width: 3; }
+  .hull-trim { stroke: var(--gold); stroke-width: 1.4; }
   .spear { stroke: #C9A36A; stroke-width: 2.4; stroke-linecap: round; }
   .spear-tip { fill: #DDE3EA; }
   .tiger { fill: #E8902E; }
@@ -592,7 +596,7 @@
   const NS = 'http://www.w3.org/2000/svg';
   const stage = document.getElementById('stage');
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const FLOOR = 100, H = 104;
+  const FLOOR = 126, H = 130;
   let W = stage.clientWidth || 1200;
   function el(tag, attrs, parent) {
     const e = document.createElementNS(NS, tag);
@@ -613,8 +617,8 @@
     ['legL', 'legR'].forEach(k => { m[k] = el('line', { class: 'stick', x1: 0, y1: -28, x2: 0, y2: 0 }, g); });
     el('circle', { class: 'stick-head', cx: 0, cy: -66, r: 9 }, g);
     m.face = el('g', { class: 'face' }, g);
-    [[-3.2, -68.6, 1.5], [3.2, -68.6, 1.5], [-3.7, -63.8, .95], [-1.3, -62.5, .95], [1.3, -62.5, .95], [3.7, -63.8, .95]]
-      .forEach(([x, y, r]) => el('circle', { cx: x, cy: y, r }, m.face));
+    [[-3.2, -68.6], [3.2, -68.6]].forEach(([x, y]) => el('circle', { cx: x, cy: y, r: 1.5 }, m.face));
+    el('path', { class: 'mouth', d: 'M-4 -63.8 Q0 -60 4 -63.8' }, m.face);
     return m;
   }
   function stride(m, t, walking) {
@@ -707,7 +711,7 @@
     const g = el('g', { class: 'scene' });
     const lines = [];
     for (let i = 0; i < 13; i++) {
-      const y = 14 + i * 7 + (i % 2) * 2, dash = 30 + (i * 37) % 60, gap = 20 + (i * 23) % 50;
+      const y = 16 + i * 8.6 + (i % 2) * 2, dash = 30 + (i * 37) % 60, gap = 20 + (i * 23) % 50;
       lines.push({ e: el('line', { class: 'current', x1: 0, y1: y, x2: '100%', y2: y, 'stroke-dasharray': `${dash} ${gap}`, 'stroke-width': 1 + (i % 3) * .5, opacity: .18 + (i % 4) * .08 }, g), v: 140 + (i * 53) % 120, per: dash + gap });
     }
     const bubbles = [0, 1, 2, 3].map(() => el('circle', { class: 'bubble', r: 2 }, g));
@@ -722,7 +726,7 @@
         lines.forEach(l => { l.e.style.strokeDashoffset = String(-((t * l.v) % l.per)); });
         const start = W * .82, span = W * .66, base = start - ((t * 18) % span);
         const surge = Math.sin(t * Math.PI * 2 / 1.6);
-        const x = base + surge * 10, y = 58 + Math.sin(t * 1.3) * 7;
+        const x = base + surge * 10, y = 72 + Math.sin(t * 1.3) * 9;
         f.style.opacity = String(clamp((start - base) / 40, 0, 1) * clamp((base - (start - span)) / 40, 0, 1));
         rot(tail, Math.sin(t * (surge < 0 ? 22 : 12)) * 16, 31, 0);
         f.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${(Math.cos(t * 1.3) * 6).toFixed(1)}) scale(1.5)`);
@@ -738,7 +742,7 @@
     };
   }
 
-  /* Ship: a sailing ship pushes through rough waves */
+  /* Ship: a ship fights high seas, the stickman at the wheel */
   function shipScene() {
     const g = el('g', { class: 'scene' });
     const back = el('path', { class: 'wave-back' }, g), mid = el('path', { class: 'wave-mid' }, g);
@@ -747,12 +751,19 @@
     const sail = el('path', { class: 'sail' }, ship);
     el('path', { class: 'jib', d: 'M0 -52 L-24 -14 L0 -14 Z' }, ship);
     const flag = el('path', { class: 'flag' }, ship);
-    el('path', { class: 'hull', d: 'M-36 -6 L36 -6 L27 9 L-28 9 Z' }, ship);
+    el('line', { class: 'wheel-post', x1: 24, y1: -6, x2: 24, y2: -22 }, ship);
+    const wheel = el('g', {}, ship);
+    el('circle', { class: 'wheel', cx: 0, cy: 0, r: 5.5 }, wheel);
+    el('path', { class: 'wheel', d: 'M-8 0 H8 M0 -8 V8 M-5.7 -5.7 L5.7 5.7 M-5.7 5.7 L5.7 -5.7' }, wheel);
+    const crew = el('g', {}, ship);
+    const m = stickman(crew);
+    el('path', { class: 'hull', d: 'M-38 -6 L38 -6 L28 10 L-30 10 Z' }, ship);
+    el('path', { class: 'hull-trim', d: 'M-35 -1 H35' }, ship);
     const front = el('path', { class: 'wave-front' }, g);
-    const spray = [0, 1, 2, 3, 4, 5].map(() => el('circle', { class: 'spray', r: 1.6 }, g));
+    const spray = Array.from({ length: 9 }, () => el('circle', { class: 'spray', r: 1.8 }, g));
+    function swell(t) { return 1 + 1.1 * Math.pow(Math.max(0, Math.sin(t * .45)), 4); }
     function wy(x, t, base, A, k, w, ph) {
-      const big = 1 + .7 * Math.pow(Math.max(0, Math.sin(t * .45)), 4);
-      return base + A * big * Math.sin(k * x - w * t + ph) + A * .45 * Math.sin(k * 2.3 * x - w * 1.6 * t + ph * 2);
+      return base + A * swell(t) * Math.sin(k * x - w * t + ph) + A * .45 * Math.sin(k * 2.3 * x - w * 1.6 * t + ph * 2);
     }
     function wave(t, base, A, k, w, ph) {
       let d = `M0 ${H}`;
@@ -762,24 +773,31 @@
     return {
       g, layout() {},
       frame(t) {
-        back.setAttribute('d', wave(t, 66, 5, .03, 1.2, 0));
-        mid.setAttribute('d', wave(t, 76, 7, .022, 1.6, 1.3));
-        front.setAttribute('d', wave(t, 90, 6, .028, 2.1, 2.6));
+        back.setAttribute('d', wave(t, 76, 8, .028, 1.2, 0));
+        mid.setAttribute('d', wave(t, 90, 11, .02, 1.6, 1.3));
+        front.setAttribute('d', wave(t, 112, 10, .026, 2.1, 2.6));
         const sx = W * (W < 640 ? .5 : .45) + Math.sin(t * .35) * W * .05;
-        const y = wy(sx, t, 76, 7, .022, 1.6, 1.3), y2 = wy(sx + 10, t, 76, 7, .022, 1.6, 1.3);
-        const ang = Math.atan2(y2 - y, 10) * 180 / Math.PI * 1.4;
+        const y = wy(sx, t, 90, 11, .02, 1.6, 1.3), y2 = wy(sx + 10, t, 90, 11, .02, 1.6, 1.3);
+        const ang = clamp(Math.atan2(y2 - y, 10) * 180 / Math.PI * 1.5, -30, 30);
         place(ship, sx, y - 2, ` rotate(${ang.toFixed(1)})`);
-        sail.setAttribute('d', `M4 -54 Q${(24 + Math.sin(t * 3) * 3).toFixed(1)} -36 4 -16 Z`);
-        flag.setAttribute('d', `M2 -58 L${(14 + Math.sin(t * 9) * 2).toFixed(1)} ${(-61 + Math.sin(t * 9 + 1)).toFixed(1)} L2 -64 Z`);
-        const p = (t % 2.6) / 2.6;
+        sail.setAttribute('d', `M4 -54 Q${(24 + Math.sin(t * 3) * 4).toFixed(1)} -36 4 -16 Z`);
+        flag.setAttribute('d', `M2 -58 L${(15 + Math.sin(t * 11) * 2.5).toFixed(1)} ${(-61 + Math.sin(t * 11 + 1) * 1.5).toFixed(1)} L2 -64 Z`);
+        const steer = Math.sin(t * 1.9) * 40 - ang * 1.5;
+        place(wheel, 24, -24, ` rotate(${steer.toFixed(1)})`);
+        const strain = Math.sin(t * 3.8);
+        limb(m.legL, 18 + strain * 4); limb(m.legR, -14 + strain * 4);
+        limb(m.armL, 27 + strain * 6); limb(m.armR, 25 - strain * 6);
+        m.face.setAttribute('transform', 'translate(-1.6 0)');
+        place(crew, 31, -6, ` rotate(${(-ang * .55 + strain * 3).toFixed(1)}) scale(.6)`);
+        const p = (t % 2.2) / 2.2, big = swell(t);
         spray.forEach((s, i) => {
-          const q = clamp(p * 1.6 - i * .05, 0, 1), a = -2.2 - i * .12;
-          s.setAttribute('cx', (sx - 34 + Math.cos(a) * q * 26).toFixed(1));
-          s.setAttribute('cy', (y + Math.sin(a) * q * 26 + q * q * 22).toFixed(1));
+          const q = clamp(p * 1.5 - i * .045, 0, 1), a = -1.9 - i * .14, r = 22 + big * 14;
+          s.setAttribute('cx', (sx - 36 + Math.cos(a) * q * r).toFixed(1));
+          s.setAttribute('cy', (y + Math.sin(a) * q * r + q * q * 26).toFixed(1));
           s.style.opacity = q > 0 && q < 1 ? String(1 - q) : '0';
         });
       },
-      still() { this.frame(2); }
+      still() { this.frame(3.4); }
     };
   }
 
