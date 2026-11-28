@@ -230,11 +230,20 @@
   .gallery .big button, .gallery .wide button { height: 100%; width: 100%; }
   .gallery .big img, .gallery .wide img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
   .gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 12px 10px; color: #fff; font-size: .92rem; background: linear-gradient(transparent, rgba(11,20,38,.85)); }
-  dialog.viewer { border: 0; padding: 0; background: transparent; max-width: min(92vw, 900px); }
-  dialog.viewer::backdrop { background: rgba(6,11,22,.92); }
-  dialog.viewer img { display: block; width: 100%; height: auto; max-height: 82vh; object-fit: contain; border-radius: 6px; }
-  dialog.viewer p { color: #fff; margin: 10px 0 0; }
-  dialog.viewer .close { position: absolute; top: 8px; right: 8px; background: #fff; color: var(--night); border: 0; border-radius: 4px; font: 700 .95rem var(--sans); padding: 8px 12px; cursor: pointer; }
+  dialog.viewer { border: 0; padding: 0; background: transparent; width: min(94vw, 1000px); max-width: none; max-height: 96vh; overflow: visible; color: #fff; }
+  dialog.viewer::backdrop { background: rgba(6,11,22,.94); }
+  .zoom-wrap { position: relative; overflow: hidden; border-radius: 6px; background: #000; touch-action: none; cursor: zoom-in; display: grid; place-items: center; max-height: 78vh; }
+  .zoom-wrap.zoomed { cursor: grab; }
+  .zoom-wrap.dragging { cursor: grabbing; }
+  #viewer-img { display: block; max-width: 100%; max-height: 78vh; width: auto; height: auto; transform-origin: 0 0; transition: transform .25s ease; }
+  .zoom-wrap.dragging #viewer-img, .zoom-wrap.pinching #viewer-img { transition: none; }
+  #viewer-cap { margin: 10px 0 0; }
+  .viewer-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; }
+  .viewer-bar button { white-space: nowrap; }
+  @media (max-width: 640px) { .viewer-bar span { flex-basis: 100%; } }
+  .viewer-bar span { color: var(--muted); font-size: .9rem; margin-right: auto; }
+  .viewer-bar button { background: #fff; color: var(--night); border: 0; border-radius: 4px; font: 700 .95rem var(--sans); padding: 8px 14px; cursor: pointer; }
+  .viewer-bar button:hover { background: var(--gold); }
 
   .timeline { list-style: none; margin: 0 0 56px; padding: 0; position: relative; }
   .timeline::before { content: ""; position: absolute; left: 76px; top: 8px; bottom: 8px; width: 2px; background: var(--rule); }
@@ -455,10 +464,15 @@
       <figure><button type="button" data-full="/photos/mirror.jpg" data-cap="Mirror room at a science centre, 2019"><img src="/photos/mirror-sm.jpg" width="480" height="480" alt="Sayyan taking a selfie in a room of mirrors at a science centre" loading="lazy"><figcaption>Mirror room, 2019</figcaption></button></figure>
       <figure><button type="button" data-full="/photos/cuff-1.jpg" data-cap="My calligraphy cuff, engraved with Surah Ya-Sin 36:40"><img src="/photos/cuff-1-sm.jpg" width="480" height="480" alt="Gold cuff bracelet engraved with Arabic calligraphy, on a slice of wood" loading="lazy"><figcaption>My calligraphy cuff</figcaption></button></figure>
     </div>
-    <dialog class="viewer" id="viewer" aria-label="Photo">
-      <button class="close" type="button" id="viewer-close">Close</button>
-      <img id="viewer-img" src="" alt="">
+    <dialog class="viewer" id="viewer" aria-label="Photo viewer">
+      <div class="zoom-wrap" id="zoom-wrap"><img id="viewer-img" src="" alt=""></div>
       <p id="viewer-cap"></p>
+      <div class="viewer-bar">
+        <span id="viewer-hint">Tap the photo to zoom. Drag to move. Pinch or scroll to zoom more.</span>
+        <button type="button" id="viewer-prev" aria-label="Previous photo">‹ Prev</button>
+        <button type="button" id="viewer-next" aria-label="Next photo">Next ›</button>
+        <button type="button" id="viewer-close">Close</button>
+      </div>
     </dialog>
   </section>
 
@@ -624,16 +638,71 @@
     window.open('https://wa.me/918722614128?text=' + encodeURIComponent(t), '_blank', 'noopener');
   });
 
-  /* ---------- Photo viewer ---------- */
-  const dlg = document.getElementById('viewer');
-  document.querySelectorAll('.gallery button').forEach(b => b.addEventListener('click', () => {
-    document.getElementById('viewer-img').src = b.dataset.full;
-    document.getElementById('viewer-img').alt = b.querySelector('img').alt;
-    document.getElementById('viewer-cap').textContent = b.dataset.cap;
-    dlg.showModal();
-  }));
+  /* ---------- Photo viewer with zoom ---------- */
+  const dlg = document.getElementById('viewer'), wrap = document.getElementById('zoom-wrap'), vimg = document.getElementById('viewer-img');
+  const vcap = document.getElementById('viewer-cap'), gbtns = [...document.querySelectorAll('.gallery button')];
+  const lim = (v, a, b) => Math.max(a, Math.min(b, v));
+  let zs = 1, zx = 0, zy = 0, gi = 0, moved = false, start = null, pinch = null;
+  const pts = new Map();
+  function apply() {
+    const w = vimg.offsetWidth, h = vimg.offsetHeight;
+    zs = lim(zs, 1, 4); zx = lim(zx, w - w * zs, 0); zy = lim(zy, h - h * zs, 0);
+    vimg.style.transform = `translate(${zx}px, ${zy}px) scale(${zs})`;
+    wrap.classList.toggle('zoomed', zs > 1.01);
+  }
+  function zoomAt(cx, cy, s2) {
+    const r = wrap.getBoundingClientRect(), x = cx - r.left - vimg.offsetLeft, y = cy - r.top - vimg.offsetTop;
+    s2 = lim(s2, 1, 4); zx = x - (x - zx) * (s2 / zs); zy = y - (y - zy) * (s2 / zs); zs = s2; apply();
+  }
+  function resetZoom() { zs = 1; zx = 0; zy = 0; apply(); }
+  function openPhoto(i) {
+    gi = (i + gbtns.length) % gbtns.length;
+    const b = gbtns[gi];
+    resetZoom();
+    vimg.src = b.dataset.full; vimg.alt = b.querySelector('img').alt; vcap.textContent = b.dataset.cap;
+    if (!dlg.open) dlg.showModal();
+  }
+  vimg.addEventListener('load', resetZoom);
+  gbtns.forEach((b, i) => b.addEventListener('click', () => openPhoto(i)));
+  document.getElementById('viewer-prev').addEventListener('click', () => openPhoto(gi - 1));
+  document.getElementById('viewer-next').addEventListener('click', () => openPhoto(gi + 1));
   document.getElementById('viewer-close').addEventListener('click', () => dlg.close());
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') openPhoto(gi - 1); if (e.key === 'ArrowRight') openPhoto(gi + 1); });
+  wrap.addEventListener('pointerdown', e => {
+    wrap.setPointerCapture(e.pointerId);
+    pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    moved = pts.size > 1 ? true : false;
+    start = { x: e.clientX, y: e.clientY, zx, zy };
+    if (pts.size === 2) { const [p1, p2] = [...pts.values()]; pinch = { d: Math.hypot(p1.x - p2.x, p1.y - p2.y), s: zs }; wrap.classList.add('pinching'); }
+  });
+  wrap.addEventListener('pointermove', e => {
+    if (!pts.has(e.pointerId)) return;
+    pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pts.size === 2 && pinch) {
+      const [p1, p2] = [...pts.values()];
+      zoomAt((p1.x + p2.x) / 2, (p1.y + p2.y) / 2, pinch.s * Math.hypot(p1.x - p2.x, p1.y - p2.y) / pinch.d);
+      return;
+    }
+    const dx = e.clientX - start.x, dy = e.clientY - start.y;
+    if (Math.hypot(dx, dy) > 6) moved = true;
+    if (moved && zs > 1.01) { wrap.classList.add('dragging'); zx = start.zx + dx; zy = start.zy + dy; apply(); }
+  });
+  const lift = e => {
+    if (!pts.has(e.pointerId)) return;
+    const dx = e.clientX - start.x;
+    pts.delete(e.pointerId);
+    wrap.classList.remove('dragging');
+    if (pts.size < 2) { pinch = null; wrap.classList.remove('pinching'); }
+    if (pts.size === 1) { const [p] = [...pts.values()]; start = { x: p.x, y: p.y, zx, zy }; return; }
+    if (e.type !== 'pointerup' || pts.size) return;
+    if (!moved) { if (zs > 1.01) resetZoom(); else zoomAt(e.clientX, e.clientY, 2.5); }
+    else if (zs <= 1.01 && Math.abs(dx) > 60) openPhoto(gi + (dx < 0 ? 1 : -1));
+  };
+  wrap.addEventListener('pointerup', lift);
+  wrap.addEventListener('pointercancel', lift);
+  wrap.addEventListener('wheel', e => { e.preventDefault(); zoomAt(e.clientX, e.clientY, zs * (e.deltaY < 0 ? 1.2 : 1 / 1.2)); }, { passive: false });
+  window.addEventListener('resize', () => { if (dlg.open) resetZoom(); });
 
   /* ---------- Header scenes: one per tab ---------- */
   const NS = 'http://www.w3.org/2000/svg';
