@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sayyan Shaikh – Lecturer, Computer Science &amp; Engineering</title>
-<meta name="description" content="Sayyan Shaikh teaches Computer Science and Engineering at Government Polytechnic, Joida, Karnataka, and builds machine learning systems for EEG stress detection, driver drowsiness alerts and face-recognition attendance. About, photos, achievements, contact, and a form to ask him a question.">
+<meta name="description" content="Sayyan Shaikh, Lecturer in Computer Science &amp; Engineering at Government Polytechnic, Joida, Karnataka. Teaching computer science since 2013 and researching artificial intelligence and machine learning.">
 <meta name="author" content="Sayyan Shaikh">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sayyanshaikh.com/">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://sayyanshaikh.com/">
 <meta property="og:title" content="Sayyan Shaikh – Lecturer, Computer Science &amp; Engineering">
-<meta property="og:description" content="Teaching computer science in Karnataka and building machine learning systems: EEG stress detection, drowsiness alerts and face-recognition attendance.">
+<meta property="og:description" content="Teaching computer science since 2013. Researching artificial intelligence and machine learning.">
 <meta property="og:image" content="https://sayyanshaikh.com/portrait.jpg">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -282,6 +282,22 @@
   .ask button:hover { background: #F6C463; }
   .hp { position: absolute; left: -9999px; }
 
+  /* ---------- Achievements reveal ---------- */
+  @media (prefers-reduced-motion: no-preference) {
+    .js #achievements.play .timeline::before { animation: grow 1.8s cubic-bezier(.3,.7,.2,1) both; transform-origin: top; }
+    .js #achievements.play .timeline li { animation: rise .6s ease-out both; animation-delay: calc(var(--i) * 120ms + 150ms); }
+    .js #achievements.play .timeline li::before { animation: pop .5s cubic-bezier(.3,1.7,.5,1) both; animation-delay: calc(var(--i) * 120ms + 300ms); }
+    .js #achievements.play .timeline li.key::before { animation: pop .5s cubic-bezier(.3,1.7,.5,1) both, glow 2.6s ease-in-out infinite; animation-delay: calc(var(--i) * 120ms + 300ms), calc(var(--i) * 120ms + 900ms); }
+    .js #achievements.play .timeline .yr { animation: yr .6s ease-out both; animation-delay: calc(var(--i) * 120ms + 150ms); }
+    .js #achievements [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s ease-out, transform .7s ease-out; transition-delay: var(--d, 0ms); }
+    .js #achievements [data-reveal].in { opacity: 1; transform: none; }
+    @keyframes grow { from { transform: scaleY(0); } }
+    @keyframes rise { from { opacity: 0; transform: translateX(-18px); } }
+    @keyframes pop { from { transform: scale(0); } 70% { transform: scale(1.35); } }
+    @keyframes glow { 0%, 100% { box-shadow: 0 0 0 5px var(--gold-soft); } 50% { box-shadow: 0 0 0 11px rgba(242,177,61,0); } }
+    @keyframes yr { from { opacity: 0; transform: translateX(10px); } }
+  }
+
   /* ---------- Floating buttons ---------- */
   .music { position: fixed; right: 18px; bottom: 18px; z-index: 30; display: inline-flex; align-items: center; gap: 10px; font: 700 .95rem var(--sans); color: #fff; background: var(--night); border: 2px solid var(--gold); border-radius: 999px; padding: 10px 16px 10px 12px; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.4); }
   .music .bars { display: inline-flex; align-items: flex-end; gap: 2px; height: 14px; }
@@ -359,7 +375,7 @@
   <div class="wrap hero">
     <div>
       <h1>Sayyan Shaikh</h1>
-      <p class="lead">I teach computer science at a government polytechnic in Karnataka and build machine learning systems that read brain signals, watch for sleepy drivers and take attendance by face.</p>
+      <p class="lead">Teaching computer science since 2013. Researching artificial intelligence and machine learning.</p>
       <p class="role">Lecturer, Computer Science &amp; Engineering, Government Polytechnic, Joida</p>
     </div>
     <figure class="portrait" id="portrait" aria-label="Photos of Sayyan Shaikh">
@@ -462,32 +478,32 @@
       <li><span class="yr">2011</span><div><strong>B.E., Computer Science &amp; Engineering</strong><span class="d">KLS Vishwanathrao Deshpande Institute of Technology, Haliyal (VTU).</span></div></li>
     </ol>
 
-    <h3>Papers</h3>
+    <h3 data-reveal>Papers</h3>
     <ul class="pubs">
-      <li><span class="pt">FaceAnchor: A Session-Anchored, Proxy-Resistant Face Recognition Attendance System with Calibrated LBPH Thresholds</span><span class="pa">Sayyan Shaikh, Rizawan N. Shaikh</span><span class="pv">International Journal of Innovative Research in Technology (IJIRT), ISSN 2349-6002, 2026. <a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></span></li>
-      <li><span class="pt">NeuroStress AI: An Advanced Electroencephalography-Based Clinical Decision Support System for Real-Time Stress Detection and Risk Stratification</span><span class="pa">Sayyan Shaikh, Rizawan N. Shaikh, Prasanna Bammigatti, Manjunatha Badiger</span><span class="pv">CISCom 2026, Malta, October 2026. To appear in Springer Communications in Computer and Information Science (CCIS).</span></li>
-      <li><span class="pt">Adaptive Face Recognition and Emotion Analysis Framework (AFREAF): A Real-Time Multi-Modal Deep Learning System for Comprehensive Facial Attribute Detection</span><span class="pa">Sayyan Shaikh, Prasanna Bammigatti, Rizawan N. Shaikh</span><span class="pv">DMPedia Lecture Notes in Computer Science &amp; Engineering, pp. 241–248, 2026.</span></li>
-      <li><span class="pt">OCR Based Mapless Navigation Method of Robot</span><span class="pa">S. N. Shaikh, N. V. Londhe</span><span class="pv">International Journal of Inventive Engineering and Sciences (IJIES), vol. 1, no. 8, pp. 6–12, 2013.</span></li>
+      <li data-reveal><span class="pt">FaceAnchor: A Session-Anchored, Proxy-Resistant Face Recognition Attendance System with Calibrated LBPH Thresholds</span><span class="pa">Sayyan Shaikh, Rizawan N. Shaikh</span><span class="pv">International Journal of Innovative Research in Technology (IJIRT), ISSN 2349-6002, 2026. <a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></span></li>
+      <li data-reveal><span class="pt">NeuroStress AI: An Advanced Electroencephalography-Based Clinical Decision Support System for Real-Time Stress Detection and Risk Stratification</span><span class="pa">Sayyan Shaikh, Rizawan N. Shaikh, Prasanna Bammigatti, Manjunatha Badiger</span><span class="pv">CISCom 2026, Malta, October 2026. To appear in Springer Communications in Computer and Information Science (CCIS).</span></li>
+      <li data-reveal><span class="pt">Adaptive Face Recognition and Emotion Analysis Framework (AFREAF): A Real-Time Multi-Modal Deep Learning System for Comprehensive Facial Attribute Detection</span><span class="pa">Sayyan Shaikh, Prasanna Bammigatti, Rizawan N. Shaikh</span><span class="pv">DMPedia Lecture Notes in Computer Science &amp; Engineering, pp. 241–248, 2026.</span></li>
+      <li data-reveal><span class="pt">OCR Based Mapless Navigation Method of Robot</span><span class="pa">S. N. Shaikh, N. V. Londhe</span><span class="pv">International Journal of Inventive Engineering and Sciences (IJIES), vol. 1, no. 8, pp. 6–12, 2013.</span></li>
     </ul>
 
-    <h3>Projects</h3>
+    <h3 data-reveal>Projects</h3>
     <div class="projects">
-      <article class="project"><h4>NeuroStress AI</h4><p>Reads EEG brain signals and grades stress with an ensemble of machine learning models, shown in a Flask web app.</p><p class="muted">Python, scikit-learn, Flask. Code is private until the paper is out.</p></article>
-      <article class="project"><h4>Driver drowsiness detection</h4><p>Tracks 68 facial landmarks from a webcam and speaks an alert for closed eyes, yawning or nodding. Runs at 12–20 frames per second on a laptop.</p><p><a href="https://github.com/SayyanShaikh/drowsiness-detection">Code on GitHub</a></p></article>
-      <article class="project"><h4>FaceAnchor</h4><p>Face-recognition attendance that ties each check-in to a class session, with calibrated LBPH match thresholds.</p><p><a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></p></article>
+      <article class="project" data-reveal><h4>NeuroStress AI</h4><p>Reads EEG brain signals and grades stress with an ensemble of machine learning models, shown in a Flask web app.</p><p class="muted">Python, scikit-learn, Flask. Code is private until the paper is out.</p></article>
+      <article class="project" data-reveal><h4>Driver drowsiness detection</h4><p>Tracks 68 facial landmarks from a webcam and speaks an alert for closed eyes, yawning or nodding. Runs at 12–20 frames per second on a laptop.</p><p><a href="https://github.com/SayyanShaikh/drowsiness-detection">Code on GitHub</a></p></article>
+      <article class="project" data-reveal><h4>FaceAnchor</h4><p>Face-recognition attendance that ties each check-in to a class session, with calibrated LBPH match thresholds.</p><p><a href="https://ijirt.org/article?manuscript=211422">Read the paper</a></p></article>
     </div>
 
-    <h3>Course material I have written</h3>
+    <h3 data-reveal>Course material I have written</h3>
     <table>
       <thead><tr><th scope="col">Course</th><th scope="col">What I wrote</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Artificial Intelligence &amp; Machine Learning<small>20CS51I</small></th><td>59 pages of study notes and a 55-page lab manual with 26 experiments</td></tr>
-        <tr><th scope="row">Thinking Programming with Python<small>25CS21I</small></th><td>57 pages of illustrated notes and a 32-page lab manual</td></tr>
-        <tr><th scope="row">Data Structures with Python<small>25CS33I</small></th><td>Study notes and a lab manual with 23 tested programs</td></tr>
-        <tr><th scope="row">Database Concepts and Technologies<small>25CS31I</small></th><td>A 13-week MySQL and MongoDB lab manual, solutions manual and question bank</td></tr>
-        <tr><th scope="row">Computer Networks<small>25CS32I</small></th><td>A 54-page question bank and a fully solved model paper</td></tr>
-        <tr><th scope="row">System and Network Administration<small>25CS34I</small></th><td>53 pages of study notes and a 34-page lab manual</td></tr>
-        <tr><th scope="row">Engineering Mathematics<small>25SC11I, 25SC21I</small></th><td>A 133-page solutions manual with all 294 answers checked in SymPy</td></tr>
+        <tr data-reveal><th scope="row">Artificial Intelligence &amp; Machine Learning<small>20CS51I</small></th><td>59 pages of study notes and a 55-page lab manual with 26 experiments</td></tr>
+        <tr data-reveal><th scope="row">Thinking Programming with Python<small>25CS21I</small></th><td>57 pages of illustrated notes and a 32-page lab manual</td></tr>
+        <tr data-reveal><th scope="row">Data Structures with Python<small>25CS33I</small></th><td>Study notes and a lab manual with 23 tested programs</td></tr>
+        <tr data-reveal><th scope="row">Database Concepts and Technologies<small>25CS31I</small></th><td>A 13-week MySQL and MongoDB lab manual, solutions manual and question bank</td></tr>
+        <tr data-reveal><th scope="row">Computer Networks<small>25CS32I</small></th><td>A 54-page question bank and a fully solved model paper</td></tr>
+        <tr data-reveal><th scope="row">System and Network Administration<small>25CS34I</small></th><td>53 pages of study notes and a 34-page lab manual</td></tr>
+        <tr data-reveal><th scope="row">Engineering Mathematics<small>25SC11I, 25SC21I</small></th><td>A 133-page solutions manual with all 294 answers checked in SymPy</td></tr>
       </tbody>
     </table>
   </section>
@@ -548,6 +564,7 @@
     tabs.forEach((t, k) => { t.setAttribute('aria-selected', k === i); t.tabIndex = k === i ? 0 : -1; });
     panels.forEach((p, k) => { p.hidden = k !== i; });
     if (window.setScene) window.setScene(panels[i].id);
+    if (panels[i].id === 'achievements' && window.playAchievements) window.playAchievements();
     if (focus) tabs[i].focus();
   }
   tabs.forEach((t, i) => {
@@ -569,6 +586,21 @@
   });
   show(location.hash.slice(1) || 'about');
   window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+
+  /* ---------- Achievements animation ---------- */
+  const ach = document.getElementById('achievements');
+  ach.querySelectorAll('.timeline li').forEach((li, i) => li.style.setProperty('--i', i));
+  const groups = new Map();
+  ach.querySelectorAll('[data-reveal]').forEach(e => {
+    const k = e.parentElement; const n = groups.get(k) || 0; groups.set(k, n + 1);
+    e.style.setProperty('--d', Math.min(n, 8) * 90 + 'ms');
+  });
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px' }) : null;
+  window.playAchievements = () => {
+    ach.classList.remove('play'); void ach.offsetWidth; ach.classList.add('play');
+    ach.querySelectorAll('[data-reveal]').forEach(e => { e.classList.remove('in'); if (io) io.observe(e); else e.classList.add('in'); });
+  };
+  if (!ach.hidden) window.playAchievements();
 
   /* ---------- Rotating portrait ---------- */
   const pics = [...document.querySelectorAll('#portrait img')];
@@ -671,21 +703,33 @@
     const g = el('g', { class: 'scene' });
     el('line', { class: 'floor', x1: 0, y1: FLOOR, x2: '100%', y2: FLOOR }, g);
     const m = stickman(g);
-    const spear = el('g', {}, m.g);
-    el('line', { class: 'spear', x1: -8, y1: -33, x2: 58, y2: -45 }, spear);
-    el('path', { class: 'spear-tip', d: 'M57 -49 L70 -47.5 L59 -41 Z' }, spear);
+    const shaft = el('line', { class: 'spear' }, m.g);
+    const tip = el('path', { class: 'spear-tip' }, m.g);
+    const R = Math.PI / 180;
+    function hold(delta) {
+      const ab = 55 + delta, af = -58 + delta;
+      limb(m.armL, ab); limb(m.armR, af);
+      const hand = a => [-22 * Math.sin(a * R), -50 + 22 * Math.cos(a * R)];
+      const [bx, by] = hand(ab), [fx, fy] = hand(af);
+      let ux = fx - bx, uy = fy - by; const L = Math.hypot(ux, uy); ux /= L; uy /= L;
+      const ex = fx + ux * 44, ey = fy + uy * 44, px = -uy, py = ux;
+      shaft.setAttribute('x1', (bx - ux * 18).toFixed(1)); shaft.setAttribute('y1', (by - uy * 18).toFixed(1));
+      shaft.setAttribute('x2', ex.toFixed(1)); shaft.setAttribute('y2', ey.toFixed(1));
+      tip.setAttribute('d', `M${(ex + px * 4).toFixed(1)} ${(ey + py * 4).toFixed(1)} L${(ex + ux * 13).toFixed(1)} ${(ey + uy * 13).toFixed(1)} L${(ex - px * 4).toFixed(1)} ${(ey - py * 4).toFixed(1)} Z`);
+    }
     const tg = el('g', {}, g), tb = el('g', {}, tg);
-    // far-side legs (darker), then tail, body, near-side legs, head
     const leg = (x, top, cls) => {
-      const lg = el('g', {}, tb);
-      el('line', { class: cls, x1: x, y1: top, x2: x, y2: -4 }, lg);
-      el('ellipse', { class: cls === 'tl-far' ? 'paw-far' : 'paw', cx: x - 3, cy: -2.5, rx: 6, ry: 3 }, lg);
-      el('path', { class: 'tiger-stripe thin', d: `M${x - 4} ${top + 12} h8 M${x - 4} ${top + 20} h8` }, lg);
-      lg.dataset.x = x; lg.dataset.top = top;
-      return lg;
+      const hip = el('g', {}, tb), knee = top + (-4 - top) * .55;
+      el('line', { class: cls, x1: x, y1: top, x2: x, y2: knee }, hip);
+      el('path', { class: 'tiger-stripe thin', d: `M${x - 4} ${top + 8} h8 M${x - 4} ${top + 15} h8` }, hip);
+      const low = el('g', {}, hip);
+      el('line', { class: cls, x1: x, y1: knee, x2: x, y2: -4 }, low);
+      el('ellipse', { class: cls === 'tl-far' ? 'paw-far' : 'paw', cx: x - 3, cy: -2.5, rx: 6, ry: 3 }, low);
+      return { hip, low, x, top, knee };
     };
-    const legs = [leg(18, -46, 'tl-far'), leg(90, -50, 'tl-far')];
-    const up = el('g', { transform: 'translate(0 -10)' }, tb);
+    // far-side legs first (behind the body)
+    const farF = leg(18, -46, 'tl-far'), farB = leg(90, -50, 'tl-far');
+    const up = el('g', {}, tb);
     const tail = el('g', {}, up);
     el('path', { class: 'tiger-tail', d: 'M102 -46 Q128 -50 134 -70 Q136 -78 131 -82' }, tail);
     el('path', { class: 'tiger-tail-rings', d: 'M102 -46 Q128 -50 134 -70 Q136 -78 131 -82' }, tail);
@@ -693,7 +737,7 @@
     el('path', { class: 'tiger-belly', d: 'M12 -23 C40 -17 70 -17 92 -22 C72 -27 40 -27 12 -23 Z' }, up);
     ['M16 -58 q5 9 1 20', 'M27 -59 q6 11 1 24 q-1 -12 -5 -22', 'M39 -58 q5 12 0 26', 'M51 -56 q6 12 1 26 q-1 -12 -5 -24', 'M63 -57 q5 11 0 24', 'M75 -58 q6 12 1 25 q-1 -12 -5 -23', 'M87 -56 q5 10 1 22', 'M98 -52 q4 8 0 17']
       .forEach(d => el('path', { class: 'tiger-stripe', d }, up));
-    legs.push(leg(8, -44, 'tl'), leg(80, -48, 'tl'));
+    const nearF = leg(8, -44, 'tl'), nearB = leg(80, -48, 'tl');
     const head = el('g', {}, up);
     const hs = el('g', { transform: 'translate(-15 -46) scale(1.2) translate(15 46)' }, head);
     el('path', { class: 'tiger-ear', d: 'M-4 -60 q2 -10 10 -6 q-1 6 -6 9 Z M-22 -63 q-1 -10 8 -8 q0 6 -4 10 Z' }, hs);
@@ -707,34 +751,50 @@
     el('circle', { class: 'tiger-dark', cx: -23, cy: -50, r: 1.2 }, hs);
     ['M-13 -64 l-1 6', 'M-17 -63 l1 5', 'M-9 -63 l-2 5', 'M-4 -52 q4 3 4 8', 'M-6 -46 q4 2 5 6', 'M-18 -45 q-3 3 -2 6']
       .forEach(d => el('path', { class: 'tiger-stripe thin', d }, hs));
-    const T = 9.5;
+    // diagonal gait: near-front with far-back, far-front with near-back
+    const gait = [[nearF, 0], [farB, 0], [farF, Math.PI], [nearB, Math.PI]];
+    function legsAt(phase, amp) {
+      gait.forEach(([l, off]) => {
+        const p = phase + off, a = Math.sin(p) * amp;
+        const lift = amp ? Math.max(0, Math.cos(p)) * -38 : 0;
+        rot(l.hip, a, l.x, l.top); rot(l.low, lift, l.x, l.knee);
+      });
+    }
+    const T = 11, STRIDE = 70;
     let mx = 0;
     return {
       g,
       layout() { mx = Math.round(W * (W < 640 ? .12 : .26)); },
       frame(t) {
-        const c = t % T, near = mx + 122, far = mx + (W < 640 ? 200 : 250);
-        limb(m.legL, 16); limb(m.legR, -18); m.face.setAttribute('transform', 'translate(1.6 0)');
-        const thrust = c > 4.55 && c < 5.55 ? Math.sin((c - 4.55) * Math.PI) * 12 : 0;
-        limb(m.armL, -60 + thrust * .3); limb(m.armR, -66 + thrust * .4);
-        place(spear, thrust, -thrust * .12);
-        place(m.g, mx, FLOOR);
+        const c = t % T, near = mx + 124, far = mx + (W < 640 ? 205 : 255);
+        // --- tiger ---
         let x, y = 0, sx = 1, sy = 1, flip = false, walk = false, tailA = Math.sin(t * 2.5) * 5, bob = 0;
-        if (c < 3.3) { x = W + 150 - (W + 150 - far) * (c / 3.3); walk = true; }
-        else if (c < 4.2) { x = far; sy = .82; tailA = Math.sin(t * 16) * 9; }
-        else if (c < 4.9) { const p = (c - 4.2) / .7; x = far - (far - near) * ease(p); y = -Math.sin(p * Math.PI) * 30; sx = 1.06; sy = .95; }
-        else if (c < 5.5) { const p = (c - 4.9) / .6; x = near + (far - 40 - near) * ease(p); y = -Math.sin(p * Math.PI) * 8; }
-        else if (c < 6.8) { x = far - 40; bob = Math.sin(t * 10) * 1.4; tailA = Math.sin(t * 8) * 8; }
-        else if (c < 9) { const p = (c - 6.8) / 2.2; x = far - 40 + (W + 260 - far) * p; flip = true; walk = true; }
+        if (c < 4.5) { x = W + 150 - (W + 150 - far) * (c / 4.5); walk = true; }
+        else if (c < 5.4) { x = far; sy = .82; tailA = Math.sin(t * 16) * 9; }
+        else if (c < 6.1) { const p = (c - 5.4) / .7; x = far - (far - near) * ease(p); y = -Math.sin(p * Math.PI) * 30; sx = 1.06; sy = .95; }
+        else if (c < 6.7) { const p = (c - 6.1) / .6; x = near + (far - 40 - near) * ease(p); y = -Math.sin(p * Math.PI) * 8; }
+        else if (c < 8) { x = far - 40; bob = Math.sin(t * 10) * 1.4; tailA = Math.sin(t * 8) * 8; }
+        else if (c < 10.4) { const p = (c - 8) / 2.4; x = far - 40 + (W + 260 - far) * p; flip = true; walk = true; }
         else x = W + 300;
-        const s = Math.sin(t * Math.PI * 3.2);
-        legs.forEach((l, i) => rot(l, walk ? (i % 2 ? s : -s) * (i < 2 ? 14 : 18) * (i % 2 ? 1 : -1) : 0, l.dataset.x, l.dataset.top));
+        const phase = x / STRIDE * Math.PI * 2;
+        legsAt(walk ? (flip ? -phase : phase) : 0, walk ? 20 : 0);
+        up.setAttribute('transform', `translate(0 ${(-10 - (walk ? Math.abs(Math.sin(phase)) * 1.8 : 0)).toFixed(1)})`);
         rot(tail, tailA, 102, -46);
-        place(head, 0, bob);
+        place(head, 0, bob + (walk ? Math.sin(phase * 2) * .8 : 0));
         tb.setAttribute('transform', `scale(${sx} ${sy})`);
         if (flip) place(tg, x + 96, FLOOR + y, ' scale(-1 1)'); else place(tg, x, FLOOR + y);
+        // --- stickman: both hands on the spear ---
+        let lunge = 0, delta = Math.sin(t * 2.3) * 9;
+        if (c < 4.5) lunge = .35 * Math.pow(Math.max(0, Math.sin(c * Math.PI * 2 / 1.1)), 3);
+        else if (c < 5.5) delta = -4 + Math.sin(t * 9) * 2;
+        else if (c < 6.8) { lunge = Math.sin(clamp((c - 5.75) / 1, 0, 1) * Math.PI); delta = 2; }
+        else if (c < 8) lunge = .6 * Math.pow(Math.max(0, Math.sin(c * Math.PI * 2 / .8)), 3);
+        hold(delta);
+        limb(m.legL, 16 + lunge * 12); limb(m.legR, -18 - lunge * 14);
+        m.face.setAttribute('transform', 'translate(1.6 0)');
+        place(m.g, mx + lunge * 12, FLOOR, ` rotate(${(lunge * 8).toFixed(1)})`);
       },
-      still() { this.frame(6); }
+      still() { this.frame(7.2); }
     };
   }
 
