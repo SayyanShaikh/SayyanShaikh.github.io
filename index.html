@@ -153,7 +153,7 @@
   .no-js .portrait img:first-child { opacity: 1; }
   @media (prefers-reduced-motion: reduce) { .portrait img { transition: none; } }
 
-  .stage { position: relative; height: 130px; margin-top: 6px; }
+  .stage { position: relative; height: 170px; margin-top: 0; }
   .stage svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
   .floor { stroke: rgba(255,255,255,.28); stroke-width: 1; }
   .stick { stroke: #fff; stroke-width: 3; stroke-linecap: round; fill: none; }
@@ -162,6 +162,22 @@
   .board-legs { stroke: #8B6A3E; stroke-width: 3; }
   .chalk { fill: none; stroke: #E9F1EA; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
 
+  .wx-label { font: 12px "Atkinson Hyperlegible", system-ui, sans-serif; fill: rgba(255,255,255,.8); paint-order: stroke; stroke: #0B1426; stroke-width: 3px; stroke-linejoin: round; }
+  .sun { fill: #F7C04A; } .sun-glow { fill: rgba(242,177,61,.2); }
+  .sun-ray { stroke: #F7C04A; stroke-width: 2.4; stroke-linecap: round; }
+  .moon { fill: #F3E9C8; } .moon-bite { fill: #0B1426; } .moon-glow { fill: rgba(243,233,200,.12); } .star { fill: #fff; }
+  .cloud { fill: #E9EEF6; } .cloud-grey { fill: #A3AFC2; } .cloud-dark { fill: #5A6782; } .cloud-storm { fill: #3E4A62; }
+  .rain { stroke: #9CCBF5; stroke-width: 1.4; stroke-linecap: round; fill: none; opacity: .85; }
+  .bolt { fill: #FFE680; stroke: #FFF6C8; stroke-width: 1; }
+  .flash { fill: #fff; pointer-events: none; }
+  .wind { fill: none; stroke: rgba(255,255,255,.55); stroke-width: 1.8; stroke-linecap: round; }
+  .wind.cold { stroke: rgba(191,227,255,.75); }
+  .speck { fill: rgba(220,232,248,.65); }
+  .leaf { stroke-width: 1.2; stroke-linejoin: round; }
+  .umb-top { fill: var(--gold); stroke: #fff; stroke-width: 1; }
+  .umb-handle, .umb-rib { stroke: #fff; stroke-width: 1.6; fill: none; }
+  .bday { font-weight: 700; color: var(--night); background: var(--gold); border-radius: 999px; padding: 4px 14px; font-size: .95rem; white-space: nowrap; }
+  .confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 29; }
   .face circle { fill: #fff; }
   .mouth { fill: none; stroke: #fff; stroke-width: 1.5; stroke-linecap: round; }
   .wheel { fill: none; stroke: #C9A36A; stroke-width: 1.8; }
@@ -736,10 +752,14 @@
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const FLOOR = 126, H = 130;
   let W = stage.clientWidth || 1200;
+  const mkG = tr => { const g = document.createElementNS(NS, 'g'); if (tr) g.setAttribute('transform', tr); stage.appendChild(g); return g; };
+  const skyG = mkG(), world = mkG('translate(0 40)'), fxG = mkG();
+  let RAIN = false;
+  const MEN = [];
   function el(tag, attrs, parent) {
     const e = document.createElementNS(NS, tag);
     for (const k in attrs) e.setAttribute(k, attrs[k]);
-    (parent || stage).appendChild(e);
+    (parent || world).appendChild(e);
     return e;
   }
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
@@ -757,6 +777,11 @@
     m.face = el('g', { class: 'face' }, g);
     [[-3.2, -68.6], [3.2, -68.6]].forEach(([x, y]) => el('circle', { cx: x, cy: y, r: 1.5 }, m.face));
     el('path', { class: 'mouth', d: 'M-4 -63.8 Q0 -60 4 -63.8' }, m.face);
+    m.umb = el('g', { class: 'umb' }, g); m.umb.style.display = 'none';
+    el('line', { class: 'umb-handle', x1: -9.3, y1: -70, x2: -9.3, y2: -97 }, m.umb);
+    el('path', { class: 'umb-top', d: 'M-35 -95 Q-9.3 -124 16.4 -95 Q10 -99 3.6 -95 Q-2.8 -99 -9.3 -95 Q-15.7 -99 -22.1 -95 Q-28.5 -99 -35 -95 Z' }, m.umb);
+    el('path', { class: 'umb-rib', d: 'M-9.3 -110 L-22.1 -95 M-9.3 -110 L3.6 -95' }, m.umb);
+    MEN.push(m);
     return m;
   }
   function stride(m, t, walking) {
@@ -805,7 +830,8 @@
       const ab = 55 + delta, af = -58 + delta;
       limb(m.armL, ab); limb(m.armR, af);
       const hand = a => [-22 * Math.sin(a * R), -50 + 22 * Math.cos(a * R)];
-      const [bx, by] = hand(ab), [fx, fy] = hand(af);
+      let [bx, by] = hand(ab); const [fx, fy] = hand(af);
+      if (RAIN) { const p = (-12 + delta * .5) * R; bx = fx - Math.cos(p) * 10; by = fy - Math.sin(p) * 10; }
       let ux = fx - bx, uy = fy - by; const L = Math.hypot(ux, uy); ux /= L; uy /= L;
       const ex = fx + ux * 44, ey = fy + uy * 44, px = -uy, py = ux;
       shaft.setAttribute('x1', (bx - ux * 18).toFixed(1)); shaft.setAttribute('y1', (by - uy * 18).toFixed(1));
@@ -1002,15 +1028,229 @@
     Object.values(scenes).forEach(x => { x.g.style.display = x === s ? '' : 'none'; });
     cur = s; t0 = performance.now();
     if (still) s.still(); else s.frame(0);
+    if (window.__wx) window.__wx(still ? 2 : 0);
   };
   layoutAll();
   window.addEventListener('resize', () => { layoutAll(); if (still && cur) cur.still(); });
   const sel = document.querySelector('[role="tab"][aria-selected="true"]');
   window.setScene(sel ? sel.getAttribute('aria-controls') : 'about');
   if (!still) {
-    const loop = now => { if (cur) cur.frame((now - t0) / 1000); requestAnimationFrame(loop); };
+    const loop = now => { if (cur) cur.frame((now - t0) / 1000); if (window.__wx) window.__wx(now / 1000); requestAnimationFrame(loop); };
     requestAnimationFrame(loop);
   }
+
+  /* ---------- Live weather for Haliyal (Open-Meteo), drawn above the scene ---------- */
+  const qs = new URLSearchParams(location.search);
+  function istNow() {
+    const p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'numeric', hour: 'numeric', hour12: false }).formatToParts(new Date());
+    const g = k => +((p.find(x => x.type === k) || {}).value || 0);
+    return { d: g('day'), m: g('month'), h: g('hour') };
+  }
+  function seasonNow() {
+    const o = qs.get('season'); if (o) return o;
+    const { m } = istNow();
+    return (m === 12 || m <= 2) ? 'winter' : (m === 10 || m === 11) ? 'autumn' : (m >= 6 && m <= 9) ? 'monsoon' : 'summer';
+  }
+  const WX = { kind: 'sunny', day: true, windy: false, text: '', season: seasonNow() };
+  const DESC = { 0: 'clear sky', 1: 'mainly clear', 2: 'partly cloudy', 3: 'overcast', 45: 'fog', 48: 'fog', 51: 'light drizzle', 53: 'drizzle', 55: 'heavy drizzle', 56: 'freezing drizzle', 57: 'freezing drizzle', 61: 'light rain', 63: 'rain', 65: 'heavy rain', 66: 'freezing rain', 67: 'freezing rain', 71: 'light snow', 73: 'snow', 75: 'heavy snow', 77: 'snow grains', 80: 'rain showers', 81: 'rain showers', 82: 'heavy showers', 85: 'snow showers', 86: 'snow showers', 95: 'thunderstorm', 96: 'thunderstorm with hail', 99: 'thunderstorm with hail' };
+  function kindOf(c) {
+    if (c >= 95) return 'thunder';
+    if ((c >= 51 && c <= 67) || (c >= 71 && c <= 77) || (c >= 80 && c <= 86)) return 'rain';
+    if (c === 3 || c === 45 || c === 48) return 'cloudy';
+    if (c === 2) return 'partly';
+    return 'sunny';
+  }
+
+  // sky layer (behind the scene) and effects layer (in front)
+  const skyLayer = el('g', {}, skyG), wxLabel = el('text', { class: 'wx-label', x: 16, y: 15 }, skyG);
+  let sun = null, rays = [], moon = null, stars = [], clouds = [];
+  function cloud(cls, s) {
+    const g = el('g', { class: cls }, skyLayer);
+    [[-16, 3, 9], [-3, -5, 12], [12, -1, 10], [22, 4, 7]].forEach(([x, y, r]) => el('circle', { cx: x, cy: y, r }, g));
+    el('ellipse', { cx: 3, cy: 6, rx: 27, ry: 6.5 }, g);
+    return { g, s };
+  }
+  function buildSky() {
+    while (skyLayer.firstChild) skyLayer.removeChild(skyLayer.firstChild);
+    sun = moon = null; rays = []; stars = []; clouds = [];
+    const k = WX.kind, wet = k === 'rain' || k === 'thunder';
+    if (!wet && k !== 'cloudy') {
+      if (WX.day) {
+        sun = el('g', {}, skyLayer);
+        el('circle', { class: 'sun-glow', r: 20 }, sun);
+        for (let i = 0; i < 10; i++) rays.push(el('line', { class: 'sun-ray', x1: 0, y1: -15, x2: 0, y2: -21, transform: `rotate(${i * 36})` }, sun));
+        el('circle', { class: 'sun', r: 11 }, sun);
+      } else {
+        moon = el('g', {}, skyLayer);
+        el('circle', { class: 'moon-glow', r: 17 }, moon);
+        el('circle', { class: 'moon', r: 11 }, moon);
+        el('circle', { class: 'moon-bite', cx: 5, cy: -4, r: 9.5 }, moon);
+        for (let i = 0; i < 9; i++) stars.push({ e: el('circle', { class: 'star', r: i % 3 ? .9 : 1.3 }, skyLayer), fx: (i * 0.137 + .05) % 1, y: 6 + (i * 7) % 26, ph: i });
+      }
+    }
+    const spec = {
+      sunny: [['cloud', .85, .74, 22, 50, .09]],
+      partly: [['cloud', 1, .78, 24, 30, .07], ['cloud', .8, .46, 18, 70, .05]],
+      cloudy: [['cloud-grey', 1.1, .3, 24, 40, .05], ['cloud-grey', 1.3, .56, 26, 50, .04], ['cloud-grey', 1, .84, 22, 40, .06]],
+      rain: [['cloud-dark', 1.3, .3, 25, 20, .05], ['cloud-dark', 1.5, .5, 26, 25, .04], ['cloud-dark', 1.3, .7, 23, 20, .05], ['cloud-dark', 1.5, .9, 26, 25, .04]],
+      thunder: [['cloud-storm', 1.4, .3, 25, 15, .06], ['cloud-storm', 1.6, .5, 27, 20, .05], ['cloud-storm', 1.4, .7, 23, 15, .06], ['cloud-storm', 1.6, .9, 27, 20, .05]]
+    }[k];
+    spec.forEach(([cls, s, fx, y, amp, sp], i) => { const c = cloud(cls, s); Object.assign(c, { fx, y, amp, sp, ph: i * 1.7 }); clouds.push(c); });
+    const where = WX.text ? `Haliyal now: ${WX.text}` : '';
+    wxLabel.textContent = where;
+  }
+
+  // effects
+  const rainPath = el('path', { class: 'rain' }, fxG);
+  const bolt = el('path', { class: 'bolt' }, fxG);
+  const flash = el('rect', { class: 'flash', x: 0, y: 0, width: '100%', height: '100%', opacity: 0 }, fxG);
+  const winds = Array.from({ length: 6 }, (_, i) => ({ e: el('path', { class: 'wind', d: i % 2 ? 'M0 0 q26 -7 52 0 t52 0 q14 0 14 -9 q0 -8 -8 -6' : 'M0 0 q30 -6 60 0 t60 0' }, fxG), off: i * 173, v: 230 + (i * 37) % 90, y: 48 + i * 19 }));
+  const specks = Array.from({ length: 14 }, (_, i) => ({ e: el('circle', { class: 'speck', r: 1 + (i % 3) * .5 }, fxG), off: i * 97, v: 120 + (i * 29) % 70, y: 40 + (i * 37) % 120 }));
+  const LEAF = 'M0 -10 L2 -5 L6 -7 L5 -2 L10 -2 L7 1 L9 4 L3 3 L1 8 L0 5 L-1 8 L-3 3 L-9 4 L-7 1 L-10 -2 L-5 -2 L-6 -7 L-2 -5 Z M0 5 L0 12';
+  const leafCols = ['#D9472B', '#E8902E', '#F2B13D', '#B33A1E'];
+  const leaves = Array.from({ length: 9 }, (_, i) => ({ e: el('path', { class: 'leaf', d: LEAF, fill: leafCols[i % 4], stroke: leafCols[i % 4] }, fxG), off: i * 151, v: 70 + (i * 23) % 60, y: 46 + (i * 29) % 110, s: .8 + (i % 3) * .2, ph: i * 1.3 }));
+  const drops = Array.from({ length: 110 }, (_, i) => ({ x: (i * 97.13) % 1, y: (i * 53.7) % 150, v: 260 + (i * 41) % 110 }));
+
+  function wxFrame(t) {
+    const k = WX.kind, wet = k === 'rain' || k === 'thunder';
+    const winter = WX.season === 'winter' && !wet, autumn = WX.season === 'autumn' && !wet;
+    const windOn = WX.windy || winter;
+    wxLabel.setAttribute('x', Math.max(16, (W - 1120) / 2 + 48));
+    if (sun) { place(sun, W - (W < 640 ? 42 : 120), 24); rays.forEach((r, i) => r.setAttribute('transform', `rotate(${(i * 36 + t * 12).toFixed(1)})`)); }
+    if (moon) place(moon, W - (W < 640 ? 42 : 120), 22);
+    stars.forEach(s => { s.e.setAttribute('cx', (s.fx * W).toFixed(1)); s.e.setAttribute('cy', s.y); s.e.style.opacity = String(.35 + .65 * Math.abs(Math.sin(t * 1.3 + s.ph))); });
+    const drift = WX.windy ? 2.2 : winter ? 1.5 : 1;
+    clouds.forEach(c => place(c.g, c.fx * W + Math.sin(t * c.sp * drift + c.ph) * c.amp, c.y, ` scale(${c.s})`));
+    // rain
+    rainPath.style.display = wet ? '' : 'none';
+    if (wet) {
+      const n = Math.round(clamp(W / 11, 40, 110)), slant = WX.windy ? .35 : .15;
+      let d = '';
+      for (let i = 0; i < n; i++) {
+        const r = drops[i], y = 30 + ((r.y + t * r.v) % 145), x = r.x * (W + 60) - (y - 30) * slant;
+        d += `M${x.toFixed(1)} ${y.toFixed(1)}l${(-10 * slant).toFixed(1)} 10`;
+      }
+      rainPath.setAttribute('d', d);
+    }
+    // thunder
+    const ph = t % 4.6, on = k === 'thunder' && (ph < .14 || (ph > .26 && ph < .36));
+    bolt.style.display = on ? '' : 'none';
+    flash.setAttribute('opacity', on ? (ph < .14 ? .28 : .16) : 0);
+    if (on) {
+      const bx = W * (Math.floor(t / 4.6) % 2 ? .7 : .5);
+      bolt.setAttribute('d', `M${bx} 34 l-9 26 h8 l-7 24 l20 -32 h-9 l8 -18 Z`);
+    }
+    // wind
+    winds.forEach(w => {
+      w.e.style.display = windOn ? '' : 'none';
+      w.e.classList.toggle('cold', winter && !WX.windy);
+      if (windOn) { const sp = WX.windy ? 1 : .6, x = ((t * w.v * sp + w.off) % (W + 320)) - 220; place(w.e, x, w.y + Math.sin(t * 1.4 + w.off) * 4); }
+    });
+    specks.forEach(s => {
+      s.e.style.display = winter ? '' : 'none';
+      if (winter) { s.e.setAttribute('cx', (((t * s.v + s.off) % (W + 40)) - 20).toFixed(1)); s.e.setAttribute('cy', (s.y + Math.sin(t * 2 + s.off) * 6).toFixed(1)); }
+    });
+    // maple leaves
+    leaves.forEach((l, i) => {
+      const show = autumn || (WX.windy && !wet && WX.season !== 'winter' && i < 5);
+      l.e.style.display = show ? '' : 'none';
+      if (show) {
+        const sp = WX.windy ? 2.2 : 1, x = ((t * l.v * sp + l.off) % (W + 120)) - 60, y = l.y + Math.sin(t * 1.6 + l.ph) * 14;
+        place(l.e, x, y, ` rotate(${((t * 150 + l.off) * (i % 2 ? 1 : -1)) % 360}) scale(${l.s})`);
+      }
+    });
+    // umbrella for the stickman when it rains
+    RAIN = wet;
+    MEN.forEach(m => {
+      const show = wet && cur && cur.g.contains(m.g);
+      m.umb.style.display = show ? '' : 'none';
+      if (show) limb(m.armL, 155);
+    });
+  }
+
+  function applyWx(c) {
+    const o = qs.get('weather');
+    if (o) {
+      WX.kind = o === 'night' || o === 'windy' ? 'sunny' : o;
+      WX.day = o !== 'night'; WX.windy = o === 'windy'; WX.text = `preview (${o})`;
+    } else if (c) {
+      WX.kind = kindOf(c.weather_code); WX.day = c.is_day === 1;
+      WX.windy = c.wind_speed_10m >= 25 || c.wind_gusts_10m >= 40;
+      WX.text = `${Math.round(c.temperature_2m)}°C, ${DESC[c.weather_code] || 'weather unavailable'}${WX.windy ? ', windy' : ''}`;
+    } else {
+      const h = istNow().h; WX.kind = 'sunny'; WX.day = h >= 6 && h < 18; WX.windy = false; WX.text = '';
+    }
+    WX.season = seasonNow();
+    buildSky();
+    if (still) wxFrame(2);
+  }
+  const WX_URL = 'https://api.open-meteo.com/v1/forecast?latitude=15.3306&longitude=74.7647&current=temperature_2m,weather_code,wind_speed_10m,wind_gusts_10m,is_day&timezone=Asia%2FKolkata';
+  async function loadWx() {
+    if (qs.get('weather')) return applyWx(null);
+    try {
+      let c = null;
+      try { const s = JSON.parse(localStorage.getItem('wx-haliyal') || 'null'); if (s && Date.now() - s.at < 30 * 60e3) c = s.cur; } catch (e) {}
+      if (!c) {
+        const r = await fetch(WX_URL); if (!r.ok) throw new Error('weather ' + r.status);
+        c = (await r.json()).current;
+        try { localStorage.setItem('wx-haliyal', JSON.stringify({ at: Date.now(), cur: c })); } catch (e) {}
+      }
+      applyWx(c);
+    } catch (e) { applyWx(null); }
+  }
+  applyWx(null);
+  loadWx();
+  setInterval(loadWx, 60 * 60e3);
+
+  /* ---------- Birthday: party poppers every 14 August (India time) ---------- */
+  const today = istNow();
+  if ((today.d === 14 && today.m === 8) || qs.has('birthday')) {
+    const tag = document.createElement('span');
+    tag.className = 'bday'; tag.textContent = '🎉 It’s my birthday today!';
+    const top = document.querySelector('.monitor-top'); top.insertBefore(tag, top.children[1] || null);
+    if (!still) {
+      const cv = document.createElement('canvas'); cv.className = 'confetti'; cv.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(cv);
+      const g2 = cv.getContext('2d'), dpr = Math.min(2, window.devicePixelRatio || 1), RD = Math.PI / 180;
+      const cols = ['#F2B13D', '#D9472B', '#7FB2E5', '#25D366', '#FFFFFF', '#E8902E', '#C084FC'];
+      let parts = [], last = -1e9, n = 0;
+      const fit = () => { cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; g2.setTransform(dpr, 0, 0, dpr, 0, 0); };
+      fit(); window.addEventListener('resize', fit);
+      const base = side => [side < 0 ? 34 : innerWidth - 34, innerHeight - (innerWidth < 640 ? 84 : 100)];
+      function pop(side) {
+        const [x0, y0] = base(side);
+        for (let i = 0; i < 90; i++) {
+          const a = (side < 0 ? -62 : -118) + (Math.random() - .5) * 44, sp = 8 + Math.random() * 10;
+          parts.push({ x: x0, y: y0, vx: Math.cos(a * RD) * sp, vy: Math.sin(a * RD) * sp, w: 4 + Math.random() * 5, h: 7 + Math.random() * 6, r: Math.random() * 6.3, vr: (Math.random() - .5) * .45, c: cols[i % cols.length], life: 0 });
+        }
+      }
+      function popper(side, kick) {
+        const [x, y] = base(side);
+        g2.save(); g2.translate(x, y); g2.rotate((side < 0 ? 28 : -28) * RD); g2.scale(1 + kick * .15, 1 + kick * .15);
+        g2.beginPath(); g2.moveTo(0, -24); g2.lineTo(-10, 12); g2.lineTo(10, 12); g2.closePath();
+        g2.fillStyle = '#F2B13D'; g2.fill();
+        g2.strokeStyle = '#D9472B'; g2.lineWidth = 2.5; g2.beginPath(); g2.moveTo(-6, 2); g2.lineTo(6, 2); g2.moveTo(-3, -8); g2.lineTo(3, -8); g2.stroke();
+        g2.restore();
+      }
+      const loopC = now => {
+        if (now - last > 5000) { last = now; pop(n++ % 2 ? 1 : -1); setTimeout(() => pop(n++ % 2 ? 1 : -1), 600); }
+        g2.clearRect(0, 0, innerWidth, innerHeight);
+        parts = parts.filter(p => p.y < innerHeight + 30 && p.life < 420);
+        parts.forEach(p => {
+          p.vy += .22; p.vx *= .985; p.vy *= .985; p.x += p.vx; p.y += p.vy; p.r += p.vr; p.life++;
+          g2.save(); g2.translate(p.x, p.y); g2.rotate(p.r); g2.globalAlpha = Math.min(1, (420 - p.life) / 60);
+          g2.fillStyle = p.c; g2.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.r * 1.7)) + 1); g2.restore();
+        });
+        const kick = Math.max(0, 1 - (now - last) / 300);
+        popper(-1, kick); popper(1, kick);
+        requestAnimationFrame(loopC);
+      };
+      requestAnimationFrame(loopC);
+    }
+  }
+
+  window.__wx = wxFrame;
+  if (still) wxFrame(2);
 
   /* ---------- Photo protection (deterrent only) ---------- */
   const guarded = e => e.target.closest && e.target.closest('.gallery, .portrait, dialog.viewer, .wa-head');
